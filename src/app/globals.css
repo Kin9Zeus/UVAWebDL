@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #221E1F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-secondary: #6661AB;
+  --color-tertiary: #221E1F;
+  --font-sans: var(--font-inter);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Utilidad para difuminar bordes de contenedores con imagen de fondo */
+.fade-edges {
+  -webkit-mask-image: radial-gradient(closest-side, black 60%, transparent 100%);
+  mask-image: radial-gradient(closest-side, black 60%, transparent 100%);
+  transition: transform 300ms ease, -webkit-mask-image 300ms ease, mask-image 300ms ease;
+  will-change: transform;
+}
+.fade-edges:hover {
+  -webkit-mask-image: radial-gradient(closest-side, black 75%, transparent 100%);
+  mask-image: radial-gradient(closest-side, black 75%, transparent 100%);
+  transform: scale(1.02);
+}
+
+/* Animación sutil para entradas y bloques */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 400ms ease both; }
