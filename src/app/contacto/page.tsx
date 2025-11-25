@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 const WHATSAPP_URL = process.env.NEXT_PUBLIC_WHATSAPP_URL || "https://wa.me/";
 const INSTAGRAM_URL = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/";
@@ -33,23 +34,30 @@ export default function ContactoPage() {
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <header className="text-center">
-          <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--color-tertiary)]">Contacto</h1>
-          <p className="mt-3 text-neutral-600 max-w-2xl mx-auto">Hablemos de tu proyecto — respuesta en 24–48 horas.</p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-5 py-3 text-sm hover:bg-neutral-50 transition transform hover:scale-[1.01]"
-            >
-              WhatsApp
-            </a>
+        <div className="relative overflow-hidden rounded-2xl">
+          <div className="relative" style={{ aspectRatio: "16 / 9" }}>
+            <Image src="/Humanizar/Contacto1.jpg" alt="Contacto UVA" fill priority sizes="100vw" style={{ objectFit: "cover" }} />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/25 to-transparent" />
+          <div className="absolute inset-0 flex items-end p-6 sm:p-10">
+            <div className="text-white max-w-2xl">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">Contacto</h1>
+              <p className="mt-2 text-sm sm:text-base opacity-90">Hablemos de tu proyecto — respuesta en 24–48 horas.</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href="#form-contacto" className="rounded-full bg-[var(--color-secondary)] px-5 py-2 text-white">Escribir mensaje</a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/70 px-5 py-2 text-white hover:bg-white/10">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <header className="text-center mt-10">
+          <p className="text-neutral-600 max-w-2xl mx-auto">También puedes contactarnos por Instagram.</p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-5 py-3 text-sm hover:bg-neutral-50 transition transform hover:scale-[1.01]"
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 px-5 py-3 text-sm hover:bg-neutral-50 transition"
             >
               Instagram
             </a>
@@ -58,20 +66,20 @@ export default function ContactoPage() {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-2">
           {/* Formulario */}
-          <form onSubmit={onSubmit} className="rounded-xl border border-neutral-200 p-6 bg-white/60">
+          <form id="form-contacto" onSubmit={onSubmit} className="rounded-xl border border-neutral-200 p-6 bg-white">
             <h2 className="text-lg font-semibold text-[var(--color-tertiary)]">Envíanos un mensaje</h2>
             <div className="mt-4 grid gap-4">
               <div>
                 <label className="text-sm text-neutral-600">Nombre completo</label>
-                <input name="nombre" value={form.nombre} onChange={onChange} className="mt-1 w-full rounded border border-neutral-300 px-3 py-2" />
+                <input name="nombre" value={form.nombre} onChange={onChange} className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:ring-2 focus:ring-[var(--color-secondary)] outline-none" />
               </div>
               <div>
                 <label className="text-sm text-neutral-600">Correo electrónico</label>
-                <input name="email" value={form.email} onChange={onChange} type="email" className="mt-1 w-full rounded border border-neutral-300 px-3 py-2" />
+                <input name="email" value={form.email} onChange={onChange} type="email" className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:ring-2 focus:ring-[var(--color-secondary)] outline-none" />
               </div>
               <div>
                 <label className="text-sm text-neutral-600">Mensaje</label>
-                <textarea name="mensaje" value={form.mensaje} onChange={onChange} className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 h-32" />
+                <textarea name="mensaje" value={form.mensaje} onChange={onChange} className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 h-32 focus:ring-2 focus:ring-[var(--color-secondary)] outline-none" />
               </div>
               {error && <p className="text-sm text-red-600">{error}</p>}
               {ok && <p className="text-sm text-green-600">Mensaje validado. Implementa el envío en el backend.</p>}
@@ -82,7 +90,7 @@ export default function ContactoPage() {
 
           {/* Mapa y info */}
           <aside>
-            <div className="rounded-xl border border-neutral-200 p-6 bg-white">
+            <div className="rounded-xl border border-neutral-200 p-6 bg-white transition hover:shadow-sm">
               <h2 className="text-lg font-semibold text-[var(--color-tertiary)]">Ubicación</h2>
               <p className="text-sm text-neutral-500 mt-1">Calle 14 #23-71, Oficina 501, Edificio Alturia, Pereira, Risaralda, Colombia</p>
               <iframe

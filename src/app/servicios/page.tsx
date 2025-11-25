@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
 
@@ -53,31 +54,49 @@ export default function ServiciosPage() {
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <header className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-semibold text-[var(--color-tertiary)]">Servicios de Arquitectura</h1>
-          <p className="mt-2 text-neutral-600 max-w-2xl mx-auto">Selecciona un servicio y cuéntanos tu idea. Te contactaremos para una propuesta a medida.</p>
+        <div className="relative overflow-hidden rounded-2xl">
+          <div className="relative" style={{ aspectRatio: "16 / 9" }}>
+            <Image src="/Humanizar/Srv.jpg" alt="Servicios UVA" fill priority sizes="100vw" style={{ objectFit: "cover" }} />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/25 to-transparent" />
+          <div className="absolute inset-0 flex items-end p-6 sm:p-10">
+            <div className="text-white max-w-2xl">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">Servicios UVA</h1>
+              <p className="mt-2 text-sm sm:text-base opacity-90">Diseño arquitectónico, urbano e interior. Consultoría y construcción con excelencia.</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href="#contacto" className="rounded-full bg-[var(--color-secondary)] px-5 py-2 text-white">Solicitar propuesta</a>
+                <a href="/proyectos" className="rounded-full border border-white/70 px-5 py-2 text-white hover:bg-white/10">Ver proyectos</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <header className="text-center mt-10">
+          <p className="text-neutral-600 max-w-2xl mx-auto">Selecciona un servicio y cuéntanos tu idea. Te contactaremos para una propuesta a medida.</p>
         </header>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {/* Selección de servicios */}
           <div>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <p className="text-lg font-semibold text-[var(--color-tertiary)]">Paso 1: Elige el servicio que necesitas.</p>
+            <div className="mt-3 grid gap-6 sm:grid-cols-2">
               {SERVICES.map((s) => (
                 <button
                   key={s.id}
                   onClick={() => setSelected(s.id)}
-                  className={`text-left rounded-2xl border p-6 transition hover:shadow-sm ${selected===s.id?"border-[var(--color-secondary)] ring-2 ring-[var(--color-secondary)]":"border-neutral-200"}`}
+                  className={`group text-left rounded-2xl border p-6 bg-white transition hover:shadow-md hover:-translate-y-0.5 ${selected===s.id?"border-[var(--color-secondary)] ring-2 ring-[var(--color-secondary)]":"border-neutral-200"}`}
                 >
-                  <h3 className="font-semibold text-[var(--color-tertiary)]">{s.name}</h3>
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-secondary)]/10 text-[var(--color-secondary)]">★</span>
+                    <h3 className="font-semibold text-[var(--color-tertiary)]">{s.name}</h3>
+                  </div>
                   <p className="mt-2 text-sm text-neutral-600">{s.desc}</p>
                 </button>
               ))}
             </div>
-            <p className="mt-3 text-xs text-neutral-500">Paso 1: Elige el servicio que necesitas.</p>
           </div>
 
           {/* Formulario de contacto */}
-          <div className="rounded-2xl border border-neutral-200 p-6 bg-white">
+          <div id="contacto" className="rounded-2xl border border-neutral-200 p-6 bg-white">
             <h2 className="text-lg font-semibold text-[var(--color-tertiary)]">Paso 2: Cuéntanos sobre tu proyecto</h2>
             <form onSubmit={onSubmit} className="mt-4 grid gap-4">
               <div className="grid gap-4 sm:grid-cols-2">
