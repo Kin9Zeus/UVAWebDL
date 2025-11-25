@@ -30,7 +30,7 @@ export default function Home() {
             </div>
             <div className="hidden md:block relative">
                <img
-                 src="/home-hero.jpg"
+                 src="/Portada-Arenas.jpg"
                  alt="Casa Liévano"
                  className="rounded-2xl w-full aspect-square object-contain shadow-sm transition-transform duration-500 hover:scale-[1.02]"
                />

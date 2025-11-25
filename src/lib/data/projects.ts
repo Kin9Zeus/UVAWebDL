@@ -8,6 +8,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "la-mahaus",
+    name: "La Mahaus",
+    description:
+      "La Mahaus – Vivienda campestre de estilo industrial e integrada a la naturaleza. Las vistas exteriores muestran volúmenes de madera, concreto y metal en un entorno montañoso. Los interiores combinan materiales rústicos e industriales: vigas a la vista, muros de ladrillo, mesas de madera maciza y grandes ventanales hacia el bosque. Las habitaciones presentan iluminación cálida indirecta, paredes oscuras y vistas panorámicas; el baño integra madera y concreto con regadera y tina.",
+    images: [
+      "/projects/La-Mahaus/1.jpg",
+      "/projects/La-Mahaus/2.jpg",
+      "/projects/La-Mahaus/3.jpg",
+      "/projects/La-Mahaus/4.jpg",
+      "/projects/La-Mahaus/5.jpg",
+      "/projects/La-Mahaus/6.jpg",
+      "/projects/La-Mahaus/7.jpg",
+      "/projects/La-Mahaus/9.jpg",
+      "/projects/La-Mahaus/10.jpg",
+      "/projects/La-Mahaus/11.jpg",
+    ],
+  },
+  {
     id: "selva-negra",
     name: "SELVA NEGRA",
     description:
@@ -73,24 +91,7 @@ export const projects: Project[] = [
       "/projects/FENAT/8.jpg",
     ],
   },
-  {
-    id: "la-mahaus",
-    name: "La Mahaus",
-    description:
-      "La Mahaus – Vivienda campestre de estilo industrial e integrada a la naturaleza. Las vistas exteriores muestran volúmenes de madera, concreto y metal en un entorno montañoso. Los interiores combinan materiales rústicos e industriales: vigas a la vista, muros de ladrillo, mesas de madera maciza y grandes ventanales hacia el bosque. Las habitaciones presentan iluminación cálida indirecta, paredes oscuras y vistas panorámicas; el baño integra madera y concreto con regadera y tina.",
-    images: [
-      "/projects/La-Mahaus/1.jpg",
-      "/projects/La-Mahaus/2.jpg",
-      "/projects/La-Mahaus/3.jpg",
-      "/projects/La-Mahaus/4.jpg",
-      "/projects/La-Mahaus/5.jpg",
-      "/projects/La-Mahaus/6.jpg",
-      "/projects/La-Mahaus/7.jpg",
-      "/projects/La-Mahaus/9.jpg",
-      "/projects/La-Mahaus/10.jpg",
-      "/projects/La-Mahaus/11.jpg",
-    ],
-  },
+  
   {
     id: "residencia-lepore",
     name: "Residencia Lepore",
