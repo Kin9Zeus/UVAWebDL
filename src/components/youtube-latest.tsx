@@ -24,9 +24,9 @@ export default async function YouTubeLatest({ handle = process.env.YOUTUBE_CHANN
   return (
     <div>
       <p className="text-sm text-neutral-500 mb-3">Últimos videos de YouTube</p>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
         {videos.slice(0, max).map((v) => (
-          <div key={v.id} className="group rounded-xl overflow-hidden border border-neutral-200 bg-white">
+          <div key={v.id} className="group h-full rounded-xl overflow-hidden border border-neutral-200 bg-white">
             <iframe
               className="aspect-video w-full transition-transform duration-300 group-hover:scale-[1.02]"
               src={`https://www.youtube.com/embed/${v.id}`}
