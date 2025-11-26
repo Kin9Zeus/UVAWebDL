@@ -14,7 +14,7 @@ export default function ContactoPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setOk(false);
@@ -27,8 +27,28 @@ export default function ContactoPage() {
       setError("Correo electrónico inválido.");
       return;
     }
-    // TODO: integrar envío real vía API/Email (Node.js + Express/Firebase)
-    setOk(true);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          service: "contacto",
+          name: form.nombre,
+          email: form.email,
+          message: form.mensaje,
+          contactMethod: "email",
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || "No se pudo enviar");
+      }
+      setOk(true);
+      setForm({ nombre: "", email: "", mensaje: "" });
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "No se pudo enviar";
+      setError(message);
+    }
   };
 
   return (

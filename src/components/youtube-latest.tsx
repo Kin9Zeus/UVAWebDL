@@ -1,7 +1,7 @@
 import { getLatestVideosByHandle } from "@/lib/youtube";
 
-export default async function YouTubeLatest({ handle = process.env.YOUTUBE_CHANNEL_HANDLE || "@uvarq", max = 4 }: { handle?: string; max?: number }) {
-  const hasAPI = !!process.env.YOUTUBE_API_KEY;
+export default async function YouTubeLatest({ handle = (process.env["YOUTUBE_CHANNEL_HANDLE"] as string) || "@uvarq", max = 4 }: { handle?: string; max?: number }) {
+  const hasAPI = !!process.env["YOUTUBE_API_KEY"];
   let videos: { id: string; title: string }[] = [];
   if (hasAPI) {
     try {
