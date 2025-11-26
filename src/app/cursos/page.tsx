@@ -1,6 +1,7 @@
 import Rating from "@/components/rating";
 import { courses } from "@/lib/data/courses";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CursosPage() {
   return (
@@ -24,11 +25,14 @@ export default function CursosPage() {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {courses.map((c) => (
             <div key={c.id} className="rounded-lg border border-neutral-200 p-6">
-              <div className="h-32 w-full rounded overflow-hidden bg-neutral-100 mb-4">
-                <img
+              <div className="relative h-32 w-full rounded overflow-hidden bg-neutral-100 mb-4">
+                <Image
                   src={c.cover}
                   alt={c.title}
-                  className={`w-full h-full ${c.cover.endsWith(".svg") ? "object-contain p-4 opacity-60" : "object-cover"}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  style={{ objectFit: c.cover.endsWith(".svg") ? "contain" : "cover", padding: c.cover.endsWith(".svg") ? "1rem" : undefined }}
+                  className={c.cover.endsWith(".svg") ? "opacity-60" : ""}
                 />
               </div>
               <h3 className="font-medium text-[var(--color-tertiary)]">{c.title}</h3>

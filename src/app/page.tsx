@@ -41,32 +41,37 @@ export default function Home() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-white to-neutral-100" />
-            <img
-              src="/Portada-Arenas.jpg"
-              alt="Portada"
-              className="rounded-2xl w-full aspect-square object-contain shadow-sm transition-transform duration-500 hover:scale-[1.02]"
-            />
+            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "1 / 1" }}>
+              <Image
+                src="/Portada-Arenas.jpg"
+                alt="Portada"
+                fill
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 40vw"
+                className="shadow-sm transition-transform duration-500 hover:scale-[1.02]"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
           </div>
         </div>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <Link href="/cursos" className="group rounded-2xl border border-neutral-200 p-6 bg-white hover:shadow-sm transition">
             <div className="flex items-center gap-3">
-              <img src="/file.svg" alt="Cursos" className="h-6 w-6" />
+              <Image src="/file.svg" alt="Cursos" width={24} height={24} className="h-6 w-6" />
               <p className="font-medium text-[var(--color-tertiary)]">Cursos y diplomados</p>
             </div>
             <p className="mt-2 text-sm text-neutral-600">Formación profesional en arquitectura y gestión.</p>
           </Link>
           <Link href="/proyectos" className="group rounded-2xl border border-neutral-200 p-6 bg-white hover:shadow-sm transition">
             <div className="flex items-center gap-3">
-              <img src="/window.svg" alt="Proyectos" className="h-6 w-6" />
+              <Image src="/window.svg" alt="Proyectos" width={24} height={24} className="h-6 w-6" />
               <p className="font-medium text-[var(--color-tertiary)]">Proyectos UVA</p>
             </div>
             <p className="mt-2 text-sm text-neutral-600">Galería profesional de arquitectura y diseño.</p>
           </Link>
           <Link href="/servicios" className="group rounded-2xl border border-neutral-200 p-6 bg-white hover:shadow-sm transition">
             <div className="flex items-center gap-3">
-              <img src="/globe.svg" alt="Servicios" className="h-6 w-6" />
+              <Image src="/globe.svg" alt="Servicios" width={24} height={24} className="h-6 w-6" />
               <p className="font-medium text-[var(--color-tertiary)]">Servicios</p>
             </div>
             <p className="mt-2 text-sm text-neutral-600">Diseño arquitectónico, urbano e interior.</p>

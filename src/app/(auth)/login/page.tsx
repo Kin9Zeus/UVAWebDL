@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
@@ -51,11 +52,16 @@ export default function LoginPage() {
             </form>
           </div>
           <div className="hidden md:block relative">
-            <img
-              src="/bg-auth.jpg"
-              alt="Residencia Lepore"
-              className="rounded-2xl w-full h-[70vh] object-contain shadow-sm transition-transform duration-500 hover:scale-[1.02]"
-            />
+            <div className="relative h-[70vh] rounded-2xl overflow-hidden">
+              <Image
+                src="/bg-auth.jpg"
+                alt="Residencia Lepore"
+                fill
+                sizes="(max-width: 768px) 0px, 50vw"
+                className="transition-transform duration-500 hover:scale-[1.02]"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
             <span className="absolute left-4 top-4 rounded-full bg-white/70 backdrop-blur px-3 py-1 text-xs font-medium text-[var(--color-tertiary)]">Residencia Lepore</span>
           </div>
         </div>
