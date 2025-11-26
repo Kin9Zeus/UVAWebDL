@@ -11,20 +11,21 @@ export default async function YouTubeLatest({ handle = process.env.YOUTUBE_CHANN
     }
   }
 
-  const fallback = [
-    { id: "QuLbxdf6ty4", title: "¡Creando Empresa y También Concursando! l COMPITIENDO EN UN MERCADO COMPETIDO." },
-    { id: "p44hGFi7oGQ", title: "¡Diplomado en Gerencia de Proyectos, Costos y Honorarios!" },
-    { id: "JQiyOUV51wE", title: "Cómo convertí la incertidumbre en mi mejor proyecto l La historia detrás de UVA" },
-    { id: "OenzI24XI2M", title: "¿Un Arquitecto que sabe vender? APRENDE A VENDER SIENDO ARQUITECTO Y MEJORA TU OFICINA." },
-  ];
-
-  const list = (videos.length > 0 ? videos : fallback).slice(0, max);
+  if (!hasAPI || videos.length === 0) {
+    return (
+      <div className="rounded-lg border border-neutral-200 p-4">
+        <p className="text-sm text-neutral-500 mb-3">Últimos videos de YouTube</p>
+        <p className="text-sm text-neutral-600">Conecta YOUTUBE_API_KEY para mostrar automáticamente los últimos videos.</p>
+        <a href="https://youtube.com/@uvarq?si=DK8V8qn2uPUYFZpQ" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-[var(--color-secondary)]">Ir al canal de UVA</a>
+      </div>
+    );
+  }
 
   return (
     <div>
       <p className="text-sm text-neutral-500 mb-3">Últimos videos de YouTube</p>
       <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
-        {list.map((v) => (
+        {videos.slice(0, max).map((v) => (
           <div key={v.id} className="group h-full rounded-xl overflow-hidden border border-neutral-200 bg-white">
             <iframe
               className="aspect-video w-full transition-transform duration-300 group-hover:scale-[1.02]"

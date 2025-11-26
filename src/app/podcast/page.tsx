@@ -7,7 +7,7 @@ export default function PodcastPage() {
     <section>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="relative overflow-hidden rounded-2xl">
-          <div className="relative" style={{ aspectRatio: "16 / 9" }}>
+          <div className="relative min-h-[48vh] sm:min-h-[56vh] lg:min-h-[64vh]">
             <Image src="/Humanizar/OficialPodcast.jpg" alt="Podcast UVA" fill priority sizes="100vw" style={{ objectFit: "cover" }} />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />

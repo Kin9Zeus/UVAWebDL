@@ -1,9 +1,22 @@
+"use client";
 import Rating from "@/components/rating";
 import { courses } from "@/lib/data/courses";
 import Link from "next/link";
 import Image from "next/image";
+import { useMemo, useState } from "react";
 
 export default function CursosPage() {
+  const [query, setQuery] = useState("");
+  const normalize = (s: string) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const filtered = useMemo(() => {
+    const q = normalize(query).trim();
+    if (!q) return courses;
+    const tokens = q.split(/\s+/);
+    return courses.filter((c) => {
+      const hay = normalize(`${c.title} ${c.description} ${c.category} ${c.level} ${c.priceDisplay ?? ""}`);
+      return tokens.every((t) => hay.includes(t));
+    });
+  }, [query]);
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -13,7 +26,7 @@ export default function CursosPage() {
         </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <input placeholder="Buscar cursos..." className="w-full sm:w-80 rounded border border-neutral-300 px-3 py-2" />
+          <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar cursos..." className="w-full sm:w-80 rounded border border-neutral-300 px-3 py-2" />
           <div className="flex flex-wrap gap-2 text-sm">
             <button className="rounded-full border border-neutral-300 px-3 py-2">Todos</button>
             <button className="rounded-full border border-neutral-300 px-3 py-2">Arquitectura</button>
@@ -23,7 +36,7 @@ export default function CursosPage() {
         </div>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {courses.map((c) => (
+          {filtered.map((c) => (
             <div key={c.id} className="rounded-lg border border-neutral-200 p-6">
               <div className="relative h-32 w-full rounded overflow-hidden bg-neutral-100 mb-4">
                 <Image
