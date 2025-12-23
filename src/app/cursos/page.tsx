@@ -52,7 +52,7 @@ export default function CursosPage() {
               <p className="text-sm text-neutral-600">{c.description}</p>
               <div className="mt-3 flex items-center justify-between">
                 <Rating rating={c.rating} />
-                <span className="text-[var(--color-tertiary)] font-semibold">{c.priceDisplay ?? "$80 USD"}</span>
+                <span className="text-[var(--color-tertiary)] font-semibold">{c.priceDisplay ?? `$${c.price} USD`}</span>
               </div>
               <div className="mt-4 flex gap-2">
                 <Link href={`/cursos/${c.id}`} className="rounded-full bg-[var(--color-secondary)] px-4 py-2 text-white text-sm w-full text-center">Ver detalles</Link>

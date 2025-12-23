@@ -94,7 +94,9 @@ export default async function CursoDetallePage({ params, searchParams }: Props) 
                />
             )}
 
-            <p className="mt-4 text-xs text-neutral-500">Acceso válido por 6 meses. Certificado descargable.</p>
+            <p className="mt-4 text-xs text-neutral-500">
+              {course.accessDuration || "Acceso válido por 6 meses"}. Certificado descargable.
+            </p>
           </aside>
         </div>
       </div>

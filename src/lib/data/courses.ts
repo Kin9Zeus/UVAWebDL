@@ -11,6 +11,8 @@ export type Course = {
   priceDisplay?: string;
   // URL del video de Google Drive (embed)
   videoUrl?: string;
+  // Duración del acceso (ej. "Acceso de por vida", "6 meses")
+  accessDuration?: string;
   // Temario estructurado opcional
   syllabus?: {
     title: string;
@@ -178,6 +180,7 @@ export const courses: Course[] = [
     category: "gestión",
     level: "básico",
     videoUrl: undefined,
+    accessDuration: "Acceso de por vida",
     syllabus: [
        {
          title: "CONTENIDO DEL LIBRO DIGITAL",
