@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import Input from "@/components/ui/input";
 import Button from "@/components/ui/button";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirectUrl = searchParams.get("redirect") || "/";
@@ -41,20 +41,28 @@ export default function LoginPage() {
   };
 
   return (
+    <div className="animate-fade-in">
+      <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--color-tertiary)]">Bienvenido a UVA</h1>
+      <p className="mt-2 text-neutral-600">Únete y accede a cursos, comunidad y mentorías profesionales.</p>
+      <form onSubmit={onSubmit} className="mt-8 grid gap-4">
+        <Input name="email" label="Correo electrónico" value={form.email} onChange={onChange} type="email" />
+        <Input name="password" label="Contraseña" value={form.password} onChange={onChange} type="password" />
+        {error && <p className="text-sm text-red-600">{error}</p>}
+        <Button loading={loading} className="bg-[var(--color-secondary)] text-white" type="submit">Entrar</Button>
+        <p className="text-sm">¿No tienes cuenta? <a href="/register" className="text-[var(--color-secondary)]">Regístrate</a></p>
+      </form>
+    </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
     <section className="min-h-[70vh]">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid gap-8 md:grid-cols-2 items-center">
-          <div className="animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-[var(--color-tertiary)]">Bienvenido a UVA</h1>
-            <p className="mt-2 text-neutral-600">Únete y accede a cursos, comunidad y mentorías profesionales.</p>
-            <form onSubmit={onSubmit} className="mt-8 grid gap-4">
-              <Input name="email" label="Correo electrónico" value={form.email} onChange={onChange} type="email" />
-              <Input name="password" label="Contraseña" value={form.password} onChange={onChange} type="password" />
-              {error && <p className="text-sm text-red-600">{error}</p>}
-              <Button loading={loading} className="bg-[var(--color-secondary)] text-white" type="submit">Entrar</Button>
-              <p className="text-sm">¿No tienes cuenta? <a href="/register" className="text-[var(--color-secondary)]">Regístrate</a></p>
-            </form>
-          </div>
+          <Suspense fallback={<div>Cargando...</div>}>
+            <LoginForm />
+          </Suspense>
           <div className="hidden md:block relative">
             <div className="relative h-[70vh] rounded-2xl overflow-hidden">
               <Image
