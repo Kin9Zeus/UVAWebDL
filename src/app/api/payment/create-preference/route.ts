@@ -37,7 +37,24 @@ export async function POST(req: NextRequest) {
     const unitPrice = course.price * 4200;
 
     // Determinar la URL base dinámicamente si no está definida en .env
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || req.nextUrl.origin;
+    let baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+    // Si no hay variable de entorno, intentar deducir del request
+    if (!baseUrl) {
+      try {
+        baseUrl = req.nextUrl.origin;
+      } catch (e) {
+        console.warn("No se pudo determinar el origen desde req.nextUrl");
+      }
+    }
+
+    // Validación final: si aún no tenemos URL válida o no empieza por http, usar localhost por defecto
+    if (!baseUrl || !baseUrl.startsWith("http")) {
+      console.warn("Base URL no detectada o inválida. Usando http://localhost:3000 por defecto.");
+      baseUrl = "http://localhost:3000";
+    }
+
+    console.log("Creando preferencia MP con Base URL:", baseUrl);
 
     const result = await preference.create({
       body: {

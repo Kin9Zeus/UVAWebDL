@@ -70,32 +70,58 @@ export default function Syllabus({ syllabus, isPurchased }: SyllabusProps) {
                     </ul>
                   )}
 
-                  {/* Video Section */}
+                  {/* Video/Resource Section */}
                   <div className="mt-4 pt-4 border-t border-neutral-100">
                     {isPurchased ? (
                       session.videoUrl ? (
-                        <div className="space-y-2">
-                          <p className="text-xs font-semibold text-green-600 flex items-center gap-1">
-                            <span>🎥</span> Clase Grabada Disponible
-                          </p>
-                          <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-lg">
-                            <iframe
-                              src={session.videoUrl}
-                              className="w-full h-full"
-                              allow="autoplay; fullscreen"
-                              allowFullScreen
-                            />
+                        session.videoUrl.includes("drive.google.com") && !session.videoUrl.includes("preview") ? (
+                          // Es un link de descarga/recurso (ej: PDF)
+                          <div className="space-y-2">
+                             <p className="text-xs font-semibold text-green-600 flex items-center gap-1">
+                               <span>📖</span> Recurso Digital Disponible
+                             </p>
+                             <a 
+                               href={session.videoUrl} 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors group"
+                             >
+                               <div className="p-2 bg-white rounded-full text-green-600 shadow-sm group-hover:scale-110 transition-transform">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                 </svg>
+                               </div>
+                               <div>
+                                 <p className="font-semibold text-green-800">Descargar Material</p>
+                                 <p className="text-xs text-green-600">Haz clic para acceder al contenido</p>
+                               </div>
+                             </a>
                           </div>
-                        </div>
+                        ) : (
+                          // Es un video (Youtube o Drive Preview)
+                          <div className="space-y-2">
+                            <p className="text-xs font-semibold text-[var(--color-secondary)] flex items-center gap-1">
+                              <span>🎥</span> Clase Grabada Disponible
+                            </p>
+                            <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-lg">
+                              <iframe
+                                src={session.videoUrl}
+                                className="w-full h-full"
+                                allow="autoplay; fullscreen"
+                                allowFullScreen
+                              />
+                            </div>
+                          </div>
+                        )
                       ) : (
-                        <p className="text-xs text-neutral-400 italic">Video no disponible aún.</p>
+                        <p className="text-xs text-neutral-400 italic">Contenido no disponible aún.</p>
                       )
                     ) : (
                       <div className="flex items-center gap-2 p-3 bg-neutral-100 rounded border border-neutral-200 text-neutral-500 text-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                           <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
                         </svg>
-                        <span>Compra el curso para ver la clase grabada.</span>
+                        <span>Compra para acceder al contenido.</span>
                       </div>
                     )}
                   </div>
