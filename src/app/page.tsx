@@ -30,11 +30,11 @@ export default function Home() {
                 <p>Proyectos</p>
               </div>
               <div className="rounded-lg border border-neutral-200 p-3">
-                <p className="font-medium text-[var(--color-tertiary)]">+500</p>
+                <p className="font-medium text-[var(--color-tertiary)]">+10000</p>
                 <p>Estudiantes</p>
               </div>
               <div className="rounded-lg border border-neutral-200 p-3">
-                <p className="font-medium text-[var(--color-tertiary)]">+7</p>
+                <p className="font-medium text-[var(--color-tertiary)]">+13</p>
                 <p>Años</p>
               </div>
             </div>

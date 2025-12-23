@@ -1,10 +1,23 @@
 import { courses } from "@/lib/data/courses";
 import Rating from "@/components/rating";
+import { getAuthToken, verifyToken } from "@/lib/auth";
+import { dbConnect } from "@/lib/db";
+import User from "@/models/User";
+import PurchaseButton from "@/components/course-purchase";
+import { verifyAndEnrollUser } from "@/lib/payment";
+import Syllabus from "@/components/syllabus";
 
-type Props = { params: { id: string } };
+type Props = { 
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-export default function CursoDetallePage({ params }: Props) {
-  const course = courses.find((c) => c.id === params.id);
+export default async function CursoDetallePage({ params, searchParams }: Props) {
+  const { id } = await params;
+  const { status, payment_id } = await searchParams;
+  
+  const course = courses.find((c) => c.id === id);
+
   if (!course) {
     return (
       <section>
@@ -15,6 +28,31 @@ export default function CursoDetallePage({ params }: Props) {
       </section>
     );
   }
+
+  // Auth Check
+  const token = await getAuthToken();
+  const payload = verifyToken(token || "");
+  const isAuthenticated = !!payload;
+  let isPurchased = false;
+
+  // Auto-verify payment on return (Sync logic for localhost/fallback)
+  if (isAuthenticated && status === "success" && payment_id && typeof payment_id === "string") {
+    await verifyAndEnrollUser(payment_id);
+  }
+
+  if (payload) {
+    await dbConnect();
+    const user = await User.findById(payload.uid);
+    if (user && user.purchases) {
+      isPurchased = user.purchases.some(
+        (p: any) => 
+          p.courseId === course.id && 
+          p.status === "active" && 
+          new Date(p.expiresAt) > new Date()
+      );
+    }
+  }
+
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 py-12">
@@ -26,24 +64,64 @@ export default function CursoDetallePage({ params }: Props) {
               <span className="text-sm text-neutral-600">Nivel {course.level} · {course.category}</span>
             </div>
             <p className="mt-6 text-neutral-700">{course.description}</p>
-            <div className="mt-8 rounded-lg border border-neutral-200 p-6">
-              <h3 className="font-medium">Temario</h3>
-              <ul className="mt-2 list-disc pl-6 text-sm text-neutral-700">
-                <li>Módulo 1: Introducción</li>
-                <li>Módulo 2: Conceptos clave</li>
-                <li>Módulo 3: Caso práctico</li>
-              </ul>
-            </div>
+            
+            {course.syllabus ? (
+              <Syllabus syllabus={course.syllabus} />
+            ) : (
+              <div className="mt-8 rounded-lg border border-neutral-200 p-6">
+                <h3 className="font-medium">Temario</h3>
+                <ul className="mt-2 list-disc pl-6 text-sm text-neutral-700">
+                  <li>Módulo 1: Introducción</li>
+                  <li>Módulo 2: Conceptos clave</li>
+                  <li>Módulo 3: Caso práctico</li>
+                </ul>
+              </div>
+            )}
+
             <div className="mt-8 rounded-lg border border-neutral-200 p-6">
               <h3 className="font-medium">Videos</h3>
-              <p className="text-sm text-neutral-600">Disponible sólo para usuarios con acceso activo.</p>
-              <div className="mt-3 aspect-video rounded bg-neutral-100" />
+              {isPurchased ? (
+                <div className="mt-4 space-y-4">
+                  <p className="text-sm text-green-600 font-medium">¡Gracias por tu compra! Aquí tienes acceso al contenido:</p>
+                  {course.videoUrl ? (
+                    <div className="aspect-video w-full">
+                       <iframe 
+                        src={course.videoUrl} 
+                        className="w-full h-full rounded-lg" 
+                        allow="autoplay; fullscreen" 
+                        allowFullScreen
+                       />
+                    </div>
+                  ) : (
+                    <p className="text-sm text-neutral-500">El video estará disponible pronto.</p>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <p className="text-sm text-neutral-600">Disponible sólo para usuarios con acceso activo.</p>
+                  <div className="mt-3 aspect-video rounded bg-neutral-100 flex items-center justify-center">
+                    <p className="text-neutral-400">Contenido bloqueado</p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
           <aside className="rounded-lg border border-neutral-200 p-6 h-fit">
             <p className="text-sm text-neutral-600">Precio</p>
-            <p className="text-2xl font-semibold text-[var(--color-tertiary)]">${"" + course.price}</p>
-            <button className="mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white">Comprar</button>
+            <p className="text-2xl font-semibold text-[var(--color-tertiary)]">${"" + course.price} USD</p>
+            
+            {isPurchased ? (
+               <button disabled className="mt-4 w-full rounded-full bg-green-600 px-5 py-3 text-white cursor-default">
+                 Ya tienes este curso
+               </button>
+            ) : (
+               <PurchaseButton 
+                 courseId={course.id} 
+                 price={course.price} 
+                 isAuthenticated={isAuthenticated} 
+               />
+            )}
+
             <p className="mt-4 text-xs text-neutral-500">Acceso válido por 6 meses. Certificado descargable.</p>
           </aside>
         </div>

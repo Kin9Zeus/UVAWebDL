@@ -55,8 +55,7 @@ export default function CursosPage() {
                 <span className="text-[var(--color-tertiary)] font-semibold">{c.priceDisplay ?? "$80 USD"}</span>
               </div>
               <div className="mt-4 flex gap-2">
-                <Link href={`/cursos/${c.id}`} className="rounded-full bg-[var(--color-secondary)] px-4 py-2 text-white text-sm">Ver detalles</Link>
-                <button className="rounded-full border border-neutral-300 px-4 py-2 text-sm">Comprar</button>
+                <Link href={`/cursos/${c.id}`} className="rounded-full bg-[var(--color-secondary)] px-4 py-2 text-white text-sm w-full text-center">Ver detalles</Link>
               </div>
             </div>
           ))}
