@@ -66,7 +66,7 @@ export default async function CursoDetallePage({ params, searchParams }: Props) 
             <p className="mt-6 text-neutral-700">{course.description}</p>
             
             {course.syllabus ? (
-              <Syllabus syllabus={course.syllabus} />
+              <Syllabus syllabus={course.syllabus} isPurchased={isPurchased} />
             ) : (
               <div className="mt-8 rounded-lg border border-neutral-200 p-6">
                 <h3 className="font-medium">Temario</h3>
@@ -78,33 +78,41 @@ export default async function CursoDetallePage({ params, searchParams }: Props) 
               </div>
             )}
 
+            {/* Bloque de Video Principal (Solo si existe fuera del syllabus) */}
+            {course.videoUrl && (
             <div className="mt-8 rounded-lg border border-neutral-200 p-6">
-              <h3 className="font-medium">Videos</h3>
+              <h3 className="font-medium">Video del Curso</h3>
               {isPurchased ? (
                 <div className="mt-4 space-y-4">
-                  <p className="text-sm text-green-600 font-medium">¡Gracias por tu compra! Aquí tienes acceso al contenido:</p>
-                  {course.videoUrl ? (
-                    <div className="aspect-video w-full">
+                  <div className="flex items-center gap-2 p-3 bg-green-50 text-green-700 text-sm rounded-lg border border-green-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-medium">¡Gracias por tu compra! Aquí tienes acceso al contenido:</span>
+                  </div>
+                    <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-lg relative group">
                        <iframe 
                         src={course.videoUrl} 
-                        className="w-full h-full rounded-lg" 
+                        className="w-full h-full" 
                         allow="autoplay; fullscreen" 
                         allowFullScreen
                        />
                     </div>
-                  ) : (
-                    <p className="text-sm text-neutral-500">El video estará disponible pronto.</p>
-                  )}
                 </div>
               ) : (
                 <>
                   <p className="text-sm text-neutral-600">Disponible sólo para usuarios con acceso activo.</p>
-                  <div className="mt-3 aspect-video rounded bg-neutral-100 flex items-center justify-center">
-                    <p className="text-neutral-400">Contenido bloqueado</p>
+                  <div className="mt-3 aspect-video rounded bg-neutral-100 flex flex-col items-center justify-center gap-2 border border-neutral-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-neutral-400">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    <p className="text-neutral-500 font-medium">Contenido bloqueado</p>
+                    <p className="text-xs text-neutral-400">Adquiere el curso para ver los videos</p>
                   </div>
                 </>
               )}
             </div>
+            )}
           </div>
           <aside className="rounded-lg border border-neutral-200 p-6 h-fit">
             <p className="text-sm text-neutral-600">Precio</p>

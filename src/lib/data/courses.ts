@@ -15,6 +15,7 @@ export type Course = {
   syllabus?: {
     title: string;
     items?: string[];
+    videoUrl?: string;
   }[];
 };
 
@@ -28,10 +29,11 @@ export const courses: Course[] = [
     cover: "/Desarrollodevivienda.jpg",
     category: "arquitectura",
     level: "básico",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Placeholder
+    videoUrl: undefined, // Videos moved to syllabus sessions
     syllabus: [
       {
         title: "SESIÓN 1: INTRODUCCIÓN Y PREDIMENSIONAMIENTO A ESTRUCTURAS",
+        videoUrl: "https://drive.google.com/file/d/175zlqhWCxYNwsXAq_92M8LYUsUVRMhLA/preview",
         items: [
           "Geotecnia del predio, comprensión y análisis",
           "Predimensionamiento de estructura",
@@ -41,6 +43,7 @@ export const courses: Course[] = [
       },
       {
         title: "SESIÓN 2: MODULACIÓN Y DISEÑO DE LA VIVIENDA MODULAR",
+        videoUrl: "https://drive.google.com/file/d/1zA2ckB1CGfTR6C0USfseiwCoSx6W_8El/preview",
         items: [
           "Comercio y mercado, ¿Cómo lo abordo y vendo?",
           "Proceso de diseño sobre ejemplos reales de Vivienda Modular en área corta y área extensa.",
@@ -49,6 +52,7 @@ export const courses: Course[] = [
       },
       {
         title: "SESIÓN 3: ESTRATEGIAS COMERCIALES Y VENTA MEDIANTE REDES SOCIALES",
+        videoUrl: "https://drive.google.com/file/d/124KTIwXKzVqlf2XpxcbPeT3Zu6ykKobD/preview",
         items: [
           "Análisis de mercado general y nichos de clientes vigentes en la actualidad",
           "Publicaciones en Instagram y TikTok estructuradas sobre Vivienda Modular",
@@ -58,6 +62,7 @@ export const courses: Course[] = [
       },
       {
         title: "SESIÓN 4: CREACIÓN ESTRATÉGICA DE PIEZAS PUBLICITARIAS, PAUTA BAJO IA",
+        videoUrl: "https://drive.google.com/file/d/1Z2yUY958Mxy7MJIZXrzQr80Pu_7a23D7/preview",
         items: [
           "Canva cómo herramienta fundamental, entendimiento y diagramación",
           "Creación de videos, duración, estructura y tipo de contenido",
@@ -66,6 +71,7 @@ export const courses: Course[] = [
       },
       {
         title: "SESIÓN 5: META ADS, SISTEMAS DE PAUTAS BAJO INTELIGENCIA ARTIFICIAL",
+        videoUrl: "https://drive.google.com/file/d/10N6NgJ6JrURI2lol9Jtn0jd1-lLvRO4S/preview",
         items: [
           "Funcionamiento y creación de pautas desde Meta Ads y botón de Promocionar Publicación en Instagram",
           "Conclusiones y repaso de conceptos generales para entrar a mercado",

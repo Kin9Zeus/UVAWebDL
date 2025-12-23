@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import UserMenu from "./user-menu";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -11,14 +12,18 @@ export default function Nav() {
         <Link href="/" aria-label="Inicio UVA" className="flex items-center">
           <Image src="/logo-uva.png" alt="Logo UVA" width={120} height={120} className="h-8 md:h-10 w-auto" priority />
         </Link>
-        <button
-          className="sm:hidden rounded p-2 border border-neutral-300"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Abrir menú"
-        >
-          ☰
-        </button>
-        <nav className="hidden sm:flex gap-4 text-sm">
+        <div className="flex items-center gap-4 sm:hidden">
+            <UserMenu />
+            <button
+            className="rounded p-2 border border-neutral-300"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Abrir menú"
+            >
+            ☰
+            </button>
+        </div>
+        
+        <nav className="hidden sm:flex items-center gap-4 text-sm">
           <Link href="/" className="hover:text-[var(--color-secondary)] transition-colors">Inicio</Link>
           <Link href="/cursos" className="hover:text-[var(--color-secondary)] transition-colors">Cursos</Link>
           <Link href="/proyectos" className="hover:text-[var(--color-secondary)] transition-colors">Proyectos</Link>
@@ -26,7 +31,7 @@ export default function Nav() {
           <Link href="/comunidad" className="hover:text-[var(--color-secondary)] transition-colors">Comunidad</Link>
           <Link href="/servicios" className="hover:text-[var(--color-secondary)] transition-colors">Servicios</Link>
           <Link href="/contacto" className="hover:text-[var(--color-secondary)] transition-colors">Contacto</Link>
-          <Link href="/login" className="hover:text-[var(--color-secondary)] transition-colors">Entrar</Link>
+          <UserMenu />
         </nav>
       </div>
       {open && (
@@ -39,7 +44,6 @@ export default function Nav() {
             <Link href="/comunidad" className="py-1">Comunidad</Link>
             <Link href="/servicios" className="py-1">Servicios</Link>
             <Link href="/contacto" className="py-1">Contacto</Link>
-            <Link href="/login" className="py-1">Entrar</Link>
           </nav>
         </div>
       )}

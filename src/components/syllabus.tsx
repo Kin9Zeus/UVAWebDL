@@ -5,13 +5,15 @@ import { useState } from "react";
 interface SyllabusItem {
   title: string;
   items?: string[];
+  videoUrl?: string;
 }
 
 interface SyllabusProps {
   syllabus: SyllabusItem[];
+  isPurchased: boolean;
 }
 
-export default function Syllabus({ syllabus }: SyllabusProps) {
+export default function Syllabus({ syllabus, isPurchased }: SyllabusProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
   const toggleSession = (index: number) => {
@@ -52,7 +54,7 @@ export default function Syllabus({ syllabus }: SyllabusProps) {
               
               <div
                 className={`transition-all duration-300 ease-in-out ${
-                  isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  isOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="px-4 pb-4 pt-0">
@@ -67,6 +69,36 @@ export default function Syllabus({ syllabus }: SyllabusProps) {
                       ))}
                     </ul>
                   )}
+
+                  {/* Video Section */}
+                  <div className="mt-4 pt-4 border-t border-neutral-100">
+                    {isPurchased ? (
+                      session.videoUrl ? (
+                        <div className="space-y-2">
+                          <p className="text-xs font-semibold text-green-600 flex items-center gap-1">
+                            <span>🎥</span> Clase Grabada Disponible
+                          </p>
+                          <div className="aspect-video w-full bg-black rounded-lg overflow-hidden shadow-lg">
+                            <iframe
+                              src={session.videoUrl}
+                              className="w-full h-full"
+                              allow="autoplay; fullscreen"
+                              allowFullScreen
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        <p className="text-xs text-neutral-400 italic">Video no disponible aún.</p>
+                      )
+                    ) : (
+                      <div className="flex items-center gap-2 p-3 bg-neutral-100 rounded border border-neutral-200 text-neutral-500 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                          <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
+                        </svg>
+                        <span>Compra el curso para ver la clase grabada.</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
