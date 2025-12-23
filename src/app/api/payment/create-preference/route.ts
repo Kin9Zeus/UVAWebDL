@@ -36,6 +36,9 @@ export async function POST(req: NextRequest) {
     // Si el precio ya está pensado en COP, ajustar aquí.
     const unitPrice = course.price * 4200;
 
+    // Determinar la URL base dinámicamente si no está definida en .env
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || req.nextUrl.origin;
+
     const result = await preference.create({
       body: {
         items: [
@@ -52,19 +55,20 @@ export async function POST(req: NextRequest) {
           name: user.name,
         },
         back_urls: {
-          success: `${process.env.NEXT_PUBLIC_BASE_URL}/cursos/${course.id}?status=success`,
-          failure: `${process.env.NEXT_PUBLIC_BASE_URL}/cursos/${course.id}?status=failure`,
-          pending: `${process.env.NEXT_PUBLIC_BASE_URL}/cursos/${course.id}?status=pending`,
+          success: `${baseUrl}/cursos/${course.id}?status=success`,
+          failure: `${baseUrl}/cursos/${course.id}?status=failure`,
+          pending: `${baseUrl}/cursos/${course.id}?status=pending`,
         },
         auto_return: "approved",
         metadata: {
           user_id: payload.uid,
           course_id: course.id,
         },
-        notification_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/payment/webhook`,
+        notification_url: `${baseUrl}/api/payment/webhook`,
       },
     });
 
+    console.log("Preference created successfully:", result.id);
     return NextResponse.json({ init_point: result.init_point });
   } catch (error) {
     console.error("Error creating preference:", error);
