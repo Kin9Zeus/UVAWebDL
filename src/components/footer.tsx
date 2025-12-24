@@ -12,9 +12,14 @@ export default function Footer() {
           <p className="text-neutral-500">Calle 14 #23-71, Oficina 501, Edificio Alturia, Pereira, Risaralda, Colombia</p>
           <p className="mt-2 text-neutral-500">© {new Date().getFullYear()} Todos los derechos reservados.</p>
         </div>
-        <p className="text-neutral-500 text-center">
-          Elegante, minimalista y funcional. Arquitectura con propósito.
-        </p>
+        <div className="flex flex-col items-center justify-center text-center">
+          <p className="text-neutral-500">
+            Elegante, minimalista y funcional. Arquitectura con propósito.
+          </p>
+          <p className="mt-2 text-xs text-neutral-400">
+            Developed by <span className="font-medium text-neutral-500">Devleck</span>
+          </p>
+        </div>
         <div className="flex justify-center sm:justify-end gap-3">
           <a href={instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-[var(--color-tertiary)] hover:text-[var(--color-secondary)] transition">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

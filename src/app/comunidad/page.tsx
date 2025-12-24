@@ -16,7 +16,7 @@ export default function ComunidadPage() {
               <p className="mt-2 text-sm sm:text-base opacity-90">Contenido, mentorías y una red para crecer en arquitectura y diseño.</p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <a href="https://www.patreon.com/UVAArquitectura/membership" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[var(--color-secondary)] px-5 py-2 text-white">Unirme en Patreon</a>
-                <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/70 px-5 py-2 text-white hover:bg-white/10">Entrar a Discord</a>
+                <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=2c9380849385c5cf0193a7d1fa260f55" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#009EE3] px-5 py-2 text-white hover:opacity-90">Unirme con Mercadopago</a>
               </div>
             </div>
           </div>
@@ -40,26 +40,49 @@ export default function ComunidadPage() {
 
         {/* Niveles de membresía */}
         <section className="mt-12">
-          <h2 className="text-xl font-semibold text-[var(--color-tertiary)]">Niveles de membresía</h2>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {title:"Miembro",desc:"Acceso a contenido exclusivo, comunidad y recursos."},
-              {title:"Pro",desc:"Todo lo anterior + mentorías grupales y revisión de proyectos."},
-              {title:"Mentoría 1:1",desc:"Sesiones personalizadas para acelerar tu crecimiento profesional."},
-            ].map((t)=> (
-              <div key={t.title} className="group rounded-2xl border border-neutral-200 p-6 bg-white hover:shadow-md transition">
-                <h3 className="text-lg font-semibold text-[var(--color-tertiary)]">{t.title}</h3>
-                <p className="mt-2 text-sm text-neutral-600">{t.desc}</p>
+          <div className="mt-6">
+            <div className="group rounded-2xl border border-neutral-200 p-8 bg-white hover:shadow-md transition w-full text-center">
+              <h3 className="text-2xl font-semibold text-[var(--color-tertiary)]">Miembro UVA</h3>
+              <p className="mt-2 text-neutral-600">Acceso total a la comunidad, recursos y mentorías.</p>
+              
+              <div className="my-6 text-left space-y-3 bg-neutral-50 p-4 rounded-xl">
+                 <p className="font-semibold text-[var(--color-secondary)]">🚀 ¡Únete a la Comunidad de UVA Arquitectura en Discord! 🎓✨</p>
+                 <p className="text-sm font-medium">🔥 Por solo 5 USD al mes (sin cláusula de permanencia) obtienes:</p>
+                 <ul className="text-sm space-y-2 text-neutral-700 mt-2">
+                    <li>📌 <strong>Beneficios exclusivos:</strong></li>
+                    <li>👷‍♂️ Asesoría en tus proyectos 24/7 (mi equipo y yo te ayudamos en tiempo real)</li>
+                    <li>📑 Documentos y plantillas listas para usar</li>
+                    <li>💼 Ofertas laborales todos los lunes y jueves</li>
+                    <li>📚 Más de 500 libros de arquitectura, diseño y negocios</li>
+                    <li>🗂️ Más de 200 archivos útiles</li>
+                    <li>🎤 Diplomados y charlas con expertos</li>
+                    <li>💸 Descuentos en todos nuestros productos por ser miembro</li>
+                 </ul>
+                 <p className="text-xs text-neutral-500 mt-4">👉 Solo necesitas descargar la app Discord, registrarte y listo ✅</p>
+              </div>
+
+              <div className="mt-6 flex flex-col gap-3">
                 <a
-                  href="https://www.patreon.com/UVAArquitectura/membership"
-                  className="mt-4 inline-flex rounded-full bg-[var(--color-secondary)] px-5 py-2 text-white text-sm group-hover:opacity-90"
+                  href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=2c9380849385c5cf0193a7d1fa260f55"
+                  className="inline-flex justify-center rounded-full bg-[#009EE3] px-5 py-3 text-white font-medium hover:opacity-90 transition w-full items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Unirme en Patreon
+                  Suscribirse con Mercado Pago
+                </a>
+                <a
+                  href="https://www.patreon.com/UVAArquitectura/membership"
+                  className="inline-flex justify-center rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white font-medium hover:opacity-90 transition w-full items-center gap-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Suscribirse con Patreon
                 </a>
               </div>
-            ))}
+              <p className="mt-3 text-xs text-neutral-500">
+                ⚡ Te apoyamos en redes sociales, presupuestos, proyectos y mucho más.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -100,18 +123,7 @@ export default function ComunidadPage() {
           </div>
         </section>
 
-        {/* CTA final */}
-        <section className="mt-12 text-center">
-          <a
-            href="https://www.patreon.com/UVAArquitectura/membership"
-            className="inline-flex rounded-full bg-[var(--color-secondary)] px-6 py-3 text-white font-medium hover:opacity-90 transition"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Unirme a la comunidad privada
-          </a>
-          <p className="mt-2 text-xs text-neutral-500">Pagos seguros vía Patreon · Cancela cuando quieras</p>
-        </section>
+
       </div>
     </section>
   );
