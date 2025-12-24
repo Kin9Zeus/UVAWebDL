@@ -15,7 +15,6 @@ export default function ComunidadPage() {
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">Comunidad UVA</h1>
               <p className="mt-2 text-sm sm:text-base opacity-90">Contenido, mentorías y una red para crecer en arquitectura y diseño.</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <a href="https://www.patreon.com/UVAArquitectura/membership" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[var(--color-secondary)] px-5 py-2 text-white">Unirme en Patreon</a>
                 <a href="https://www.mercadopago.com.co/subscriptions/checkout?preapproval_plan_id=2c9380849385c5cf0193a7d1fa260f55" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[#009EE3] px-5 py-2 text-white hover:opacity-90">Unirme con Mercadopago</a>
               </div>
             </div>
@@ -69,14 +68,6 @@ export default function ComunidadPage() {
                   rel="noopener noreferrer"
                 >
                   Suscribirse con Mercado Pago
-                </a>
-                <a
-                  href="https://www.patreon.com/UVAArquitectura/membership"
-                  className="inline-flex justify-center rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white font-medium hover:opacity-90 transition w-full items-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Suscribirse con Patreon
                 </a>
               </div>
               <p className="mt-3 text-xs text-neutral-500">
