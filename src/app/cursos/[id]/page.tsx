@@ -1,4 +1,5 @@
 import { courses } from "@/lib/data/courses";
+import Link from "next/link";
 import Rating from "@/components/rating";
 import { getAuthToken, verifyToken } from "@/lib/auth";
 import { dbConnect } from "@/lib/db";
@@ -86,6 +87,13 @@ export default async function CursoDetallePage({ params, searchParams }: Props) 
                <button disabled className="mt-4 w-full rounded-full bg-green-600 px-5 py-3 text-white cursor-default">
                  Ya tienes este curso
                </button>
+            ) : course.id === "intro-arquitectura" ? (
+               <Link 
+                 href="/diplomado-vivienda"
+                 className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
+               >
+                 Comprar
+               </Link>
             ) : (
                <PurchaseButton 
                  courseId={course.id} 

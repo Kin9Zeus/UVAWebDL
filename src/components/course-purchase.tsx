@@ -7,15 +7,16 @@ interface PurchaseButtonProps {
   courseId: string;
   price: number;
   isAuthenticated: boolean;
+  redirectPath?: string;
 }
 
-export default function PurchaseButton({ courseId, price, isAuthenticated }: PurchaseButtonProps) {
+export default function PurchaseButton({ courseId, price, isAuthenticated, redirectPath }: PurchaseButtonProps) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleBuy = async () => {
     if (!isAuthenticated) {
-      router.push(`/login?redirect=/cursos/${courseId}`);
+      router.push(`/login?redirect=${redirectPath || `/cursos/${courseId}`}`);
       return;
     }
 
