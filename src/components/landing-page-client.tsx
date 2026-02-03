@@ -102,10 +102,10 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
                 <video 
                   controls 
                   className="w-full h-auto aspect-[9/16] object-cover"
-                  poster="/Desarrollodevivienda.jpg" 
+                  poster="/Gerenciadeproyectos.jpg" 
                 >
-                  <source src="/Humanizar/CYP ARQUITECTOS.mov" type="video/quicktime" />
-                  <source src="/Humanizar/CYP ARQUITECTOS.mov" type="video/mp4" />
+                  <source src="/Humanizar/Diplomado_en_Gerencia_de_Proyectos_Costos_y_Presupuestos.MOV" type="video/quicktime" />
+                  <source src="/Humanizar/Diplomado_en_Gerencia_de_Proyectos_Costos_y_Presupuestos.MOV" type="video/mp4" />
                 </video>
              </div>
            </div>
@@ -344,11 +344,6 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
           </a>
         </div>
       </div>
-      
-      {/* Footer */}
-      <footer className="py-12 text-center text-gray-600 text-sm bg-black">
-        <p>© 2026 Web UVA. Todos los derechos reservados.</p>
-      </footer>
     </div>
   );
 }

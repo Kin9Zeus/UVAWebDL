@@ -5,7 +5,7 @@ const spotify = process.env.NEXT_PUBLIC_SPOTIFY_URL || "https://open.spotify.com
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/5 bg-white">
+    <footer className="border-t border-black/5 bg-white pb-32 md:pb-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-neutral-600 grid gap-6 sm:grid-cols-3 items-center">
         <div>
           <p className="font-medium text-[var(--color-tertiary)]">UVA — Unidad Vectorial de Arquitectura</p>
