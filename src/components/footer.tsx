@@ -16,8 +16,8 @@ export default function Footer() {
           <p className="text-neutral-500">
             Elegante, minimalista y funcional. Arquitectura con propósito.
           </p>
-          <p className="mt-2 text-xs text-neutral-400">
-            Developed by <span className="font-medium text-neutral-500">Devleck</span>
+          <p className="mt-2 text-xs text-neutral-400 flex items-center justify-center gap-1">
+            Developed by <span className="font-bold px-2 py-0.5 rounded-md bg-black text-[#EFFF00] shadow-[0_0_10px_rgba(239,255,0,0.5)] border border-[#EFFF00]/20 tracking-wide">Devleck</span>
           </p>
         </div>
         <div className="flex justify-center sm:justify-end gap-3">
