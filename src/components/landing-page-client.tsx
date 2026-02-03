@@ -44,14 +44,14 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            DOMINA EL NEGOCIO DE LA <br className="hidden md:block"/>
+            DIPLOMADO EN <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-500">
-              VIVIENDA MODULAR
+              GERENCIA DE PROYECTOS
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            La metodología exacta para diseñar, gestionar y <strong className="text-white bg-yellow-600/20 px-1">VENDER</strong> proyectos arquitectónicos sin competir por precio.
+            Domina la gestión integral de obras, desde la <strong className="text-white bg-yellow-600/20 px-1">PLANIFICACIÓN</strong> estratégica y costos hasta la contratación y cierre financiero.
           </p>
           
           <div className="pt-8 flex flex-col md:flex-row justify-center items-center gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -120,9 +120,9 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Cliente Fantasma", desc: "Envías cotizaciones y nunca más te responden. No sabes si cobraste mucho o muy poco.", icon: "👻" },
-              { title: "Caos en Obra", desc: "Los imprevistos se comen tu utilidad. Terminas pagando por trabajar.", icon: "📉" },
-              { title: "Marketing Nulo", desc: "Dependes del 'boca a boca'. No tienes un sistema predecible para conseguir clientes.", icon: "📢" }
+              { title: "Descontrol Financiero", desc: "El presupuesto no alcanza y terminas poniendo dinero de tu bolsillo para terminar la obra.", icon: "💸" },
+              { title: "Retrasos Interminables", desc: "Las obras se alargan indefinidamente y los costos indirectos devoran toda tu utilidad.", icon: "⏳" },
+              { title: "Honorarios Bajos", desc: "No sabes cobrar por tu gestión administrativa y terminas regalando tu trabajo profesional.", icon: "📉" }
             ].map((card, i) => (
               <div key={i} className="bg-[#1a1a1a] p-8 rounded-2xl border border-[#333] hover:border-yellow-500 transition-colors group">
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{card.icon}</div>
@@ -135,7 +135,7 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
       </section>
 
       {/* Testimonials / Social Proof Section */}
-      <section className="py-20 bg-[#161616] overflow-hidden">
+      <section className="pt-20 pb-8 bg-[#161616] overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 mb-12 text-center">
           <span className="text-yellow-500 font-bold tracking-wider uppercase">Experiencias Reales</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2">
@@ -204,7 +204,7 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
       </section>
 
       {/* Syllabus - Accordion Style */}
-      <section className="py-24 bg-[#161616]">
+      <section className="pt-8 pb-24 bg-[#161616]">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-yellow-500 font-bold tracking-wider">EL MAPA DE RUTA</span>
@@ -275,13 +275,13 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
              </div>
              
              <div className="text-center space-y-2 mb-8">
-               <p className="text-gray-500 text-lg line-through">Precio Normal: $120 USD</p>
+               <p className="text-gray-500 text-lg line-through">Precio Normal: $250 USD</p>
                <div className="flex items-center justify-center gap-2">
                  <span className="text-6xl md:text-7xl font-black text-white tracking-tighter">${course.price}</span>
                  <span className="text-xl font-bold text-yellow-500">USD</span>
                </div>
                <p className="text-green-500 font-medium bg-green-500/10 inline-block px-3 py-1 rounded-full text-sm">
-                 Ahorras $40 USD hoy
+                 Ahorras $100 USD hoy
                </p>
              </div>
 
@@ -347,7 +347,7 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
       
       {/* Footer */}
       <footer className="py-12 text-center text-gray-600 text-sm bg-black">
-        <p>© 2024 Web UVA. Todos los derechos reservados.</p>
+        <p>© 2026 Web UVA. Todos los derechos reservados.</p>
       </footer>
     </div>
   );

@@ -24,61 +24,83 @@ export type Course = {
 export const courses: Course[] = [
   {
     id: "intro-arquitectura",
-    title: "Diplomado en Gestión y Desarrollo de Vivienda",
-    description: "Curso de Vivienda Modular y Gestión de Clientes. Dirigido a Arquitectos, Diseñadores, Ingenieros y Principiantes.",
-    price: 80,
+    title: "Diplomado en Gerencia de Proyectos, Costos y Presupuestos",
+    description: "Domina la gestión integral de obras: planificación, costos, contratación y cierre financiero.",
+    price: 150,
     rating: 5,
-    cover: "/Desarrollodevivienda.jpg",
-    category: "arquitectura",
-    level: "básico",
-    videoUrl: undefined, // Videos moved to syllabus sessions
+    cover: "/Gerenciadeproyectos.jpg",
+    category: "gestión",
+    level: "intermedio",
+    videoUrl: undefined,
     syllabus: [
       {
-        title: "SESIÓN 1: INTRODUCCIÓN Y PREDIMENSIONAMIENTO A ESTRUCTURAS",
-        videoUrl: "https://drive.google.com/file/d/175zlqhWCxYNwsXAq_92M8LYUsUVRMhLA/preview",
+        title: "SESIÓN 1: Introducción a la Gerencia de Proyectos",
         items: [
-          "Geotecnia del predio, comprensión y análisis",
-          "Predimensionamiento de estructura",
-          "¿Que es la modulación?",
-          "Alojamientos, refugios y viviendas",
-        ],
+          "Introducción al diplomado",
+          "Entrega de plantillas y documentos base",
+          "Fases del proyecto: de la conceptualización a la entrega",
+          "Rol del arquitecto y diseñador como gestor de proyectos"
+        ]
       },
       {
-        title: "SESIÓN 2: MODULACIÓN Y DISEÑO DE LA VIVIENDA MODULAR",
-        videoUrl: "https://drive.google.com/file/d/1zA2ckB1CGfTR6C0USfseiwCoSx6W_8El/preview",
+        title: "SESIÓN 2: Planificación Estratégica del Proyecto",
         items: [
-          "Comercio y mercado, ¿Cómo lo abordo y vendo?",
-          "Proceso de diseño sobre ejemplos reales de Vivienda Modular en área corta y área extensa.",
-          "Organigrama de áreas y proyección a crecimiento a futuro del proyecto como táctica comercial",
-        ],
+          "Definición de objetivos y alcance",
+          "Actores clave del proyecto (stakeholders)",
+          "Tabulaciones, presupuesto y programación de obra",
+          "Costos ocultos y rutas críticas",
+          "Elaboración de cronogramas con herramientas digitales"
+        ]
       },
       {
-        title: "SESIÓN 3: ESTRATEGIAS COMERCIALES Y VENTA MEDIANTE REDES SOCIALES",
-        videoUrl: "https://drive.google.com/file/d/124KTIwXKzVqlf2XpxcbPeT3Zu6ykKobD/preview",
+        title: "SESIÓN 3: Costos Directos e Indirectos",
         items: [
-          "Análisis de mercado general y nichos de clientes vigentes en la actualidad",
-          "Publicaciones en Instagram y TikTok estructuradas sobre Vivienda Modular",
-          "Gestión de clientes mediante publicaciones e interacción sobre historias embudo",
-          "Función de las Redes Sociales en el mercado de Vivienda Modular",
-        ],
+          "Tipos de costos: Materiales, Mano de obra, Equipos, Indirectos",
+          "Métodos de estimación: Por metro cuadrado, Presupuesto detallado"
+        ]
       },
       {
-        title: "SESIÓN 4: CREACIÓN ESTRATÉGICA DE PIEZAS PUBLICITARIAS, PAUTA BAJO IA",
-        videoUrl: "https://drive.google.com/file/d/1Z2yUY958Mxy7MJIZXrzQr80Pu_7a23D7/preview",
+        title: "SESIÓN 4: Presupuestación Detallada y Control de Costos",
         items: [
-          "Canva cómo herramienta fundamental, entendimiento y diagramación",
-          "Creación de videos, duración, estructura y tipo de contenido",
-          "Creación y diagramación de piezas PNG y JPEG para pautas efectivas sobre Vivienda Modular",
-        ],
+          "Análisis de Precios Unitarios (APU)",
+          "Control y seguimiento del presupuesto en obra",
+          "Gestión de desviaciones"
+        ]
       },
       {
-        title: "SESIÓN 5: META ADS, SISTEMAS DE PAUTAS BAJO INTELIGENCIA ARTIFICIAL",
-        videoUrl: "https://drive.google.com/file/d/10N6NgJ6JrURI2lol9Jtn0jd1-lLvRO4S/preview",
+        title: "SESIÓN 5: Honorarios Profesionales en Arquitectura y Diseño",
         items: [
-          "Funcionamiento y creación de pautas desde Meta Ads y botón de Promocionar Publicación en Instagram",
-          "Conclusiones y repaso de conceptos generales para entrar a mercado",
-        ],
+          "Métodos de cálculo de honorarios: Porcentaje, Por m², Por etapas",
+          "Ajustes según tipo y escala del proyecto",
+          "Cómo presentar propuestas económicas profesionales"
+        ]
       },
+      {
+        title: "SESIÓN 6: Contratación y Tipos de Contrato",
+        items: [
+          "Contrato por A.I.U",
+          "Administración delegada (Honorarios sobre costos directos)",
+          "Contrato Todo Costo / Llave en Mano",
+          "Riesgos y responsabilidades en cada modalidad"
+        ]
+      },
+      {
+        title: "SESIÓN 7: Ejecución y Seguimiento del Proyecto",
+        items: [
+          "Seguimiento físico y financiero",
+          "Control de avances y desviaciones",
+          "Indicadores clave de gestión"
+        ]
+      },
+      {
+        title: "SESIÓN 8: Cierre del Proyecto y Lecciones Aprendidas",
+        items: [
+          "Checklist de cierre y entrega de obra",
+          "Documentación final del proyecto",
+          "Análisis financiero final",
+          "Lecciones aprendidas"
+        ]
+      }
     ],
   },
   {
