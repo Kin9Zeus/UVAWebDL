@@ -105,6 +105,7 @@ export default function LandingPageD5Client({ course, isAuthenticated }: Props) 
                   poster="/D5size.jpg" 
                 >
                   <source src="/Humanizar/diplomado_d5.mov" type="video/quicktime" />
+                  <source src="/Humanizar/diplomado_d5.mov" type="video/mp4" />
                 </video>
              </div>
            </div>

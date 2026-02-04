@@ -102,7 +102,7 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
                 <video 
                   controls 
                   className="w-full h-auto aspect-[9/16] object-cover"
-                  poster="/Gerenciadeproyectos.jpg" 
+                  poster="/Humanizar/Gerenciadeproyectos.jpg" 
                 >
                   <source src="/Humanizar/Diplomado_en_Gerencia_de_Proyectos_Costos_y_Presupuestos.MOV" type="video/quicktime" />
                   <source src="/Humanizar/Diplomado_en_Gerencia_de_Proyectos_Costos_y_Presupuestos.MOV" type="video/mp4" />

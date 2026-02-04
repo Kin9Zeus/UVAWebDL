@@ -106,6 +106,7 @@ export default function LandingPageOficinaClient({ course, isAuthenticated }: Pr
                   poster="/Humanizar/abriendo_oficina.jpeg" 
                 >
                   <source src="/Humanizar/abriendo_oficina.mov" type="video/quicktime" />
+                  <source src="/Humanizar/abriendo_oficina.mov" type="video/mp4" />
                 </video>
              </div>
            </div>
