@@ -262,7 +262,7 @@ export const courses: Course[] = [
     description: "Mentoría grupal diseñada para arquitectos que quieren abrir su estudio de forma estructurada, acompañada y con visión empresarial.",
     price: 150,
     rating: 5,
-    cover: "/Humanizar/Abriendo_tu_oficina_de_Arquitectura_en_10_días.jpeg",
+    cover: "/Humanizar/abriendo_oficina.jpeg",
     category: "gestión",
     level: "intermedio",
     videoUrl: undefined,

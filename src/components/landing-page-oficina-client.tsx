@@ -103,9 +103,9 @@ export default function LandingPageOficinaClient({ course, isAuthenticated }: Pr
                 <video 
                   controls 
                   className="w-full h-auto aspect-[9/16] object-cover"
-                  poster="/Humanizar/Abriendo_tu_oficina_de_Arquitectura_en_10_días.jpeg" 
+                  poster="/Humanizar/abriendo_oficina.jpeg" 
                 >
-                  <source src="/Humanizar/Abriendo_tu_oficina_de_Arquitectura_en_10_días.MP4" type="video/mp4" />
+                  <source src="/Humanizar/abriendo_oficina.mp4" type="video/mp4" />
                 </video>
              </div>
            </div>
