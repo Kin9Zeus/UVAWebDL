@@ -87,15 +87,43 @@ export default async function CursoDetallePage({ params, searchParams }: Props) 
                <button disabled className="mt-4 w-full rounded-full bg-green-600 px-5 py-3 text-white cursor-default">
                  Ya tienes este curso
                </button>
-            ) : course.id === "intro-arquitectura" ? (
+            ) : course.id === "diplomado-gerencia-proyectos" ? (
                <Link 
-                 href="/diplomado-vivienda"
+                 href="/cursos/diplomado-gerencia-proyectos"
+                 className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
+               >
+                 Comprar
+               </Link>
+            ) : course.id === "diplomado-d5-render" ? (
+               <Link 
+                 href="/cursos/diplomado-d5-render"
+                 className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
+               >
+                 Comprar
+               </Link>
+            ) : course.id === "abriendo-oficina-arquitectura" ? (
+               <Link 
+                 href="/cursos/abriendo-oficina-arquitectura"
+                 className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
+               >
+                 Comprar
+               </Link>
+            ) : course.id === "libro-vendiendo-arquitectura" ? (
+               <Link 
+                 href="/cursos/libro-vendiendo-arquitectura"
+                 className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
+               >
+                 Comprar
+               </Link>
+            ) : course.id === "diplomado-redes-ia" ? (
+               <Link 
+                 href="/cursos/diplomado-redes-ia"
                  className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
                >
                  Comprar
                </Link>
             ) : (
-               <PurchaseButton 
+               <PurchaseButton  
                  courseId={course.id} 
                  price={course.price} 
                  isAuthenticated={isAuthenticated} 

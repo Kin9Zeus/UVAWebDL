@@ -4,7 +4,7 @@ import { getAuthToken, verifyToken } from "@/lib/auth";
 import LandingPageClient from "@/components/landing-page-client";
 
 export default async function DiplomadoViviendaPage() {
-  const course = courses.find((c) => c.id === "intro-arquitectura");
+  const course = courses.find((c) => c.id === "diplomado-gerencia-proyectos");
   
   // Auth Check for the purchase button on this page
   const token = await getAuthToken();

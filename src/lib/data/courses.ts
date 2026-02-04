@@ -23,7 +23,7 @@ export type Course = {
 
 export const courses: Course[] = [
   {
-    id: "intro-arquitectura",
+    id: "diplomado-gerencia-proyectos",
     title: "Diplomado en Gerencia de Proyectos, Costos y Presupuestos",
     description: "Domina la gestión integral de obras: planificación, costos, contratación y cierre financiero.",
     price: 150,
@@ -103,131 +103,42 @@ export const courses: Course[] = [
       }
     ],
   },
+  // Removed duplicate course modelado-bim
   {
-    id: "modelado-bim",
-    title: "Diplomado en Gerencia de Proyectos, Costos y Honorarios",
-    description: "Diplomado en Gerencia de Proyectos, Costos, Presupuestos y Honorarios en Arquitectura, Diseño y Construcción. Incluye plantillas editables, contratos y certificación.",
-    price: 80,
+    id: "libro-vendiendo-arquitectura",
+    title: "VENDIENDO ARQUITECTURA DE 0 A 100",
+    description: "De arquitecto técnico a profesional rentable. Estrategias y métodos para vender y realizar mejor tus proyectos. Libro digital de 115 páginas.",
+    price: 40,
     rating: 5,
-    cover: "/Gerenciadeproyectos.jpg",
-    category: "tecnología",
-    level: "intermedio",
-    videoUrl: undefined,
-    syllabus: [
-      {
-        title: "CLASE 1: Introducción a la Gerencia de Proyectos",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente: Reemplazar por link real
-        items: [
-          "Fases del proyecto: desde conceptualización hasta entrega",
-          "Rol del arquitecto y diseñador como gestor de proyectos",
-          "Actividad práctica: análisis de un caso real",
-          "📥 Entrega: Plantilla de cronograma y formato de control de avance"
-        ]
-      },
-      {
-        title: "CLASE 2: Planificación Estratégica del Proyecto",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
-        items: [
-          "Definición de objetivos, alcance y actores clave",
-          "Elaboración de cronogramas con herramientas digitales",
-          "Costos Ocultos y Rutas Críticas de Proyecto",
-          "📥 Entrega: Plantilla editable de planificación y matriz de stakeholders"
-        ]
-      },
-      {
-        title: "CLASE 3: Costos Directos e Indirectos en Proyectos",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
-        items: [
-          "Tipos de costos: materiales, mano de obra, equipos, indirectos",
-          "Métodos para estimación por metro cuadrado vs. detallado",
-          "📥 Entrega: Tabla base de costos para proyectos arquitectónicos y de obra"
-        ]
-      },
-      {
-        title: "CLASE 4: Presupuestación Detallada y Control de Costos",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
-        items: [
-          "Análisis de precios unitarios (APU)",
-          "Seguimiento del presupuesto durante la ejecución",
-          "📥 Entrega: Hoja de presupuesto editable con fórmulas automatizadas"
-        ]
-      },
-      {
-        title: "CLASE 5: Honorarios Profesionales en Diseño y Arquitectura",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
-        items: [
-          "Métodos de cálculo de honorarios: porcentajes, por m², por etapas",
-          "Consideraciones según tipo y escala del proyecto",
-          "Presentación de propuestas económicas profesionales",
-          "📥 Entrega: Plantilla de cotización + contrato base para servicios de diseño"
-        ]
-      },
-      {
-        title: "CLASE 6: Contratación y Tipos de Contrato",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
-        items: [
-          "Contratos por A.I.U (Administración, Imprevistos y Utilidades)",
-          "Contrato por Administración delegada",
-          "Contrato a Todo Costo (Llave en Mano)"
-        ]
-      },
-      {
-        title: "CLASE 7: Ejecución y Seguimiento del Proyecto",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
-        items: [
-          "Seguimiento físico y financiero del proyecto",
-          "Informes de avance y control de desviaciones",
-          "📥 Entrega: Formato editable de informe de obra y tabla de indicadores"
-        ]
-      },
-      {
-        title: "CLASE 8: Cierre del Proyecto y Lecciones Aprendidas",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
-        items: [
-          "Checklist de cierre, entrega de obra y documentación final",
-          "Análisis financiero final y lecciones aprendidas",
-          "Presentación final del proyecto",
-          "📥 Entrega: Plantilla de cierre de proyecto"
-        ]
-      }
-    ]
-  },
-  {
-    id: "interiorismo-funcional",
-    title: "Vendiendo Arquitectura de 0 a 100",
-    description: "Estrategias comerciales para vender arquitectura de manera efectiva. Libro digital descargable.",
-    price: 25,
-    rating: 4,
-    cover: "/libro-uva.jpg",
+    cover: "/Humanizar/Vendiendo_Arquitectura_de_0_a_100.PNG",
     category: "gestión",
     level: "básico",
     videoUrl: undefined,
     accessDuration: "Acceso de por vida",
     syllabus: [
-       {
-         title: "CONTENIDO DEL LIBRO DIGITAL",
-         items: [
-           "Despertando de las creencias",
-           "Apertura de oficina ¿que conlleva crear una marca?",
-           "La intuición",
-           "¿Cómo ingresar y establecerse en un mercado agresivo?",
-           "¿Cómo debe cotizarse un diseño arquitectónico?",
-           "Entrega ideal en sistema BIM",
-           "Estrategias de Mercado para arquitectos y constructores",
-           "Funcionamiento de las falsas creencias",
-           "La marca en la arquitectura",
-           "Riesgo positivo en la arquitectura",
-           "Conclusiones finales"
-         ],
-         videoUrl: "https://docs.google.com/document/d/TU_LINK_DEL_LIBRO_AQUI/export?format=pdf" // Reemplazar con link real
-       }
-     ]
-   },
+      {
+        title: "CONTENIDO DEL LIBRO DIGITAL",
+        items: [
+          "Despertando de las creencias",
+          "Apertura de oficina ¿que conlleva crear una marca?",
+          "La intuición",
+          "¿Cómo ingresar y establecerse en un mercado agresivo?",
+          "¿Cómo debe cotizarse un diseño arquitectónico?",
+          "Entrega ideal en sistema BIM",
+          "Estrategias de Mercado para arquitectos y constructores",
+          "Funcionamiento de las falsas creencias",
+          "La marca en la arquitectura",
+          "Riesgo positivo en la arquitectura",
+          "Conclusiones finales"
+        ]
+      }
+    ]
+  },
   {
-    id: "urbanismo-sostenible",
+    id: "diplomado-d5-render",
     title: "Diplomado en D5 Render",
     description: "Curso intensivo de renderizado arquitectónico. Domina la iluminación, materiales PBR, integración con IA y postproducción.",
-    price: 80,
+    price: 150,
     rating: 5,
     cover: "/D5size.jpg",
     category: "urbanismo",
@@ -235,8 +146,7 @@ export const courses: Course[] = [
     videoUrl: undefined,
     syllabus: [
       {
-        title: "MÓDULO 1: Empezando con D5 Render",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
+        title: "MÓDULO 1: Empezando",
         items: [
           "Instalación e interfaz de usuario",
           "Conceptos de ArchViz y composición fotográfica",
@@ -246,7 +156,6 @@ export const courses: Course[] = [
       },
       {
         title: "MÓDULO 2: Fundamentos Técnicos",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
         items: [
           "Materiales PBR: creación y edición avanzada",
           "Luces IES y HDRI para realismo",
@@ -256,7 +165,6 @@ export const courses: Course[] = [
       },
       {
         title: "MÓDULO 3: Renderizado de Interiores",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
         items: [
           "Iluminación ambiental y artificial",
           "Efectos climáticos y ambientación",
@@ -266,7 +174,6 @@ export const courses: Course[] = [
       },
       {
         title: "MÓDULO 4: Renderizado de Exteriores",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
         items: [
           "Entorno natural y vegetación",
           "Configuración de clima y efectos atmosféricos",
@@ -276,7 +183,6 @@ export const courses: Course[] = [
       },
       {
         title: "MÓDULO 5: Inteligencia Artificial en D5",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
         items: [
           "Mapas de profundidad y blur",
           "Rescalado y enhancers (D5 + Krea)",
@@ -288,69 +194,159 @@ export const courses: Course[] = [
     ]
   },
   {
-    id: "render-fotorealista",
-    title: "Diplomado en Redes Sociales y Contenido Efectivo",
-    description: "Aprende a crear contenido estratégico, dominar el algoritmo y vender servicios de arquitectura con Instagram y Meta Ads.",
-    price: 80,
-    rating: 4,
+    id: "diplomado-redes-ia",
+    title: "Diplomado en Redes Sociales, Creación de Contenido e Inteligencia Artificial",
+    description: "Gana clientes, crece en seguidores y viraliza tu empresa. Aprende a crear contenido estratégico, dominar el algoritmo y vender servicios de arquitectura.",
+    price: 150,
+    rating: 5,
     cover: "/RedesSociales.jpg",
     category: "visualización",
     level: "intermedio",
-    priceDisplay: "$80 USD",
     videoUrl: undefined,
     syllabus: [
       {
-        title: "SESIÓN 1: Creación de Contenido (Arquitectura → Historia → Video)",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
+        title: "SESIÓN 1: Introducción y Diagnóstico de cuentas",
         items: [
-          "Cómo contar un proyecto: cliente → problema → solución → resultado",
-          "Tipos de contenido: Educativo | Inspiracional | Técnico | Riesgos reales",
-          "Hooks: 5–7s para retención",
-          "Canva: carruseles, fichas técnicas y portafolios",
-          "💡 Práctica: Script de Reel + matriz de 30 contenidos"
+          "Análisis de tus cuentas",
+          "Fórmula simple: problema → solución → resultado",
+          "Tipos de contenido que vende",
+          "Hooks de alto impacto para retención",
+          "Canva: carruseles, fichas técnicas y portafolio visual"
         ]
       },
       {
-        title: "SESIÓN 2: Producción y Edición Pro (Reels Arquitectónicos)",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
+        title: "SESIÓN 2: Creación de Contenido, Storytelling y Contenido Viral",
         items: [
-          "Recorrido visual: vestíbulo → eje → remate → detalle",
-          "Sonido + voz + ritmo",
-          "CapCut: secuencias 7–9 escenas, subtítulos, plantillas, before/after",
-          "Canva: portadas, miniaturas y CTA visual",
-          "💡 Práctica: 1 Reel grabado y editado en clase"
+          "Cómo grabar contenido viral",
+          "2026 contenido natural va a viralizar",
+          "Audio, voz y música que elevan el contenido",
+          "CapCut: edición rápida, subtítulos, before/after",
+          "Canva: portadas y llamados a la acción"
         ]
       },
       {
-        title: "SESIÓN 3: Clientes y Modelo Comercial (DM → Asesoría → Contrato)",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
+        title: "SESIÓN 3: Clientes, venta efectiva y estructura de mensajes",
         items: [
-          "Embudos: Historia → Mensaje → Llamada → Contrato",
-          "Productos puente: consultoría, pre-diseño, análisis de vivienda",
-          "Plantillas de DM que cierran ventas",
-          "Canva: cotización premium + portafolio 1 página",
-          "💡 Práctica: Embudo UVA personalizado"
+          "Embudo claro: contenido → mensaje → llamada → contrato",
+          "Qué decir (y qué no) en mensajes directos",
+          "Productos puente: Asesorías, Pre-diseños, Análisis de vivienda",
+          "Plantillas de DM que convierten",
+          "Canva: cotización premium + portafolio de una página"
         ]
       },
       {
-        title: "SESIÓN 4: Algoritmo + Sistema de Pauta Meta Ads",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
+        title: "SESIÓN 4: Pautas e Inteligencia Artificial",
         items: [
-          "Instagram mide: retención + interacción + guardados + compartidos",
-          "Sistema UVA 3/30: Publica 3 piezas, Espera 30h, La más fuerte → pauta",
-          "Pauta Meta Ads: Viralización, Comercial (mensajes) y Marca profesional",
+          "Cómo funciona el algoritmo hoy (sin mitos)",
+          "Qué tipo de contenido impulsar con pauta",
+          "Estructura básica de anuncios para arquitectos",
+          "Errores comunes que queman presupuesto",
+          "Sistema simple para amplificar resultados"
         ]
       },
       {
-        title: "SESIÓN 5: Sistema UVA 30–60–90 + Escalamiento",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Pendiente
+        title: "SESIÓN 5: Consolidación de marca y plan de contenido anual",
         items: [
-          "Calendario editorial 90 días",
-          "Operación por roles: Crear → Publicar → Analizar → Optimizar",
-          "Lenguaje para cerrar negocios",
-          "Aumento de 59 seguidores Diarios, metodología UVA"
+          "Cómo verte profesional y confiable en redes",
+          "Perfil optimizado que genera contactos",
+          "Organización de contenido semanal",
+          "Automatización básica para ahorrar tiempo",
+          "Ruta clara para escalar tu marca y tus ingresos"
         ]
       }
     ]
   },
+  {
+    id: "abriendo-oficina-arquitectura",
+    title: "Abriendo tu oficina de Arquitectura en 10 días",
+    description: "Mentoría grupal diseñada para arquitectos que quieren abrir su estudio de forma estructurada, acompañada y con visión empresarial.",
+    price: 150,
+    rating: 5,
+    cover: "/Humanizar/Abriendo_tu_oficina_de_Arquitectura_en_10_días.jpeg",
+    category: "gestión",
+    level: "intermedio",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "MÓDULO 1: Mentalidad y visión de estudio",
+        items: [
+          "Transición de arquitecto ejecutor a arquitecto empresario",
+          "Definición clara del tipo de estudio que quieres construir",
+          "Eliminación de bloqueos comunes (miedo, desorden, improvisación)"
+        ]
+      },
+      {
+        title: "MÓDULO 2: Definición de tu modelo de estudio",
+        items: [
+          "Servicios que vas a ofrecer",
+          "Cliente ideal y enfoque de mercado",
+          "Diferenciación estratégica (más allá de lo estético)"
+        ]
+      },
+      {
+        title: "MÓDULO 3: Marca, identidad y posicionamiento",
+        items: [
+          "Creación y análisis de marca según tu identidad personal y profesional",
+          "Coherencia entre quién eres, cómo te muestras y lo que comunicas",
+          "Construcción de una marca auténtica y alineada con tu estudio",
+          "Narrativa y discurso de marca aplicados a arquitectura"
+        ]
+      },
+      {
+        title: "MÓDULO 4: Estructura legal y operativa básica",
+        items: [
+          "Requisitos esenciales para operar formalmente sin sobrecomplicarte",
+          "Procesos mínimos para trabajar ordenado desde el inicio",
+          "Organización básica de proyectos y clientes"
+        ]
+      },
+      {
+        title: "MÓDULO 5: Portafolio estratégico",
+        items: [
+          "Qué mostrar y qué no mostrar",
+          "Cómo presentar proyectos aunque no tengas grandes obras",
+          "El portafolio como herramienta comercial"
+        ]
+      },
+      {
+        title: "MÓDULO 6: Estrategia comercial para arquitectos",
+        items: [
+          "Cómo atraer clientes sin depender solo de referidos",
+          "Canales que sí funcionan en arquitectura",
+          "Sistema simple y realista de ventas"
+        ]
+      },
+      {
+        title: "MÓDULO 7: Propuesta de valor y estructura de precios",
+        items: [
+          "Definición clara de servicios y entregables",
+          "Bases para cobrar con seguridad y coherencia",
+          "Evitar la subvaloración del trabajo profesional"
+        ]
+      },
+      {
+        title: "MÓDULO 8: Redes sociales con intención de negocio",
+        items: [
+          "Contenido adecuado según tu etapa",
+          "Uso de redes para atraer clientes reales",
+          "Rutina sostenible alineada con tu marca"
+        ]
+      },
+      {
+        title: "MÓDULO 9: Plan de acción personalizado",
+        items: [
+          "Pasos concretos según tu contexto actual",
+          "Priorización estratégica de acciones"
+        ]
+      },
+      {
+        title: "MÓDULO 10: Cierre y proyección del estudio",
+        items: [
+          "Revisión final del proceso",
+          "Ajustes estratégicos",
+          "Proyección y siguientes pasos para tu estudio"
+        ]
+      }
+    ]
+  }
 ];

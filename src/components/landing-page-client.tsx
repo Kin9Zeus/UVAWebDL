@@ -290,7 +290,7 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
                   courseId={course.id} 
                   price={course.price} 
                   isAuthenticated={isAuthenticated}
-                  redirectPath="/diplomado-vivienda"
+                  redirectPath="/cursos/diplomado-gerencia-proyectos"
                 />
                 <p className="text-xs text-center text-gray-500">
                   *Acceso inmediato enviado a tu correo electrónico.
