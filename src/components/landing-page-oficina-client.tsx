@@ -105,6 +105,7 @@ export default function LandingPageOficinaClient({ course, isAuthenticated }: Pr
                   className="w-full h-auto aspect-[9/16] object-cover"
                   poster="/Humanizar/abriendo_oficina.jpeg" 
                 >
+                  <source src="/Humanizar/abriendo_oficina.mov" type="video/quicktime" />
                   <source src="/Humanizar/abriendo_oficina.mp4" type="video/mp4" />
                 </video>
              </div>

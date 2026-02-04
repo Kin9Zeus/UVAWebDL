@@ -104,6 +104,7 @@ export default function LandingPageRedesClient({ course, isAuthenticated }: Prop
                   className="w-full h-auto aspect-[9/16] object-cover"
                   poster="/RedesSociales.jpg" 
                 >
+                  <source src="/Humanizar/diplomado_redes.mov" type="video/quicktime" />
                   <source src="/Humanizar/diplomado_redes.mp4" type="video/mp4" />
                 </video>
              </div>
