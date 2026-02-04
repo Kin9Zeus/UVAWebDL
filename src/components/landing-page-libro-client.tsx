@@ -105,7 +105,6 @@ export default function LandingPageLibroClient({ course, isAuthenticated }: Prop
                   poster="/Humanizar/Vendiendo_Arquitectura_de_0_a_100.PNG" 
                 >
                   <source src="/Humanizar/uva_reel_libro.mov" type="video/quicktime" />
-                  <source src="/Humanizar/uva_reel_libro.mp4" type="video/mp4" />
                 </video>
              </div>
            </div>
