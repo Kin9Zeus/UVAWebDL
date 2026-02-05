@@ -1,11 +1,6 @@
 import { courses } from "@/lib/data/courses";
 import Link from "next/link";
 import Rating from "@/components/rating";
-import { getAuthToken, verifyToken } from "@/lib/auth";
-import { dbConnect } from "@/lib/db";
-import User from "@/models/User";
-import PurchaseButton from "@/components/course-purchase";
-import { verifyAndEnrollUser } from "@/lib/payment";
 import Syllabus from "@/components/syllabus";
 
 type Props = { 
@@ -13,9 +8,8 @@ type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export default async function CursoDetallePage({ params, searchParams }: Props) {
+export default async function CursoDetallePage({ params }: Props) {
   const { id } = await params;
-  const { status, payment_id } = await searchParams;
   
   const course = courses.find((c) => c.id === id);
 
@@ -30,29 +24,7 @@ export default async function CursoDetallePage({ params, searchParams }: Props) 
     );
   }
 
-  // Auth Check
-  const token = await getAuthToken();
-  const payload = verifyToken(token || "");
-  const isAuthenticated = !!payload;
-  let isPurchased = false;
-
-  // Auto-verify payment on return (Sync logic for localhost/fallback)
-  if (isAuthenticated && status === "success" && payment_id && typeof payment_id === "string") {
-    await verifyAndEnrollUser(payment_id);
-  }
-
-  if (payload) {
-    await dbConnect();
-    const user = await User.findById(payload.uid);
-    if (user && user.purchases) {
-      isPurchased = user.purchases.some(
-        (p: any) => 
-          p.courseId === course.id && 
-          p.status === "active" && 
-          new Date(p.expiresAt) > new Date()
-      );
-    }
-  }
+  const isPurchased = false;
 
   return (
     <section>
@@ -83,51 +55,57 @@ export default async function CursoDetallePage({ params, searchParams }: Props) 
             <p className="text-sm text-neutral-600">Precio</p>
             <p className="text-2xl font-semibold text-[var(--color-tertiary)]">${"" + course.price} USD</p>
             
-            {isPurchased ? (
-               <button disabled className="mt-4 w-full rounded-full bg-green-600 px-5 py-3 text-white cursor-default">
-                 Ya tienes este curso
-               </button>
+            {course.hotmartLink ? (
+                <a 
+                    href={course.hotmartLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center mt-4 w-full rounded-full bg-yellow-500 px-5 py-3 text-black font-bold hover:bg-yellow-400 transition-colors"
+                >
+                    Comprar
+                </a>
             ) : course.id === "diplomado-gerencia-proyectos" ? (
                <Link 
                  href="/cursos/diplomado-gerencia-proyectos"
                  className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
                >
-                 Comprar
+                 Ver Detalles
                </Link>
             ) : course.id === "diplomado-d5-render" ? (
                <Link 
                  href="/cursos/diplomado-d5-render"
                  className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
                >
-                 Comprar
+                 Ver Detalles
                </Link>
             ) : course.id === "abriendo-oficina-arquitectura" ? (
                <Link 
                  href="/cursos/abriendo-oficina-arquitectura"
                  className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
                >
-                 Comprar
+                 Ver Detalles
                </Link>
             ) : course.id === "libro-vendiendo-arquitectura" ? (
                <Link 
                  href="/cursos/libro-vendiendo-arquitectura"
                  className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
                >
-                 Comprar
+                 Ver Detalles
                </Link>
             ) : course.id === "diplomado-redes-ia" ? (
                <Link 
                  href="/cursos/diplomado-redes-ia"
                  className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
                >
-                 Comprar
+                 Ver Detalles
                </Link>
             ) : (
-               <PurchaseButton  
-                 courseId={course.id} 
-                 price={course.price} 
-                 isAuthenticated={isAuthenticated} 
-               />
+               <Link 
+                 href="/contacto"
+                 className="block text-center mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white hover:opacity-90 transition-opacity"
+               >
+                 Más Información
+               </Link>
             )}
 
             <p className="mt-4 text-xs text-neutral-500">

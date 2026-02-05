@@ -1,15 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import PurchaseButton from "@/components/course-purchase";
 import { Course } from "@/lib/data/courses";
 
 interface Props {
   course: Course;
-  isAuthenticated: boolean;
 }
 
-export default function LandingPageLibroClient({ course, isAuthenticated }: Props) {
+export default function LandingPageLibroClient({ course }: Props) {
   const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
@@ -190,12 +188,23 @@ export default function LandingPageLibroClient({ course, isAuthenticated }: Prop
              </div>
 
              <div className="max-w-md mx-auto space-y-6">
-                <PurchaseButton 
-                  courseId={course.id} 
-                  price={course.price} 
-                  isAuthenticated={isAuthenticated}
-                  redirectPath="/cursos/libro-vendiendo-arquitectura"
-                />
+               {course.hotmartLink ? (
+                  <a 
+                    href={course.hotmartLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-4 w-full rounded-full bg-[#f24ac5] px-5 py-3 text-white font-bold text-center hover:bg-[#d13ba8] transition-colors"
+                  >
+                    COMPRAR AHORA
+                  </a>
+               ) : (
+                 <a 
+                   href="/contacto"
+                   className="block mt-4 w-full rounded-full bg-[#f24ac5] px-5 py-3 text-white text-center font-bold hover:opacity-90 transition-opacity"
+                 >
+                   Más Información
+                 </a>
+               )}
                 
                 <div className="flex items-center justify-center gap-4 opacity-70">
                    <div className="flex -space-x-2">

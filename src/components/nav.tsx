@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import UserMenu from "./user-menu";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -13,7 +12,6 @@ export default function Nav() {
           <Image src="/logo-uva.png" alt="Logo UVA" width={120} height={120} className="h-8 md:h-10 w-auto" priority />
         </Link>
         <div className="flex items-center gap-4 sm:hidden">
-            <UserMenu />
             <button
             className="rounded p-2 border border-neutral-300"
             onClick={() => setOpen((v) => !v)}
@@ -31,7 +29,6 @@ export default function Nav() {
           <Link href="/comunidad" className="hover:text-[var(--color-secondary)] transition-colors">Comunidad</Link>
           <Link href="/servicios" className="hover:text-[var(--color-secondary)] transition-colors">Servicios</Link>
           <Link href="/contacto" className="hover:text-[var(--color-secondary)] transition-colors">Contacto</Link>
-          <UserMenu />
         </nav>
       </div>
       {open && (

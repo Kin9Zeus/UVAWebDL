@@ -2,15 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import PurchaseButton from "@/components/course-purchase";
 import { Course } from "@/lib/data/courses";
 
 interface Props {
   course: Course;
-  isAuthenticated: boolean;
 }
 
-export default function LandingPageRedesClient({ course, isAuthenticated }: Props) {
+export default function LandingPageRedesClient({ course }: Props) {
   const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
@@ -286,12 +284,23 @@ export default function LandingPageRedesClient({ course, isAuthenticated }: Prop
              </div>
 
              <div className="space-y-4">
-                <PurchaseButton 
-                  courseId={course.id} 
-                  price={course.price} 
-                  isAuthenticated={isAuthenticated}
-                  redirectPath="/cursos/diplomado-redes-ia"
-                />
+               {course.hotmartLink ? (
+                  <a 
+                    href={course.hotmartLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-4 w-full rounded-full bg-[#7791ff] px-5 py-3 text-white font-bold text-center hover:bg-[#5a75e6] transition-colors"
+                  >
+                    COMPRAR AHORA
+                  </a>
+               ) : (
+                 <a 
+                   href="/contacto"
+                   className="block mt-4 w-full rounded-full bg-[#7791ff] px-5 py-3 text-white text-center font-bold hover:opacity-90 transition-opacity"
+                 >
+                   Más Información
+                 </a>
+               )}
                 <p className="text-xs text-center text-gray-500">
                   *Acceso inmediato enviado a tu correo electrónico.
                 </p>

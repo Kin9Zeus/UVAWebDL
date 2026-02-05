@@ -19,6 +19,8 @@ export type Course = {
     items?: string[];
     videoUrl?: string;
   }[];
+  // Enlace directo de pago (e.g. Hotmart)
+  hotmartLink?: string;
 };
 
 export const courses: Course[] = [
@@ -27,6 +29,7 @@ export const courses: Course[] = [
     title: "Diplomado en Gerencia de Proyectos, Costos y Presupuestos",
     description: "Domina la gestión integral de obras: planificación, costos, contratación y cierre financiero.",
     price: 150,
+    hotmartLink: "https://pay.hotmart.com/M103088444X",
     rating: 5,
     cover: "/Gerenciadeproyectos.jpg",
     category: "gestión",
@@ -130,6 +133,34 @@ export const courses: Course[] = [
           "La marca en la arquitectura",
           "Riesgo positivo en la arquitectura",
           "Conclusiones finales"
+        ]
+      }
+    ]
+  },
+  {
+    id: "libro-del-cad-al-feed",
+    title: "DEL CAD AL FEED",
+    description: "Guía digital práctica que te enseña cómo pasar del diseño al contenido y del contenido a las ventas.",
+    price: 40,
+    rating: 5,
+    cover: "/Humanizar/del_cad_al_feed.png",
+    category: "gestión",
+    level: "básico",
+    videoUrl: undefined,
+    accessDuration: "Acceso de por vida",
+    syllabus: [
+      {
+        title: "CONTENIDO DE LA GUÍA",
+        items: [
+          "Cómo usar Instagram de forma profesional",
+          "Qué tipo de Reels generan alcance",
+          "Cuándo publicar y por qué",
+          "Hooks para captar atención en segundos",
+          "Contenido viral sin perder autoridad",
+          "Pautas pagas con Meta Ads",
+          "Canva aplicado a redes",
+          "Inteligencia artificial para crear y crecer",
+          "Cómo monetizar tus redes de forma real"
         ]
       }
     ]

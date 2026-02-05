@@ -2,15 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import PurchaseButton from "@/components/course-purchase";
 import { Course } from "@/lib/data/courses";
 
 interface Props {
   course: Course;
-  isAuthenticated: boolean;
 }
 
-export default function LandingPageClient({ course, isAuthenticated }: Props) {
+export default function LandingPageClient({ course }: Props) {
   const [showSticky, setShowSticky] = useState(false);
 
   useEffect(() => {
@@ -102,7 +100,7 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
                 <video 
                   controls 
                   className="w-full h-auto aspect-[9/16] object-cover"
-                  poster="/Humanizar/Gerenciadeproyectos.jpg" 
+                  poster="/Gerenciadeproyectos.jpg" 
                 >
                   <source src="/Humanizar/Diplomado_en_Gerencia_de_Proyectos_Costos_y_Presupuestos.MOV" type="video/quicktime" />
                   <source src="/Humanizar/Diplomado_en_Gerencia_de_Proyectos_Costos_y_Presupuestos.MOV" type="video/mp4" />
@@ -286,12 +284,23 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
              </div>
 
              <div className="space-y-4">
-                <PurchaseButton 
-                  courseId={course.id} 
-                  price={course.price} 
-                  isAuthenticated={isAuthenticated}
-                  redirectPath="/cursos/diplomado-gerencia-proyectos"
-                />
+               {course.hotmartLink ? (
+                  <a 
+                    href={course.hotmartLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-4 w-full rounded-full bg-yellow-500 px-5 py-3 text-black font-bold text-center hover:bg-yellow-400 transition-colors"
+                  >
+                    COMPRAR AHORA
+                  </a>
+               ) : (
+                 <a 
+                   href="/contacto"
+                   className="block mt-4 w-full rounded-full bg-[var(--color-secondary)] px-5 py-3 text-white text-center font-bold hover:opacity-90 transition-opacity"
+                 >
+                   Más Información
+                 </a>
+               )}
                 <p className="text-xs text-center text-gray-500">
                   *Acceso inmediato enviado a tu correo electrónico.
                 </p>
@@ -339,7 +348,12 @@ export default function LandingPageClient({ course, isAuthenticated }: Props) {
             <p className="text-xs text-gray-400">Oferta por tiempo limitado</p>
             <p className="text-lg font-bold text-white">${course.price} USD</p>
           </div>
-          <a href="#pricing" className="bg-yellow-400 text-black font-bold px-6 py-3 rounded-full text-sm hover:bg-yellow-300">
+          <a 
+            href={course.hotmartLink || "#pricing"} 
+            target={course.hotmartLink ? "_blank" : "_self"}
+            rel={course.hotmartLink ? "noopener noreferrer" : ""}
+            className="bg-yellow-400 text-black font-bold px-6 py-3 rounded-full text-sm hover:bg-yellow-300"
+          >
             Inscribirme
           </a>
         </div>
