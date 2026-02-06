@@ -291,7 +291,7 @@ export default function LandingPageRedesClient({ course }: Props) {
                     rel="noopener noreferrer"
                     className="block mt-4 w-full rounded-full bg-[#7791ff] px-5 py-3 text-white font-bold text-center hover:bg-[#5a75e6] transition-colors"
                   >
-                    COMPRAR AHORA
+                    Comprar Ahora
                   </a>
                ) : (
                  <a 

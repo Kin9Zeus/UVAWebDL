@@ -291,7 +291,7 @@ export default function LandingPageD5Client({ course }: Props) {
                     rel="noopener noreferrer"
                     className="block mt-4 w-full rounded-full bg-[#5E24C8] px-5 py-3 text-white font-bold text-center hover:bg-[#4c1da3] transition-colors"
                   >
-                    COMPRAR AHORA
+                    Comprar Ahora
                   </a>
                ) : (
                  <a 

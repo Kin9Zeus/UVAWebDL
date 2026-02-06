@@ -169,12 +169,12 @@ export default function LandingPageLibroClient({ course }: Props) {
              {/* Metallic Shine Effect */}
              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#fff] to-transparent opacity-50"></div>
              
-             <div className="absolute top-8 right-8 rotate-12 bg-gradient-to-r from-[#f24ac5] to-[#c0399b] text-white text-sm font-bold px-4 py-1 rounded shadow-lg">
+             <div className="absolute top-8 right-8 rotate-12 bg-gradient-to-r from-[#f24ac5] to-[#c0399b] text-white text-sm font-bold px-4 py-1 rounded shadow-lg hidden md:block">
                -53% OFF
              </div>
              
              <h2 className="text-3xl md:text-5xl font-black mb-2">OBTÉN TU COPIA HOY</h2>
-             <p className="text-gray-400 mb-8">Acceso inmediato al archivo PDF completo</p>
+             <p className="text-gray-400 mb-8">Acceso inmediato al archivo PDF o libro físico!</p>
 
              <div className="space-y-2 mb-8">
                <p className="text-gray-500 text-xl line-through">Precio Regular: $85 USD</p>
@@ -195,7 +195,7 @@ export default function LandingPageLibroClient({ course }: Props) {
                     rel="noopener noreferrer"
                     className="block mt-4 w-full rounded-full bg-[#f24ac5] px-5 py-3 text-white font-bold text-center hover:bg-[#d13ba8] transition-colors"
                   >
-                    COMPRAR AHORA
+                    Comprar Ahora
                   </a>
                ) : (
                  <a 

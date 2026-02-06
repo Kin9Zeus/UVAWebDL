@@ -292,7 +292,7 @@ export default function LandingPageOficinaClient({ course }: Props) {
                     rel="noopener noreferrer"
                     className="block mt-4 w-full rounded-full bg-[#5d85b4] px-5 py-3 text-white font-bold text-center hover:bg-[#4a6d94] transition-colors"
                   >
-                    COMPRAR AHORA
+                    Comprar Ahora
                   </a>
                ) : (
                  <a 

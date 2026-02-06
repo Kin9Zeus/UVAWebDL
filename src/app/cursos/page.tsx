@@ -22,17 +22,11 @@ export default function CursosPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-2xl sm:text-3xl font-semibold text-[var(--color-tertiary)]">Cursos y diplomados UVA</h1>
         <p className="mt-2 text-neutral-600 max-w-2xl">
-          Explora cursos profesionales de arquitectura. Usa el buscador y filtros para encontrar el contenido ideal.
+          Explora cursos profesionales de arquitectura. Usa el buscador para encontrar el contenido ideal.
         </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Buscar cursos..." className="w-full sm:w-80 rounded border border-neutral-300 px-3 py-2" />
-          <div className="flex flex-wrap gap-2 text-sm">
-            <button className="rounded-full border border-neutral-300 px-3 py-2">Todos</button>
-            <button className="rounded-full border border-neutral-300 px-3 py-2">Arquitectura</button>
-            <button className="rounded-full border border-neutral-300 px-3 py-2">Diseño</button>
-            <button className="rounded-full border border-neutral-300 px-3 py-2">Urbanismo</button>
-          </div>
         </div>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
