@@ -31,7 +31,7 @@ export default function CursosPage() {
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((c) => (
-            <div key={c.id} className="rounded-lg border border-neutral-200 p-6">
+            <div key={c.id} className="flex flex-col h-full rounded-lg border border-neutral-200 p-6">
               <div className="relative h-32 w-full rounded overflow-hidden bg-neutral-100 mb-4">
                 <Image
                   src={c.cover}
@@ -43,8 +43,8 @@ export default function CursosPage() {
                 />
               </div>
               <h3 className="font-medium text-[var(--color-tertiary)]">{c.title}</h3>
-              <p className="text-sm text-neutral-600">{c.description}</p>
-              <div className="mt-3 flex items-center justify-between">
+              <p className="text-sm text-neutral-600 mb-4">{c.description}</p>
+              <div className="mt-auto flex items-center justify-between">
                 <Rating rating={c.rating} />
                 <span className="text-[var(--color-tertiary)] font-semibold">{c.priceDisplay ?? `$${c.price} USD`}</span>
               </div>

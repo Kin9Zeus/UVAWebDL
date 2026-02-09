@@ -106,6 +106,146 @@ export const courses: Course[] = [
       }
     ],
   },
+  {
+    id: "abriendo-oficina-arquitectura",
+    title: "Abriendo tu oficina de Arquitectura en 10 días",
+    description: "Mentoría grupal diseñada para arquitectos que quieren abrir su estudio de forma estructurada, acompañada y con visión empresarial.",
+    price: 150,
+    hotmartLink: "https://wa.link/ba1roh",
+    rating: 5,
+    cover: "/Humanizar/abriendo_oficina.jpeg",
+    category: "gestión",
+    level: "intermedio",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "MÓDULO 1: Mentalidad y visión de estudio",
+        items: [
+          "Transición de arquitecto ejecutor a arquitecto empresario",
+          "Definición clara del tipo de estudio que quieres construir",
+          "Eliminación de bloqueos comunes (miedo, desorden, improvisación)"
+        ]
+      },
+      {
+        title: "MÓDULO 2: Definición de tu modelo de estudio",
+        items: [
+          "Servicios que vas a ofrecer",
+          "Cliente ideal y enfoque de mercado",
+          "Diferenciación estratégica (más allá de lo estético)"
+        ]
+      },
+      {
+        title: "MÓDULO 3: Marca, identidad y posicionamiento",
+        items: [
+          "Creación y análisis de marca según tu identidad personal y profesional",
+          "Coherencia entre quién eres, cómo te muestras y lo que comunicas",
+          "Construcción de una marca auténtica y alineada con tu estudio",
+          "Narrativa y discurso de marca aplicados a arquitectura"
+        ]
+      },
+      {
+        title: "MÓDULO 4: Estructura legal y operativa básica",
+        items: [
+          "Requisitos esenciales para operar formalmente sin sobrecomplicarte",
+          "Procesos mínimos para trabajar ordenado desde el inicio",
+          "Organización básica de proyectos y clientes"
+        ]
+      },
+      {
+        title: "MÓDULO 5: Portafolio estratégico",
+        items: [
+          "Qué mostrar y qué no mostrar",
+          "Cómo presentar proyectos aunque no tengas grandes obras",
+          "El portafolio como herramienta comercial"
+        ]
+      },
+      {
+        title: "MÓDULO 6: Estrategia comercial para arquitectos",
+        items: [
+          "Cómo atraer clientes sin depender solo de referidos",
+          "Canales que sí funcionan en arquitectura",
+          "Sistema simple y realista de ventas"
+        ]
+      },
+      {
+        title: "MÓDULO 7: Propuesta de valor y estructura de precios",
+        items: [
+          "Definición clara de servicios y entregables",
+          "Bases para cobrar con seguridad y coherencia",
+          "Evitar la subvaloración del trabajo profesional"
+        ]
+      },
+      {
+        title: "MÓDULO 8: Redes sociales con intención de negocio",
+        items: [
+          "Contenido adecuado según tu etapa",
+          "Uso de redes para atraer clientes reales",
+          "Rutina sostenible alineada con tu marca"
+        ]
+      },
+      {
+        title: "MÓDULO 9: Plan de acción personalizado",
+        items: [
+          "Pasos concretos según tu contexto actual",
+          "Priorización estratégica de acciones"
+        ]
+      },
+      {
+        title: "MÓDULO 10: Cierre y proyección del estudio",
+        items: [
+          "Revisión final del proceso",
+          "Ajustes estratégicos",
+          "Proyección y siguientes pasos para tu estudio"
+        ]
+      }
+    ]
+  },
+  {
+    id: "asesoria-personalizada",
+    title: "Asesoría 1 a 1 personalizada para tu empresa",
+    description: "Acompañamiento estratégico para proyectos y empresas de arquitectura, diseño y construcción. Enfocado en presupuesto, estructura arquitectónica y control económico.",
+    price: 80,
+    priceDisplay: "Desde $80 USD",
+    hotmartLink: "https://wa.link/r7u7qs",
+    rating: 5,
+    cover: "/Humanizar/asesoria_1a1.jpeg",
+    category: "gestión",
+    level: "avanzado",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "PAQUETE 1 — SESIÓN ESTRATÉGICA (1 Hora - $80 USD)",
+        items: [
+          "Revisión rápida de tu proyecto o empresa",
+          "Diagnóstico presupuestal y económico",
+          "Análisis de viabilidad arquitectónica",
+          "Recomendaciones claras y accionables",
+          "Sesión 100% personalizada (1 a 1)"
+        ]
+      },
+      {
+        title: "PAQUETE 2 — ACOMPAÑAMIENTO PROFESIONAL (5 Horas - $380 USD)",
+        items: [
+          "Análisis profundo de presupuestos y costos",
+          "Optimización de diseño y decisiones arquitectónicas",
+          "Estrategia de control financiero del proyecto",
+          "Ajustes en honorarios, márgenes y estructura de cobro",
+          "Acompañamiento personalizado paso a paso"
+        ]
+      },
+      {
+        title: "PAQUETE 3 — MENTORÍA ESTRATÉGICA UVA (10 Horas - $760 USD)",
+        items: [
+          "Diagnóstico completo de tu empresa o proyecto",
+          "Estructuración total de presupuestos y flujo de caja",
+          "Estrategia arquitectónica alineada con rentabilidad",
+          "Corrección de errores que generan pérdidas",
+          "Acompañamiento estratégico continuo",
+          "Visión clara para escalar y tomar decisiones con seguridad"
+        ]
+      }
+    ]
+  },
   // Removed duplicate course modelado-bim
   {
     id: "libro-vendiendo-arquitectura",
@@ -287,100 +427,6 @@ export const courses: Course[] = [
           "Organización de contenido semanal",
           "Automatización básica para ahorrar tiempo",
           "Ruta clara para escalar tu marca y tus ingresos"
-        ]
-      }
-    ]
-  },
-  {
-    id: "abriendo-oficina-arquitectura",
-    title: "Abriendo tu oficina de Arquitectura en 10 días",
-    description: "Mentoría grupal diseñada para arquitectos que quieren abrir su estudio de forma estructurada, acompañada y con visión empresarial.",
-    price: 150,
-    hotmartLink: "https://wa.link/ba1roh",
-    rating: 5,
-    cover: "/Humanizar/abriendo_oficina.jpeg",
-    category: "gestión",
-    level: "intermedio",
-    videoUrl: undefined,
-    syllabus: [
-      {
-        title: "MÓDULO 1: Mentalidad y visión de estudio",
-        items: [
-          "Transición de arquitecto ejecutor a arquitecto empresario",
-          "Definición clara del tipo de estudio que quieres construir",
-          "Eliminación de bloqueos comunes (miedo, desorden, improvisación)"
-        ]
-      },
-      {
-        title: "MÓDULO 2: Definición de tu modelo de estudio",
-        items: [
-          "Servicios que vas a ofrecer",
-          "Cliente ideal y enfoque de mercado",
-          "Diferenciación estratégica (más allá de lo estético)"
-        ]
-      },
-      {
-        title: "MÓDULO 3: Marca, identidad y posicionamiento",
-        items: [
-          "Creación y análisis de marca según tu identidad personal y profesional",
-          "Coherencia entre quién eres, cómo te muestras y lo que comunicas",
-          "Construcción de una marca auténtica y alineada con tu estudio",
-          "Narrativa y discurso de marca aplicados a arquitectura"
-        ]
-      },
-      {
-        title: "MÓDULO 4: Estructura legal y operativa básica",
-        items: [
-          "Requisitos esenciales para operar formalmente sin sobrecomplicarte",
-          "Procesos mínimos para trabajar ordenado desde el inicio",
-          "Organización básica de proyectos y clientes"
-        ]
-      },
-      {
-        title: "MÓDULO 5: Portafolio estratégico",
-        items: [
-          "Qué mostrar y qué no mostrar",
-          "Cómo presentar proyectos aunque no tengas grandes obras",
-          "El portafolio como herramienta comercial"
-        ]
-      },
-      {
-        title: "MÓDULO 6: Estrategia comercial para arquitectos",
-        items: [
-          "Cómo atraer clientes sin depender solo de referidos",
-          "Canales que sí funcionan en arquitectura",
-          "Sistema simple y realista de ventas"
-        ]
-      },
-      {
-        title: "MÓDULO 7: Propuesta de valor y estructura de precios",
-        items: [
-          "Definición clara de servicios y entregables",
-          "Bases para cobrar con seguridad y coherencia",
-          "Evitar la subvaloración del trabajo profesional"
-        ]
-      },
-      {
-        title: "MÓDULO 8: Redes sociales con intención de negocio",
-        items: [
-          "Contenido adecuado según tu etapa",
-          "Uso de redes para atraer clientes reales",
-          "Rutina sostenible alineada con tu marca"
-        ]
-      },
-      {
-        title: "MÓDULO 9: Plan de acción personalizado",
-        items: [
-          "Pasos concretos según tu contexto actual",
-          "Priorización estratégica de acciones"
-        ]
-      },
-      {
-        title: "MÓDULO 10: Cierre y proyección del estudio",
-        items: [
-          "Revisión final del proceso",
-          "Ajustes estratégicos",
-          "Proyección y siguientes pasos para tu estudio"
         ]
       }
     ]
