@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import LayoutContent from "@/components/layout-content";
+import GoogleTagManager from "@/components/analytics/GoogleTagManager";
+import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
+import ConsentBanner from "@/components/analytics/ConsentBanner";
+import FacebookPixel from "@/components/analytics/FacebookPixel";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,6 +18,8 @@ export const metadata: Metadata = {
   description: "Cursos, proyectos y servicios de arquitectura en Colombia.",
 };
 
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,6 +28,14 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable} antialiased`}>
+        <GoogleTagManager gtmId={GTM_ID} />
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
+        <Suspense fallback={null}>
+          <AnalyticsTracker />
+        </Suspense>
+        <ConsentBanner />
         <LayoutContent>
           {children}
         </LayoutContent>

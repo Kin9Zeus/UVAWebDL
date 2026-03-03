@@ -11,6 +11,7 @@ const LeadSchema = new Schema(
     budget: { type: Number },
     timeline: { type: String },
     contactMethod: { type: String },
+    eventID: { type: String }, // For Meta CAPI Deduplication
   },
   { timestamps: true }
 );

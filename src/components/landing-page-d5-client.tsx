@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Course } from "@/lib/data/courses";
+import { useAnalytics } from "@/hooks/use-analytics";
 
 interface Props {
   course: Course;
@@ -10,6 +11,7 @@ interface Props {
 
 export default function LandingPageD5Client({ course }: Props) {
   const [showSticky, setShowSticky] = useState(false);
+  const { trackEvent } = useAnalytics();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,23 @@ export default function LandingPageD5Client({ course }: Props) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleVideoPlay = () => {
+    trackEvent('VideoPlay', {
+      video_title: 'Diplomado D5 Render',
+      video_src: '/Humanizar/diplomado_d5.mov'
+    });
+  };
+
+  const handlePurchaseClick = () => {
+    trackEvent('InitiateCheckout', {
+      content_name: course.title,
+      content_ids: [course.id],
+      content_type: 'product',
+      value: course.price,
+      currency: 'USD'
+    });
+  };
 
   return (
     <div className="min-h-screen bg-[#111] text-white font-sans selection:bg-[#5E24C8] selection:text-white overflow-x-hidden">
@@ -101,6 +120,7 @@ export default function LandingPageD5Client({ course }: Props) {
                   controls 
                   className="w-full h-auto aspect-[9/16] object-cover"
                   poster="/D5size.jpg" 
+                  onPlay={handleVideoPlay}
                 >
                   <source src="/Humanizar/diplomado_d5.mov" type="video/quicktime" />
                   <source src="/Humanizar/diplomado_d5.mov" type="video/mp4" />
@@ -289,6 +309,7 @@ export default function LandingPageD5Client({ course }: Props) {
                     href={course.hotmartLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={handlePurchaseClick}
                     className="block mt-4 w-full rounded-full bg-[#5E24C8] px-5 py-3 text-white font-bold text-center hover:bg-[#4c1da3] transition-colors"
                   >
                     Comprar Ahora
