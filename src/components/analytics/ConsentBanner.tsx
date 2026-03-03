@@ -12,8 +12,8 @@ export default function ConsentBanner() {
       setIsVisible(true);
       
       // Set default denied
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('consent', 'default', {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('consent', 'default', {
           'ad_storage': 'denied',
           'analytics_storage': 'denied',
           'ad_user_data': 'denied',
@@ -27,15 +27,15 @@ export default function ConsentBanner() {
     localStorage.setItem('cookie_consent', 'granted');
     setIsVisible(false);
     
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('consent', 'update', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('consent', 'update', {
         'ad_storage': 'granted',
         'analytics_storage': 'granted',
         'ad_user_data': 'granted',
         'ad_personalization': 'granted',
       });
       // Push event to GTM
-      (window as any).dataLayer.push({ event: 'consent_update' });
+      window.dataLayer.push({ event: 'consent_update' });
     }
   };
 
