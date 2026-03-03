@@ -1,4 +1,5 @@
 
+import { Suspense } from "react";
 import { courses } from "@/lib/data/courses";
 import LandingPageD5Client from "@/components/landing-page-d5-client";
 
@@ -7,5 +8,9 @@ export default async function DiplomadoD5RenderPage() {
   
   if (!course) return <div>Curso no encontrado</div>;
 
-  return <LandingPageD5Client course={course} />;
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <LandingPageD5Client course={course} />
+    </Suspense>
+  );
 }

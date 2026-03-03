@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
@@ -21,7 +22,11 @@ export default function LayoutContent({
       <main className="flex-1">
         {children}
       </main>
-      {!isCourseLanding && <Footer />}
+      {!isCourseLanding && (
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+      )}
     </div>
   );
 }
