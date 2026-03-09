@@ -430,5 +430,138 @@ export const courses: Course[] = [
         ]
       }
     ]
+  },
+  {
+    id: "diseno-interior-iluminacion",
+    title: "Diseño Interior e Iluminación",
+    description: "Curso completo para principiantes, profesionales y empíricos. Domina desde la historia y el concepto hasta la iluminación y la gestión profesional.",
+    price: 150, // Precio estimado, ajustar si es diferente
+    hotmartLink: "https://wa.link/vaq30t",
+    rating: 5,
+    cover: "/Humanizar/Diseño_Interior_e_Iluminacion.jpeg",
+    category: "diseño",
+    level: "básico",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "SESIÓN 1: Definición, Concepto e Historia del Diseño Interior",
+        items: [
+          "Qué es el diseño de interiores y qué no es",
+          "Diferencias entre arquitectura, diseño interior y estilismo",
+          "El interiorismo como disciplina proyectual",
+          "El concepto de capas en el espacio",
+          "Historia del diseño interior (1900–2000)",
+          "Referentes clave, movimientos e influencias",
+          "El rol del interiorista hoy",
+          "Introducción al pensamiento crítico del espacio"
+        ]
+      },
+      {
+        title: "SESIÓN 2: Estilos y Desarrollo",
+        items: [
+          "Análisis del usuario y del espacio",
+          "Estilo propio y estilo de vida",
+          "Lectura del contexto arquitectónico",
+          "Estilos de diseño interior (más allá de la etiqueta estética)",
+          "Cómo construir un concepto sólido",
+          "Moodboards conceptuales",
+          "Narrativa del espacio y storytelling",
+          "Coherencia conceptual en todo el proyecto"
+        ]
+      },
+      {
+        title: "SESIÓN 3: Desarrollo del Proyecto de Diseño Interior",
+        items: [
+          "Fases de un proyecto de interiorismo",
+          "Zonificación y distribución espacial",
+          "Ergonomía, proporción y escala",
+          "Diseño de iluminación",
+          "Selección de materiales y acabados",
+          "Mobiliario fijo y suelto",
+          "Detalles constructivos y criterios técnicos",
+          "Planos de interiorismo",
+          "Presentación profesional del proyecto"
+        ]
+      },
+      {
+        title: "SESIÓN 4: Introducción a la Práctica Profesional",
+        items: [
+          "Qué es la administración del diseño",
+          "Cómo funciona un estudio de diseño de interiores",
+          "Tipos de proyectos de diseño interior",
+          "Tipos de servicios de diseño",
+          "Tipos de contrataciones",
+          "Tipos de cotizaciones",
+          "Relación con el cliente: roles, límites y expectativas",
+          "Comunicación profesional y presentación de propuestas"
+        ]
+      }
+    ]
+  },
+  {
+    id: "revit-arquitectura",
+    title: "Revit Arquitectura",
+    description: "Curso completo de Revit Arquitectura. Aprende desde los fundamentos hasta la documentación y planos, optimizando tus tiempos de trabajo.",
+    price: 150, // Precio estimado, ajustar si es diferente
+    hotmartLink: "https://wa.link/c660qc",
+    rating: 5,
+    cover: "/Humanizar/Revit_Arquitectura.jpeg",
+    category: "software",
+    level: "básico",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "Día 1: REVIT - Introducción a Revit Arquitectura",
+        items: [
+          "Fundamentos y Navegación",
+          "Conceptos básicos, interfaz de usuario y metodología de modelado"
+        ]
+      },
+      {
+        title: "Día 2: REVIT - Modelado de Elementos Arquitectónicos",
+        items: [
+          "Muros, Pisos y Cubiertas",
+          "Creación y modificación de elementos arquitectónicos esenciales"
+        ]
+      },
+      {
+        title: "Día 3: REVIT - Diseño Paramétrico: Familias y Componentes Personalizados",
+        items: [
+          "Introducción a las familias",
+          "Categorías",
+          "Parámetros"
+        ]
+      },
+      {
+        title: "Día 4: REVIT - Diseño Paramétrico: Familias y Componentes Personalizados II",
+        items: [
+          "Continuación con el modelado paramétrico",
+          "Importación y carga de familias"
+        ]
+      },
+      {
+        title: "Día 5: REVIT - Cuantificación y cantidades",
+        items: [
+          "Cuantificación de materiales y elementos",
+          "Tablas de cantidades"
+        ]
+      },
+      {
+        title: "Día 6: REVIT - Expresión y componentes gráficos",
+        items: [
+          "Plantillas de visualización",
+          "Líneas y expresión",
+          "Regiones, Hatch y estilos de dibujo"
+        ]
+      },
+      {
+        title: "Día 7: REVIT - Documentación y Planos",
+        items: [
+          "Generación de vistas",
+          "Planos de planta, secciones y detalles",
+          "Isometrías y exportación planos PDF - DWG"
+        ]
+      }
+    ]
   }
 ];
