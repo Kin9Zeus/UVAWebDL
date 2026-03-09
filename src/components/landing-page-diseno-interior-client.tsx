@@ -203,7 +203,7 @@ export default function LandingPageDisenoInteriorClient({ course }: Props) {
              </div>
              
              <div className="text-center space-y-2 mb-8">
-               <p className="text-gray-500 text-lg line-through">Precio Normal: $250 USD</p>
+               <p className="text-gray-500 text-lg line-through">Precio Normal: $320 USD</p>
                <div className="flex items-center justify-center gap-2">
                  <span className="text-6xl md:text-7xl font-black text-white tracking-tighter">${course.price}</span>
                  <span className="text-xl font-bold text-[#9b5de5]">USD</span>

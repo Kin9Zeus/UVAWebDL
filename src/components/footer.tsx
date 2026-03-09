@@ -30,7 +30,7 @@ export default function Footer() {
             Elegante, minimalista y funcional. Arquitectura con propósito.
           </p>
           <p className="mt-2 text-xs text-neutral-400 flex items-center justify-center gap-1">
-            Developed by <span className="font-bold px-2 py-0.5 rounded-md bg-black text-[#EFFF00] shadow-[0_0_10px_rgba(239,255,0,0.5)] border border-[#EFFF00]/20 tracking-wide">Devleck</span>
+            Developed by <a href="https://www.devleck.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Devleck website" className="font-bold px-2 py-0.5 rounded-md bg-black text-[#EFFF00] shadow-[0_0_10px_rgba(239,255,0,0.5)] border border-[#EFFF00]/20 tracking-wide hover:bg-[#EFFF00] hover:text-black transition-all duration-300 hover:shadow-[0_0_15px_rgba(239,255,0,0.8)] focus:outline-none focus:ring-2 focus:ring-[#EFFF00] focus:ring-offset-2">Devleck</a>
           </p>
         </div>
         <div className="flex justify-center sm:justify-end gap-3">
