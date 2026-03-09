@@ -2,8 +2,17 @@
 
 import Script from 'next/script';
 
+const isValidGaId = (id: string): boolean => {
+  return /^G-[A-Z0-9]+$/.test(id);
+};
+
 export default function GoogleAnalytics({ gaId }: { gaId: string }) {
   if (!gaId) return null;
+
+  if (!isValidGaId(gaId)) {
+    console.warn('Google Analytics ID inválido:', gaId);
+    return null;
+  }
 
   return (
     <>
@@ -17,13 +26,13 @@ export default function GoogleAnalytics({ gaId }: { gaId: string }) {
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
-            // Check if gtag is already defined (e.g. by GTM component) to reuse it
             if (typeof window.gtag === 'undefined') {
               window.gtag = function(){window.dataLayer.push(arguments);}
             }
             window.gtag('js', new Date());
             window.gtag('config', '${gaId}', {
               page_path: window.location.pathname,
+              send_page_view: true, // Explicitly enable page view
             });
           `,
         }}
