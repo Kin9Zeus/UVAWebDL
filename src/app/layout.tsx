@@ -7,6 +7,7 @@ import GoogleTagManager from "@/components/analytics/GoogleTagManager";
 import AnalyticsTracker from "@/components/analytics/AnalyticsTracker";
 import ConsentBanner from "@/components/analytics/ConsentBanner";
 import FacebookPixel from "@/components/analytics/FacebookPixel";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 export default function RootLayout({
   children,
@@ -29,6 +31,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${inter.variable} antialiased`}>
         <GoogleTagManager gtmId={GTM_ID} />
+        <GoogleAnalytics gaId={GA_ID} />
         <Suspense fallback={null}>
           <FacebookPixel />
         </Suspense>
