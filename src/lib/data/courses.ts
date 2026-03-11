@@ -25,6 +25,66 @@ export type Course = {
 
 export const courses: Course[] = [
   {
+    id: "render-visualizacion-ia",
+    title: "Render y Visualización con IA",
+    description: "Aprende a crear renders hiperrealistas, videos y recorridos virtuales en minutos a partir de imágenes básicas, bocetos o fotografías crudas.",
+    price: 300, // Precio estimado, ajustar si es diferente
+    hotmartLink: "https://wa.link/37c5z5",
+    rating: 5,
+    cover: "/Humanizar/Portada_para_curso_en_home_de_cursos_Render y Visualización con IA.jpeg",
+    category: "visualización",
+    level: "básico",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "Sesión 1: La mente de la IA aplicada a arquitectura",
+        items: [
+          "Introducción al flujo ARCH-AI",
+          "Prompt Engineering para arquitectos",
+          "Cómo entrenar la IA para entender espacio, estilo y materialidad",
+          "Creación de moodboards inteligentes con IA",
+          "Conceptualización arquitectónica asistida"
+        ]
+      },
+      {
+        title: "Sesión 2: De boceto a render profesional en minutos",
+        items: [
+          "Convertir croquis o imágenes básicas en renders",
+          "Flujo Sketch → Render hiperrealista",
+          "Control de estilo arquitectónico",
+          "Generación rápida de 3 renders profesionales"
+        ]
+      },
+      {
+        title: "Sesión 3: Arquitectura técnica con IA",
+        items: [
+          "Generación de planos, cortes y vistas técnicas",
+          "Remodelación con IA desde fotografías reales",
+          "Control geométrico para respetar la arquitectura",
+          "IA aplicada a interiores y materiales"
+        ]
+      },
+      {
+        title: "Sesión 4: Arquitectura en movimiento",
+        items: [
+          "Creación de recorridos virtuales con IA",
+          "Generación de videos arquitectónicos",
+          "Storytelling visual para proyectos",
+          "Animaciones arquitectónicas en minutos"
+        ]
+      },
+      {
+        title: "Sesión 5: Presentación y venta de proyectos con IA",
+        items: [
+          "Cómo crear presentaciones comerciales impactantes",
+          "Generación automática de láminas y portafolios",
+          "Uso de IA para marketing arquitectónico",
+          "Preparación de proyecto final del curso"
+        ]
+      }
+    ]
+  },
+  {
     id: "diplomado-gerencia-proyectos",
     title: "Diplomado en Gerencia de Proyectos, Costos y Presupuestos",
     description: "Domina la gestión integral de obras: planificación, costos, contratación y cierre financiero.",
