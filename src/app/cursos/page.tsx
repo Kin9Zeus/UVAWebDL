@@ -65,14 +65,14 @@ export default function CursosPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filtered.map((c) => (
               <div key={c.id} className="flex flex-col h-full bg-[#1a1a1a] rounded-2xl border border-[#333] p-6 hover:border-[#f3c609] transition-all group hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(243,198,9,0.1)]">
-                <div className="relative h-40 w-full rounded-xl overflow-hidden bg-[#111] mb-4">
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#111] mb-4">
                   <Image
                     src={c.cover}
                     alt={c.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    style={{ objectFit: c.cover.endsWith(".svg") ? "contain" : "cover", padding: c.cover.endsWith(".svg") ? "1rem" : undefined }}
-                    className={`transition-transform duration-500 group-hover:scale-110 ${c.cover.endsWith(".svg") ? "opacity-80" : ""}`}
+                    style={{ objectFit: "cover" }}
+                    className="transition-transform duration-500 group-hover:scale-110"
                   />
                   {/* Category Badge */}
                   <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-[#f3c609] text-xs font-bold px-2 py-1 rounded border border-[#f3c609]/30">
