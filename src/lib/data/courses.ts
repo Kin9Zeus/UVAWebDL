@@ -31,7 +31,7 @@ export const courses: Course[] = [
     price: 300, // Precio estimado, ajustar si es diferente
     hotmartLink: "https://wa.link/37c5z5",
     rating: 5,
-    cover: "/Humanizar/Portada_para_curso_en_home_de_cursos_Render y Visualización con IA.jpeg",
+    cover: "/Humanizar/portada_render_ia.jpeg",
     category: "visualización",
     level: "básico",
     videoUrl: undefined,
