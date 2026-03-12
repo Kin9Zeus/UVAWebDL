@@ -21,9 +21,23 @@ export type Course = {
   }[];
   // Enlace directo de pago (e.g. Hotmart)
   hotmartLink?: string;
+  // Enlace personalizado (opcional) para redirigir a una página externa o interna diferente a /cursos/[id]
+  href?: string;
 };
 
 export const courses: Course[] = [
+  {
+    id: "comunidad-discord",
+    title: "Comunidad UVA",
+    description: "Únete a nuestra comunidad exclusiva en Discord. Conecta con otros arquitectos, comparte recursos y crece profesionalmente.",
+    price: 7,
+    priceDisplay: "Desde $7USD/mes",
+    rating: 5,
+    cover: "/Humanizar/discord_cover.jpeg",
+    category: "comunidad",
+    level: "básico",
+    href: "/comunidad"
+  },
   {
     id: "render-visualizacion-ia",
     title: "Render y Visualización con IA",

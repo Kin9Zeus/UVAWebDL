@@ -156,7 +156,7 @@ export default function LandingPageComunidadClient() {
              <div className="space-y-2 mb-8">
                <p className="text-gray-500 text-xl line-through">Precio Regular: $20 USD/mes</p>
                <div className="flex items-center justify-center gap-2">
-                 <span className="text-7xl md:text-8xl font-black text-white tracking-tighter drop-shadow-[0_0_10px_rgba(88,101,242,0.8)]">$5</span>
+                 <span className="text-7xl md:text-8xl font-black text-white tracking-tighter drop-shadow-[0_0_10px_rgba(88,101,242,0.8)]">$7</span>
                  <div className="flex flex-col items-start">
                     <span className="text-2xl font-bold text-[#5865F2]">USD</span>
                     <span className="text-sm text-gray-400">/mes</span>
@@ -195,7 +195,7 @@ export default function LandingPageComunidadClient() {
         <div className="flex items-center justify-between gap-4">
           <div>
             <p className="text-xs text-gray-400">Suscripción mensual</p>
-            <p className="text-lg font-bold text-white">$5 USD</p>
+            <p className="text-lg font-bold text-white">$7 USD</p>
           </div>
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-[#5865F2] text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-[#4752C4]">
             Unirme

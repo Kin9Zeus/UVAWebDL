@@ -90,7 +90,7 @@ export default function CursosPage() {
                   </div>
                   
                   <Link 
-                    href={`/cursos/${c.id}`} 
+                    href={c.href || `/cursos/${c.id}`} 
                     className="block w-full rounded-full bg-[#f3c609] px-4 py-3 text-black text-sm font-bold text-center hover:bg-[#d4ac00] transition-colors relative overflow-hidden group/btn"
                   >
                     <span className="relative z-10">VER DETALLES</span>

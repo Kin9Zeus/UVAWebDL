@@ -97,11 +97,14 @@ export default function LandingPageIAClient({ course }: Props) {
                 <div className="absolute top-0 inset-x-0 h-6 bg-[#222] z-10 flex justify-center items-center">
                    <div className="w-16 h-1 bg-[#444] rounded-full"></div>
                 </div>
-                <img 
-                  src="/Humanizar/Portada_Video_Render_y Visualización_con_IA.jpeg" 
-                  alt="Render y Visualización con IA"
+                <video 
+                  controls 
                   className="w-full h-auto aspect-[9/16] object-cover"
-                />
+                  poster="/Humanizar/portada_video_render_ia.jpeg" 
+                >
+                  <source src="/Humanizar/video_render_ia.mov" type="video/quicktime" />
+                  <source src="/Humanizar/video_render_ia.mov" type="video/mp4" />
+                </video>
              </div>
            </div>
         </div>
