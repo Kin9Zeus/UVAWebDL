@@ -2,10 +2,13 @@
 import { courses } from "@/lib/data/courses";
 import Link from "next/link";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useMemo, useState, Suspense } from "react";
+import { useAnalytics } from "@/hooks/use-analytics";
 
-export default function CursosPage() {
+function CourseList() {
   const [query, setQuery] = useState("");
+  const { trackEvent } = useAnalytics();
+  
   const normalize = (s: string) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const filtered = useMemo(() => {
     const q = normalize(query).trim();
@@ -17,11 +20,15 @@ export default function CursosPage() {
     });
   }, [query]);
 
-  return (
-    <div className="min-h-screen bg-[#111] text-white font-sans selection:bg-[#f3c609] selection:text-black">
-      {/* Background Texture */}
-      <div className="fixed inset-0 opacity-5 pointer-events-none z-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
+  const handleCourseClick = (courseTitle: string) => {
+    trackEvent('Click', {
+      category: 'Course Card',
+      label: courseTitle,
+    });
+  };
 
+  return (
+    <>
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 px-4 text-center overflow-hidden">
         {/* Glow Effects */}
@@ -91,6 +98,7 @@ export default function CursosPage() {
                   
                   <Link 
                     href={c.href || `/cursos/${c.id}`} 
+                    onClick={() => handleCourseClick(c.title)}
                     className="block w-full rounded-full bg-[#f3c609] px-4 py-3 text-black text-sm font-bold text-center hover:bg-[#d4ac00] transition-colors relative overflow-hidden group/btn"
                   >
                     <span className="relative z-10">VER DETALLES</span>
@@ -100,15 +108,21 @@ export default function CursosPage() {
               </div>
             ))}
           </div>
-          
-          {filtered.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">No se encontraron cursos que coincidan con tu búsqueda.</p>
-              <button onClick={() => setQuery("")} className="mt-4 text-[#f3c609] hover:underline">Ver todos los cursos</button>
-            </div>
-          )}
         </div>
       </section>
+    </>
+  );
+}
+
+export default function CursosPage() {
+  return (
+    <div className="min-h-screen bg-[#111] text-white font-sans selection:bg-[#f3c609] selection:text-black">
+      {/* Background Texture */}
+      <div className="fixed inset-0 opacity-5 pointer-events-none z-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
+
+      <Suspense fallback={<div className="pt-32 text-center">Cargando cursos...</div>}>
+        <CourseList />
+      </Suspense>
     </div>
   );
 }

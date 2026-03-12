@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Course } from "@/lib/data/courses";
+import { useAnalytics } from "@/hooks/use-analytics";
 
 interface Props {
   course: Course;
@@ -10,14 +11,35 @@ interface Props {
 
 export default function LandingPageIAClient({ course }: Props) {
   const [showSticky, setShowSticky] = useState(false);
+  const { trackEvent } = useAnalytics();
 
   useEffect(() => {
     const handleScroll = () => {
       setShowSticky(window.scrollY > 600);
     };
     window.addEventListener("scroll", handleScroll);
+    
+    // Track ViewContent on mount
+    trackEvent('ViewContent', {
+      content_name: course.title,
+      content_ids: [course.id],
+      content_type: 'product',
+      value: course.price,
+      currency: 'USD'
+    });
+
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [course.id, course.price, course.title, trackEvent]);
+
+  const handleInitiateCheckout = () => {
+    trackEvent('InitiateCheckout', {
+      content_name: course.title,
+      content_ids: [course.id],
+      content_type: 'product',
+      value: course.price,
+      currency: 'USD'
+    });
+  };
 
   return (
     <div className="min-h-screen bg-[#111] text-white font-sans selection:bg-[#efff00] selection:text-black overflow-x-hidden">
@@ -53,7 +75,11 @@ export default function LandingPageIAClient({ course }: Props) {
           </p>
           
           <div className="pt-8 flex flex-col md:flex-row justify-center items-center gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <a href="#pricing" className="group relative bg-[#efff00] text-black text-xl font-black px-10 py-5 rounded-full hover:bg-[#d4e600] transition-all hover:scale-105 shadow-[0_0_40px_rgba(239,255,0,0.5)] overflow-hidden">
+            <a 
+              href="#pricing" 
+              onClick={() => trackEvent('Click', { category: 'CTA', label: 'Hero - Access Now' })}
+              className="group relative bg-[#efff00] text-black text-xl font-black px-10 py-5 rounded-full hover:bg-[#d4e600] transition-all hover:scale-105 shadow-[0_0_40px_rgba(239,255,0,0.5)] overflow-hidden"
+            >
               <span className="relative z-10 flex items-center gap-2">
                 SÍ, QUIERO ACCEDER AHORA
                 <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -239,6 +265,7 @@ export default function LandingPageIAClient({ course }: Props) {
                     href={course.hotmartLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={handleInitiateCheckout}
                     className="block mt-4 w-full rounded-full bg-[#efff00] px-5 py-3 text-black font-bold text-center hover:bg-[#d4e600] transition-colors"
                   >
                     COMPRAR AHORA
@@ -279,6 +306,7 @@ export default function LandingPageIAClient({ course }: Props) {
             href={course.hotmartLink || "#pricing"} 
             target={course.hotmartLink ? "_blank" : "_self"}
             rel={course.hotmartLink ? "noopener noreferrer" : ""}
+            onClick={course.hotmartLink ? handleInitiateCheckout : undefined}
             className="bg-[#efff00] text-black font-bold px-6 py-3 rounded-full text-sm hover:bg-[#d4e600]"
           >
             Inscribirme

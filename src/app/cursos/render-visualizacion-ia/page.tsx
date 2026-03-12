@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { courses } from "@/lib/data/courses";
 import LandingPageIAClient from "@/components/landing-page-ia-client";
 
@@ -8,5 +9,9 @@ export default async function RenderVisualizacionIAPage() {
     return <div>Curso no encontrado</div>;
   }
 
-  return <LandingPageIAClient course={course} />;
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <LandingPageIAClient course={course} />
+    </Suspense>
+  );
 }
