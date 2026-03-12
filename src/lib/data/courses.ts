@@ -31,7 +31,7 @@ export const courses: Course[] = [
     title: "Comunidad UVA",
     description: "Únete a nuestra comunidad exclusiva en Discord. Conecta con otros arquitectos, comparte recursos y crece profesionalmente.",
     price: 7,
-    priceDisplay: "Desde $7USD/mes",
+    priceDisplay: "$7USD/mes",
     rating: 5,
     cover: "/Humanizar/discord_cover.jpeg",
     category: "comunidad",
