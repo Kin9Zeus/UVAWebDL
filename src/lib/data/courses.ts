@@ -42,7 +42,7 @@ export const courses: Course[] = [
     id: "render-visualizacion-ia",
     title: "Render y Visualización con IA",
     description: "Aprende a crear renders hiperrealistas, videos y recorridos virtuales en minutos a partir de imágenes básicas, bocetos o fotografías crudas.",
-    price: 170, // Precio estimado, ajustar si es diferente
+    price: 220, // Precio estimado, ajustar si es diferente
     hotmartLink: "https://wa.link/37c5z5",
     rating: 5,
     cover: "/Humanizar/portada_render_ia.jpeg",
