@@ -255,7 +255,7 @@ export default function LandingPageIAClient({ course }: Props) {
                  <span className="text-xl font-bold text-[#efff00]">USD</span>
                </div>
                <p className="text-green-500 font-medium bg-green-500/10 inline-block px-3 py-1 rounded-full text-sm">
-                 Ahorras $200 USD hoy
+                 Ahorras ${500 - course.price} USD hoy
                </p>
              </div>
 
