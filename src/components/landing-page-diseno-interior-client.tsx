@@ -77,9 +77,16 @@ export default function LandingPageDisenoInteriorClient({ course }: Props) {
               <div className="space-y-4">
                  <h3 className="text-[#e0aaff] font-bold tracking-widest uppercase text-sm">Docente Experta</h3>
                  <h2 className="text-4xl font-bold leading-tight">Aprende de <span className="text-white border-b-4 border-[#9b5de5]">Diana Buitrago</span></h2>
-                 <p className="text-gray-400 text-lg">
-                   Interior Designer, EoA Group. Lead Interior Designer previamente en Sire Design High end Residential. Experiencia real en proyectos de alto nivel.
-                 </p>
+                 <div className="text-gray-400 text-lg space-y-4">
+                   <p className="font-semibold text-white">Arquitecta y Diseñadora de Interiores.</p>
+                   <p>
+                     Experiencia en proyectos Comerciales, Residenciales de Lujo y de Hospitalidad en EE. UU.
+                     Previamente Lead Interior Designer en Sire Design, contribuyendo a proyectos residenciales de alto nivel que fueron presentados en Divided by Design de HGTV.
+                   </p>
+                   <p className="text-[0.75rem] text-gray-500 italic pt-2 border-t border-[#333]">
+                     Todos los programas de televisión, empresas y cadenas mencionados son propiedad de sus respectivos dueños.
+                   </p>
+                 </div>
               </div>
               
               <div className="grid grid-cols-2 gap-4">
