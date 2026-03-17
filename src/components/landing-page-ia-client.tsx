@@ -101,8 +101,9 @@ export default function LandingPageIAClient({ course }: Props) {
               <div className="space-y-4">
                  <h3 className="text-[#efff00] font-bold tracking-widest uppercase text-sm">Innovación</h3>
                  <h2 className="text-4xl font-bold leading-tight">El futuro de la <span className="text-white border-b-4 border-[#efff00]">Arquitectura</span> es hoy</h2>
-                 <p className="text-gray-400 text-lg">
-                   Nano Banana + Gemini de 0 a 100. Entrena algoritmos y aplica IA al flujo real de arquitectura para optimizar tu tiempo y resultados.
+                 <p className="text-gray-400 text-lg whitespace-pre-line">
+                   Gemini con Nano banana + Veo, OpenAI con Chat GPT + Sora, y hasta Kling, todo de 0 a 100. Entrena tu IA favorita con algoritmos y aplica IA al flujo real de arquitectura para optimizar tu tiempo y resultados. 
+                   Deja de copiar y pegar prompts que no se adaptan a lo que buscas
                  </p>
               </div>
               
@@ -128,8 +129,8 @@ export default function LandingPageIAClient({ course }: Props) {
                   className="w-full h-auto aspect-[9/16] object-cover"
                   poster="/Humanizar/portada_video_render_ia.jpeg" 
                 >
-                  <source src="/Humanizar/video_render_ia.mov" type="video/quicktime" />
-                  <source src="/Humanizar/video_render_ia.mov" type="video/mp4" />
+                  <source src="/Humanizar/video_render_ia_v2.mov" type="video/quicktime" />
+                  <source src="/Humanizar/video_render_ia_v2.mov" type="video/mp4" />
                 </video>
              </div>
            </div>
