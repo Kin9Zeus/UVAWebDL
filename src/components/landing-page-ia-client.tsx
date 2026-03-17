@@ -103,7 +103,7 @@ export default function LandingPageIAClient({ course }: Props) {
                  <h2 className="text-4xl font-bold leading-tight">El futuro de la <span className="text-white border-b-4 border-[#efff00]">Arquitectura</span> es hoy</h2>
                  <p className="text-gray-400 text-lg whitespace-pre-line">
                    Gemini con Nano banana + Veo, OpenAI con Chat GPT + Sora, y hasta Kling, todo de 0 a 100. Entrena tu IA favorita con algoritmos y aplica IA al flujo real de arquitectura para optimizar tu tiempo y resultados. 
-                   Deja de copiar y pegar prompts que no se adaptan a lo que buscas
+                   Deja de copiar y pegar prompts que no se adaptan a lo que buscas.
                  </p>
               </div>
               
