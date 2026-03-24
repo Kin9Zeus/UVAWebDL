@@ -298,7 +298,7 @@ export const courses: Course[] = [
         ]
       },
       {
-        title: "PAQUETE 2 — ACOMPAÑAMIENTO PROFESIONAL (5 Horas - $380 USD)",
+        title: "PAQUETE 2 — ACOMPAÑAMIENTO PROFESIONAL (5 Horas - $490 USD)",
         items: [
           "Análisis profundo de presupuestos y costos",
           "Optimización de diseño y decisiones arquitectónicas",
@@ -308,7 +308,7 @@ export const courses: Course[] = [
         ]
       },
       {
-        title: "PAQUETE 3 — MENTORÍA ESTRATÉGICA UVA (10 Horas - $760 USD)",
+        title: "PAQUETE 3 — MENTORÍA ESTRATÉGICA UVA (10 Horas - $870 USD)",
         items: [
           "Diagnóstico completo de tu empresa o proyecto",
           "Estructuración total de presupuestos y flujo de caja",

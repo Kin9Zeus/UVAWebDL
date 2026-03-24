@@ -171,7 +171,7 @@ export default function LandingPageAsesoriaClient({ course }: Props) {
                
                <div className="mb-8">
                  <div className="flex items-end gap-1">
-                   <span className="text-4xl font-bold text-white">$380</span>
+                   <span className="text-4xl font-bold text-white">$490</span>
                    <span className="text-xl font-bold text-[#f3c609] mb-1">USD</span>
                  </div>
                  <p className="text-sm text-gray-500 mt-1">Duración: 5 Horas</p>
@@ -207,7 +207,7 @@ export default function LandingPageAsesoriaClient({ course }: Props) {
                
                <div className="mb-8">
                  <div className="flex items-end gap-1">
-                   <span className="text-4xl font-bold text-white">$760</span>
+                   <span className="text-4xl font-bold text-white">$870</span>
                    <span className="text-xl font-bold text-[#f3c609] mb-1">USD</span>
                  </div>
                  <p className="text-sm text-gray-500 mt-1">Duración: 10 Horas</p>
