@@ -42,14 +42,15 @@ export default function LandingPageRedesClient({ course }: Props) {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            DIPLOMADO EN <br className="hidden md:block"/>
+            CURSO: <br className="hidden md:block"/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7791ff] via-[#a3b1ff] to-[#7791ff]">
-              REDES SOCIALES E IA
+              Instagram + Facebook Ads
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Gana clientes, crece en seguidores y viraliza tu empresa. Aprende a crear contenido estratégico con Inteligencia Artificial.
+            Para Arquitectos, Diseñadores y Constructores (DE 0 A 100).<br/>
+            Convierte redes sociales en clientes reales y proyectos pagos. Modalidad: En vivo + grabaciones.
           </p>
           
           <div className="pt-8 flex flex-col md:flex-row justify-center items-center gap-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -100,10 +101,10 @@ export default function LandingPageRedesClient({ course }: Props) {
                 <video 
                   controls 
                   className="w-full h-auto aspect-[9/16] object-cover"
-                  poster="/RedesSociales.jpg" 
+                  poster="/Humanizar/diplomado_redes_v2.jpeg" 
                 >
-                  <source src="/Humanizar/diplomado_redes.mov" type="video/quicktime" />
-                  <source src="/Humanizar/diplomado_redes.mov" type="video/mp4" />
+                  <source src="/Humanizar/diplomado_redes_v2.mov" type="video/quicktime" />
+                  <source src="/Humanizar/diplomado_redes_v2.mov" type="video/mp4" />
                 </video>
              </div>
            </div>
@@ -249,14 +250,14 @@ export default function LandingPageRedesClient({ course }: Props) {
              </p>
              
              <div className="space-y-4">
-               <h3 className="font-bold text-white uppercase tracking-wider">¿Qué incluye?</h3>
+               <h3 className="font-bold text-white uppercase tracking-wider">BONUS INCLUIDOS:</h3>
                <ul className="space-y-3">
                  {[
-                   "Claridad total sobre qué contenido crear",
-                   "Imagen profesional en redes",
-                   "Método probado para atraer y cerrar clientes",
-                   "Material práctico + plantillas",
-                   "Certificado y mentorías privadas"
+                   "20 horas certificadas",
+                   "Material de trabajo listo para aplicar",
+                   "Grabaciones de todas las sesiones",
+                   "Grupo privado de mentoría",
+                   "Estrategias enfocadas en arquitectura y construcción"
                  ].map((item, i) => (
                    <li key={i} className="flex items-center gap-3 text-gray-300">
                      <div className="w-6 h-6 rounded-full bg-[#7791ff]/20 flex items-center justify-center text-[#a3b1ff] text-xs">✓</div>
@@ -279,7 +280,7 @@ export default function LandingPageRedesClient({ course }: Props) {
                  <span className="text-xl font-bold text-[#7791ff]">USD</span>
                </div>
                <p className="text-green-500 font-medium bg-green-500/10 inline-block px-3 py-1 rounded-full text-sm">
-                 Ahorras $130 USD hoy
+                 Ahorras ${280 - course.price} USD hoy
                </p>
              </div>
 

@@ -442,64 +442,86 @@ export const courses: Course[] = [
   },
   {
     id: "diplomado-redes-ia",
-    title: "Diplomado en Redes Sociales, Creación de Contenido e Inteligencia Artificial",
-    description: "Gana clientes, crece en seguidores y viraliza tu empresa. Aprende a crear contenido estratégico, dominar el algoritmo y vender servicios de arquitectura.",
-    price: 150,
+    title: "Instagram + Facebook Ads para Arquitectos, Diseñadores y Constructores (DE 0 A 100)",
+    description: "Convierte redes sociales en clientes reales y proyectos pagos. Aprende a crear contenido estratégico, dominar el algoritmo y vender servicios de arquitectura.",
+    price: 120,
     hotmartLink: "https://wa.link/iafcnd",
     rating: 5,
-    cover: "/Humanizar/Curso_Instagram_16.9.jpeg",
+    cover: "/Humanizar/curso_instagram_v2.png",
     category: "visualización",
     level: "intermedio",
     videoUrl: undefined,
     syllabus: [
       {
-        title: "SESIÓN 1: Introducción y Diagnóstico de cuentas",
+        title: "SESIÓN 1: Mentalidad + Sistema de Captación de Clientes",
         items: [
-          "Análisis de tus cuentas",
-          "Fórmula simple: problema → solución → resultado",
-          "Tipos de contenido que vende",
-          "Hooks de alto impacto para retención",
-          "Canva: carruseles, fichas técnicas y portafolio visual"
+          "Cómo dejar de “subir contenido bonito” y empezar a vender",
+          "El sistema real que usan arquitectos para conseguir clientes",
+          "Posicionamiento: cómo volverte autoridad en tu ciudad",
+          "Estructura completa del embudo digital"
         ]
       },
       {
-        title: "SESIÓN 2: Creación de Contenido, Storytelling y Contenido Viral",
+        title: "SESIÓN 2: Consolidación de Instagram (Tu marca personal que vende)",
         items: [
-          "Cómo grabar contenido viral",
-          "2026 contenido natural va a viralizar",
-          "Audio, voz y música que elevan el contenido",
-          "CapCut: edición rápida, subtítulos, before/after",
-          "Canva: portadas y llamados a la acción"
+          "Perfil optimizado para convertir seguidores en clientes",
+          "Bio estratégica + portafolio irresistible",
+          "Qué publicar para atraer proyectos reales",
+          "Cómo construir una imagen premium"
         ]
       },
       {
-        title: "SESIÓN 3: Clientes, venta efectiva y estructura de mensajes",
+        title: "SESIÓN 3: Contenido que Vende: Storytelling + UGC",
         items: [
-          "Embudo claro: contenido → mensaje → llamada → contrato",
-          "Qué decir (y qué no) en mensajes directos",
-          "Productos puente: Asesorías, Pre-diseños, Análisis de vivienda",
-          "Plantillas de DM que convierten",
-          "Canva: cotización premium + portafolio de una página"
+          "Cómo contar historias que conectan y generan ventas",
+          "Estructura de reels virales con intención comercial",
+          "Uso de UGC para generar confianza inmediata",
+          "Cómo mostrar proyectos de forma estratégica (antes/después)"
         ]
       },
       {
-        title: "SESIÓN 4: Pautas e Inteligencia Artificial",
+        title: "SESIÓN 4: Configuración PRO: Instagram + Facebook Unificados",
         items: [
-          "Cómo funciona el algoritmo hoy (sin mitos)",
-          "Qué tipo de contenido impulsar con pauta",
-          "Estructura básica de anuncios para arquitectos",
-          "Errores comunes que queman presupuesto",
-          "Sistema simple para amplificar resultados"
+          "Conexión correcta entre Instagram y Facebook Business",
+          "Creación de Business Manager paso a paso",
+          "Instalación del Pixel",
+          "Base técnica lista para escalar"
         ]
       },
       {
-        title: "SESIÓN 5: Consolidación de marca y plan de contenido anual",
+        title: "SESIÓN 5: Segmentación Inteligente (Clientes que sí pagan)",
         items: [
-          "Cómo verte profesional y confiable en redes",
-          "Perfil optimizado que genera contactos",
-          "Organización de contenido semanal",
-          "Automatización básica para ahorrar tiempo",
-          "Ruta clara para escalar tu marca y tus ingresos"
+          "Cómo encontrar clientes con capacidad de inversión",
+          "Públicos fríos, tibios y calientes",
+          "Segmentación estratégica por ubicación e intereses",
+          "Cómo atraer proyectos de alto valor"
+        ]
+      },
+      {
+        title: "SESIÓN 6: Creación de Anuncios que Generan Leads",
+        items: [
+          "Cómo crear anuncios que captan atención",
+          "Copywriting persuasivo para arquitectura",
+          "Creativos que convierten (video + imagen)",
+          "Estrategia para llevar clientes a WhatsApp"
+        ]
+      },
+      {
+        title: "SESIÓN 7: Cierre de Ventas y Seguimiento de Leads",
+        items: [
+          "Cómo responder mensajes y cerrar proyectos",
+          "Scripts listos para WhatsApp",
+          "Cómo filtrar clientes y optimizar tu tiempo",
+          "Proceso de conversión efectivo"
+        ]
+      },
+      {
+        title: "SESIÓN 8: Escalamiento + Automatización del Negocio",
+        items: [
+          "Cómo invertir más y ganar más",
+          "Métricas clave para escalar campañas",
+          "Automatización básica de leads",
+          "Plan de crecimiento mensual"
         ]
       }
     ]
