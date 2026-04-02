@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import LayoutContent from "@/components/layout-content";
@@ -14,9 +14,31 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "UVA — Unidad Vectorial de Arquitectura",
-  description: "Cursos, proyectos y servicios de arquitectura en Colombia.",
+  description:
+    "Plataforma profesional de arquitectura, diseño y educación en Colombia. Cursos, diplomados, proyectos de alto nivel y servicios de arquitectura residencial, comercial y urbana.",
+  keywords: [
+    "arquitectura",
+    "diseño",
+    "cursos arquitectura",
+    "UVA",
+    "Colombia",
+    "diseño interior",
+    "urbanismo",
+  ],
+  openGraph: {
+    title: "UVA — Unidad Vectorial de Arquitectura",
+    description:
+      "Plataforma profesional de arquitectura, diseño y educación en Colombia.",
+    type: "website",
+  },
 };
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
@@ -29,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${outfit.variable} antialiased`}>
         <GoogleTagManager gtmId={GTM_ID} />
         <GoogleAnalytics gaId={GA_ID} />
         <Suspense fallback={null}>
