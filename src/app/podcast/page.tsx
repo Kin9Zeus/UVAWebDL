@@ -56,10 +56,8 @@ export default function PodcastPage() {
         </div>
 
         {/* Episode Carousel */}
-        <div className="mt-12 relative">
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-[var(--background)] to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[var(--background)] to-transparent z-10" />
-          <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-none" style={{ scrollbarWidth: "none" }}>
+        <div className="mt-12">
+          <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-none" style={{ scrollbarWidth: "none" }}>
             {[
               { img: "/Humanizar/Pod1.jpg", title: "Píldora UVA", desc: "Episodios cortos para activar tu práctica profesional." },
               { img: "/Humanizar/Pod2.jpg", title: "Historias de proceso", desc: "Aprendizajes reales: diseño, obra, clientes y equipo." },

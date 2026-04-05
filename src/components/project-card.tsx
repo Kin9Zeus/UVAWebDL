@@ -291,8 +291,8 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
           </div>
 
           {/* Mobile: Horizontal scroll */}
-          <div className="md:hidden relative">
-            <div className="flex gap-2.5 overflow-x-auto snap-x snap-mandatory pb-3 -mx-4 px-4" style={{ scrollbarWidth: "none" }}>
+          <div className="md:hidden">
+            <div className="flex gap-2.5 overflow-x-auto snap-x snap-mandatory pb-3" style={{ scrollbarWidth: "none" }}>
               {galleryImages.map((src, idx) => (
                 <div
                   key={src}
@@ -317,9 +317,6 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
                 </div>
               ))}
             </div>
-            {/* Scroll fade indicators */}
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-6 bg-gradient-to-r from-[var(--background)] to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-6 bg-gradient-to-l from-[var(--background)] to-transparent" />
           </div>
 
           {/* Collapse button */}
