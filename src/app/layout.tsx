@@ -41,6 +41,8 @@ export const metadata: Metadata = {
   },
 };
 
+import ChatWidget from "@/components/chat-widget";
+
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
@@ -64,6 +66,9 @@ export default function RootLayout({
         <LayoutContent>
           {children}
         </LayoutContent>
+        <Suspense fallback={null}>
+          <ChatWidget />
+        </Suspense>
       </body>
     </html>
   );
