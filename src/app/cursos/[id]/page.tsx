@@ -5,7 +5,7 @@ import Syllabus from "@/components/syllabus";
 import JsonLd from "@/components/json-ld";
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.uvarq.com";
 
 type Props = { 
   params: Promise<{ id: string }>;

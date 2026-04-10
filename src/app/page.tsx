@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import JsonLd from "@/components/json-ld";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.uvarq.com";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { courses } from "@/lib/data/courses";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.uvarq.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

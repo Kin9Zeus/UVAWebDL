@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { Course } from "@/lib/data/courses";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.uvarq.com";
 
 /**
  * Generate page metadata for a course landing page.

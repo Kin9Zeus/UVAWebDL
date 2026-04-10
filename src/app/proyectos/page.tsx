@@ -3,7 +3,7 @@ import ProjectCard from "@/components/project-card";
 import Image from "next/image";
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.uvarq.com";
 
 export const metadata: Metadata = {
   title: "Portafolio de Proyectos Arquitectónicos",
