@@ -88,6 +88,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  verification: {
+    google: "b-ejr30Exji8zbiMCcCeVOwn5Hez-oH6HMg5nsCAqo8",
+  },
   category: "education",
 };
 
