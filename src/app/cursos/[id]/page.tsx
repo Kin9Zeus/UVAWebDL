@@ -2,11 +2,41 @@ import { courses } from "@/lib/data/courses";
 import Link from "next/link";
 import Rating from "@/components/rating";
 import Syllabus from "@/components/syllabus";
+import JsonLd from "@/components/json-ld";
+import type { Metadata } from "next";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
 
 type Props = { 
   params: Promise<{ id: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const course = courses.find((c) => c.id === id);
+  if (!course) return { title: "Curso no encontrado" };
+
+  const url = `${BASE_URL}/cursos/${id}`;
+  return {
+    title: course.title,
+    description: course.description,
+    openGraph: {
+      title: `${course.title} | UVA Arquitectura`,
+      description: course.description,
+      url,
+      images: [{ url: course.cover, alt: course.title }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: course.title,
+      description: course.description,
+      images: [course.cover],
+    },
+    alternates: { canonical: url },
+  };
+}
 
 export default async function CursoDetallePage({ params }: Props) {
   const { id } = await params;

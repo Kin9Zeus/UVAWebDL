@@ -1,6 +1,28 @@
 import { projects } from "@/lib/data/projects";
 import ProjectCard from "@/components/project-card";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+
+export const metadata: Metadata = {
+  title: "Portafolio de Proyectos Arquitectónicos",
+  description:
+    "Galería profesional de proyectos de arquitectura por UVA: diseño residencial, comercial, glamping, salud y urbanismo en Colombia.",
+  openGraph: {
+    title: "Proyectos de Arquitectura | UVA",
+    description:
+      "Explora nuestro portafolio de +50 proyectos de arquitectura residencial, comercial y urbana.",
+    url: `${BASE_URL}/proyectos`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portafolio de Arquitectura | UVA",
+    description: "Galería profesional de proyectos arquitectónicos.",
+  },
+  alternates: { canonical: `${BASE_URL}/proyectos` },
+};
 
 export default function ProyectosPage() {
   const order = [

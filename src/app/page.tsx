@@ -1,9 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
+import JsonLd from "@/components/json-ld";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
 
 export default function Home() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "UVA — Unidad Vectorial de Arquitectura",
+          url: BASE_URL,
+          description:
+            "Plataforma profesional de arquitectura, diseño y educación en Colombia.",
+          publisher: {
+            "@type": "EducationalOrganization",
+            name: "UVA Arquitectura",
+          },
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: `${BASE_URL}/cursos?q={search_term_string}`,
+            },
+            "query-input": "required name=search_term_string",
+          },
+        }}
+      />
       {/* ════════ HERO SECTION ════════ */}
       <section className="relative min-h-[92vh] flex items-end overflow-hidden">
         {/* Background Image */}

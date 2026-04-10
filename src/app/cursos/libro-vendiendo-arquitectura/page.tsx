@@ -1,12 +1,24 @@
 import { courses } from "@/lib/data/courses";
 import LandingPageLibroClient from "@/components/landing-page-libro-client";
+import JsonLd from "@/components/json-ld";
+import { buildCourseMetadata, buildCourseJsonLd } from "@/lib/seo";
+
+const SLUG = "libro-vendiendo-arquitectura";
+const course = courses.find((c) => c.id === SLUG)!;
+
+export const metadata = buildCourseMetadata(
+  course,
+  SLUG,
+  "Libro: Vendiendo Arquitectura — Guía de Negocio"
+);
 
 export default async function LibroVendiendoArquitecturaPage() {
-  const course = courses.find((c) => c.id === "libro-vendiendo-arquitectura");
+  if (!course) return <div>Curso no encontrado</div>;
 
-  if (!course) {
-    return <div>Curso no encontrado</div>;
-  }
-
-  return <LandingPageLibroClient course={course} />;
+  return (
+    <>
+      <JsonLd data={buildCourseJsonLd(course, SLUG)} />
+      <LandingPageLibroClient course={course} />
+    </>
+  );
 }

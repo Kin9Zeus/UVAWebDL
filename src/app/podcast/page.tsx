@@ -1,6 +1,31 @@
 import YouTubeLatest from "@/components/youtube-latest";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+
+export const metadata: Metadata = {
+  title: "Podcast Píldora UVA — Arquitectura y Diseño",
+  description:
+    "Escucha el podcast de UVA Arquitectura: conversaciones sobre arquitectura, diseño, productividad y emprendimiento para arquitectos.",
+  openGraph: {
+    title: "Podcast Píldora UVA | Arquitectura",
+    description:
+      "Podcast sobre arquitectura, diseño y emprendimiento. Disponible en YouTube y Spotify.",
+    url: `${BASE_URL}/podcast`,
+    type: "website",
+    images: [{ url: "/Humanizar/OficialPodcast.jpg", alt: "Podcast UVA" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Podcast Píldora UVA",
+    description: "Arquitectura, diseño y emprendimiento en audio.",
+    images: ["/Humanizar/OficialPodcast.jpg"],
+  },
+  alternates: { canonical: `${BASE_URL}/podcast` },
+};
+
 
 export default function PodcastPage() {
   return (

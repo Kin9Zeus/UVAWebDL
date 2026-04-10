@@ -1,0 +1,16 @@
+import { MetadataRoute } from "next";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/devleck-demo/"],
+      },
+    ],
+    sitemap: `${BASE_URL}/sitemap.xml`,
+  };
+}

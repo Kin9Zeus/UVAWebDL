@@ -1,12 +1,24 @@
 import { courses } from "@/lib/data/courses";
 import LandingPageRevitClient from "@/components/landing-page-revit-client";
+import JsonLd from "@/components/json-ld";
+import { buildCourseMetadata, buildCourseJsonLd } from "@/lib/seo";
+
+const SLUG = "revit-arquitectura";
+const course = courses.find((c) => c.id === SLUG)!;
+
+export const metadata = buildCourseMetadata(
+  course,
+  SLUG,
+  "Diplomado en Autodesk Revit — Arquitectura desde Cero"
+);
 
 export default async function RevitPage() {
-  const course = courses.find((c) => c.id === "revit-arquitectura");
+  if (!course) return <div>Curso no encontrado</div>;
 
-  if (!course) {
-    return <div>Curso no encontrado</div>;
-  }
-
-  return <LandingPageRevitClient course={course} />;
+  return (
+    <>
+      <JsonLd data={buildCourseJsonLd(course, SLUG)} />
+      <LandingPageRevitClient course={course} />
+    </>
+  );
 }

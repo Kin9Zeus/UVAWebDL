@@ -1,0 +1,112 @@
+# UVA — Unidad Vectorial de Arquitectura
+
+> Plataforma profesional de arquitectura, diseño y educación en Colombia. +13 años de experiencia, +10,000 estudiantes formados, +50 proyectos ejecutados.
+
+## Sobre UVA
+
+UVA Arquitectura (Unidad Vectorial de Arquitectura) es una empresa colombiana fundada por el arquitecto Sebastián Arias Duque. Ofrece formación profesional online para arquitectos y diseñadores, servicios de diseño y consultoría arquitectónica, y produce contenido educativo a través de su podcast "Píldora UVA".
+
+**Sitio web:** https://uvarq.com
+**Contacto WhatsApp:** https://wa.link/4pjm79
+**Instagram:** https://www.instagram.com/uvarquitectura/
+**YouTube:** https://www.youtube.com/@uvarquitectura
+
+## Catálogo de Cursos y Diplomados
+
+### 1. Diplomado en Autodesk Revit — Arquitectura desde Cero
+- **Precio:** $150 USD
+- **Duración:** 7 sesiones, 14 horas (En Vivo)
+- **Nivel:** Básico
+- **URL:** https://uvarq.com/cursos/revit-arquitectura
+- **Descripción:** Aprende a dibujar, modelar y cuantificar tus proyectos de 0 a 100. Incluye biblioteca de familias y grupo de mentorías.
+
+### 2. Render y Visualización Arquitectónica con IA
+- **Precio:** $220 USD
+- **Sesiones:** 5 sesiones en vivo
+- **Nivel:** Básico
+- **URL:** https://uvarq.com/cursos/render-visualizacion-ia
+- **Descripción:** Crea renders hiperrealistas, videos y recorridos virtuales en minutos usando inteligencia artificial.
+
+### 3. Diplomado en Gerencia de Proyectos, Costos y Presupuestos
+- **Precio:** $150 USD
+- **Sesiones:** 8 sesiones
+- **Nivel:** Intermedio
+- **URL:** https://uvarq.com/cursos/diplomado-gerencia-proyectos
+- **Descripción:** Gestión integral de obras: planificación, costos, contratación y cierre financiero.
+
+### 4. Abriendo tu Oficina de Arquitectura en 10 Días
+- **Precio:** $150 USD
+- **Módulos:** 10 módulos de mentoría grupal
+- **Nivel:** Intermedio
+- **URL:** https://uvarq.com/cursos/abriendo-oficina-arquitectura
+- **Descripción:** Mentoría para arquitectos que quieren abrir su estudio de forma estructurada y con visión empresarial.
+
+### 5. Diplomado en D5 Render — Visualización Arquitectónica
+- **Precio:** $150 USD
+- **Módulos:** 5 módulos
+- **Nivel:** Avanzado
+- **URL:** https://uvarq.com/cursos/diplomado-d5-render
+- **Descripción:** Renderizado arquitectónico con D5: iluminación, materiales PBR, integración con IA y postproducción.
+
+### 6. Instagram + Facebook Ads para Arquitectos (De 0 a 100)
+- **Precio:** $120 USD
+- **Sesiones:** 8 sesiones
+- **Nivel:** Intermedio
+- **URL:** https://uvarq.com/cursos/diplomado-redes-ia
+- **Descripción:** Convierte redes sociales en clientes reales. Contenido estratégico, algoritmo y ventas de servicios.
+
+### 7. Diseño Interior e Iluminación
+- **Precio:** $220 USD
+- **Sesiones:** 4 sesiones
+- **Nivel:** Básico
+- **URL:** https://uvarq.com/cursos/diseno-interior-iluminacion
+- **Descripción:** Desde la historia y concepto del diseño interior hasta la iluminación y gestión profesional de proyectos.
+
+### 8. Asesoría Personalizada 1 a 1
+- **Precio:** Desde $80 USD (paquetes de 1h, 5h, 10h)
+- **Nivel:** Avanzado
+- **URL:** https://uvarq.com/cursos/asesoria-personalizada
+- **Descripción:** Acompañamiento estratégico para proyectos y empresas de arquitectura, diseño y construcción.
+
+### 9. Libro: Vendiendo Arquitectura de 0 a 100
+- **Precio:** $40 USD
+- **Formato:** Libro digital (115 páginas)
+- **URL:** https://uvarq.com/cursos/libro-vendiendo-arquitectura
+- **Descripción:** Estrategias y métodos para vender y realizar mejor proyectos de arquitectura.
+
+### 10. Libro: Del CAD al Feed
+- **Precio:** $40 USD
+- **Formato:** Guía digital
+- **URL:** https://uvarq.com/cursos/libro-del-cad-al-feed
+- **Descripción:** Guía práctica para pasar del diseño al contenido y del contenido a las ventas.
+
+### 11. Comunidad UVA en Discord
+- **Precio:** $7 USD/mes
+- **URL:** https://uvarq.com/comunidad
+- **Descripción:** Comunidad exclusiva en Discord para arquitectos. Networking, recursos y mentorías.
+
+## Servicios de Arquitectura
+
+UVA ofrece servicios profesionales de arquitectura en Colombia:
+
+- **Consultoría en proyectos** — Acompañamiento técnico y estratégico
+- **Diseño arquitectónico** — Conceptualización y desarrollo integral
+- **Diseño urbano** — Planificación y espacio público sostenible
+- **Desarrollo constructivo** — Detalle técnico y coordinación para ejecución
+- **Diseño interior** — Espacios funcionales y estéticos
+- **Diseño de marca y concepto** — Identidad visual para proyectos
+- **Asesorías 1 a 1** — Sesiones personalizadas
+
+**URL de servicios:** https://uvarq.com/servicios
+
+## Podcast
+
+**Píldora UVA** — Podcast sobre arquitectura, diseño, productividad y negocios.
+- YouTube: https://www.youtube.com/@uvarquitectura
+- Spotify: disponible como "Píldora UVA"
+
+## Contacto
+
+- **WhatsApp general:** https://wa.link/4pjm79
+- **Web de contacto:** https://uvarq.com/contacto
+- **Instagram:** https://www.instagram.com/uvarquitectura/

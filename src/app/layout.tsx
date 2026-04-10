@@ -20,28 +20,79 @@ const outfit = Outfit({
   weight: ["400", "500", "600", "700"],
 });
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://uvarq.com";
+
 export const metadata: Metadata = {
-  title: "UVA — Unidad Vectorial de Arquitectura",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "UVA — Unidad Vectorial de Arquitectura",
+    template: "%s | UVA Arquitectura",
+  },
   description:
     "Plataforma profesional de arquitectura, diseño y educación en Colombia. Cursos, diplomados, proyectos de alto nivel y servicios de arquitectura residencial, comercial y urbana.",
   keywords: [
-    "arquitectura",
-    "diseño",
-    "cursos arquitectura",
-    "UVA",
-    "Colombia",
-    "diseño interior",
+    "arquitectura Colombia",
+    "cursos de arquitectura online",
+    "diseño arquitectónico",
+    "UVA arquitectura",
+    "diplomado arquitectura",
+    "diseño interior Colombia",
     "urbanismo",
+    "Revit arquitectura",
+    "render arquitectónico",
+    "gerencia de proyectos arquitectura",
+    "servicios de arquitectura",
+    "asesoría arquitectura",
+    "Sebastián Arias Duque",
+    "cursos Revit",
+    "D5 Render curso",
   ],
+  authors: [{ name: "UVA — Unidad Vectorial de Arquitectura", url: BASE_URL }],
+  creator: "UVA Arquitectura",
+  publisher: "UVA — Unidad Vectorial de Arquitectura",
   openGraph: {
     title: "UVA — Unidad Vectorial de Arquitectura",
     description:
-      "Plataforma profesional de arquitectura, diseño y educación en Colombia.",
+      "Plataforma profesional de arquitectura, diseño y educación en Colombia. Cursos, diplomados, proyectos y servicios de arquitectura.",
+    url: BASE_URL,
+    siteName: "UVA Arquitectura",
+    locale: "es_CO",
     type: "website",
+    images: [
+      {
+        url: "/logo-uva.png",
+        width: 512,
+        height: 512,
+        alt: "UVA — Unidad Vectorial de Arquitectura",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "UVA — Unidad Vectorial de Arquitectura",
+    description:
+      "Cursos, diplomados, proyectos y servicios de arquitectura en Colombia.",
+    images: ["/logo-uva.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: BASE_URL,
+  },
+  category: "education",
 };
 
 import ChatWidget from "@/components/chat-widget";
+import JsonLd from "@/components/json-ld";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
@@ -63,6 +114,38 @@ export default function RootLayout({
           <AnalyticsTracker />
         </Suspense>
         <ConsentBanner />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            name: "UVA — Unidad Vectorial de Arquitectura",
+            alternateName: "UVA Arquitectura",
+            url: BASE_URL,
+            logo: `${BASE_URL}/logo-uva.png`,
+            description:
+              "Plataforma profesional de arquitectura, diseño y educación en Colombia. +13 años de experiencia, +10,000 estudiantes formados.",
+            foundingDate: "2012",
+            founder: {
+              "@type": "Person",
+              name: "Sebastián Arias Duque",
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Colombia",
+            },
+            sameAs: [
+              "https://www.instagram.com/uvarquitectura/",
+              "https://www.youtube.com/@uvarquitectura",
+              "https://www.tiktok.com/@uvarquitectura",
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "customer service",
+              url: "https://wa.link/4pjm79",
+              availableLanguage: "Spanish",
+            },
+          }}
+        />
         <LayoutContent>
           {children}
         </LayoutContent>

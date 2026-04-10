@@ -1,17 +1,27 @@
 import { Suspense } from "react";
 import { courses } from "@/lib/data/courses";
 import LandingPageIAClient from "@/components/landing-page-ia-client";
+import JsonLd from "@/components/json-ld";
+import { buildCourseMetadata, buildCourseJsonLd } from "@/lib/seo";
+
+const SLUG = "render-visualizacion-ia";
+const course = courses.find((c) => c.id === SLUG)!;
+
+export const metadata = buildCourseMetadata(
+  course,
+  SLUG,
+  "Render y Visualización Arquitectónica con IA"
+);
 
 export default async function RenderVisualizacionIAPage() {
-  const course = courses.find((c) => c.id === "render-visualizacion-ia");
-
-  if (!course) {
-    return <div>Curso no encontrado</div>;
-  }
+  if (!course) return <div>Curso no encontrado</div>;
 
   return (
-    <Suspense fallback={<div>Cargando...</div>}>
-      <LandingPageIAClient course={course} />
-    </Suspense>
+    <>
+      <JsonLd data={buildCourseJsonLd(course, SLUG)} />
+      <Suspense fallback={<div>Cargando...</div>}>
+        <LandingPageIAClient course={course} />
+      </Suspense>
+    </>
   );
 }

@@ -177,9 +177,11 @@ export default function ChatWidget() {
   return (
     <>
       {/* ═══ Floating Button ═══ */}
+      {/* On mobile: bottom-24 to clear sticky CTA banners on landing pages.
+          On md+: bottom-5 (normal position, no sticky banner). */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 group"
+        className="fixed bottom-24 md:bottom-5 right-5 z-[60] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 group"
         style={{
           background: "linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark))",
           boxShadow: "0 4px 20px rgba(102,97,171,0.35), 0 2px 8px rgba(0,0,0,0.15)",
@@ -223,14 +225,16 @@ export default function ChatWidget() {
       </button>
 
       {/* ═══ Chat Window ═══ */}
+      {/* On mobile: bottom-[7.5rem] (above the raised button).
+          On md+: bottom-24 (above the normal-positioned button). */}
       <div
-        className={`fixed bottom-24 right-5 z-50 w-[360px] max-w-[calc(100vw-2.5rem)] flex flex-col rounded-2xl overflow-hidden transition-all duration-400 ${
+        className={`fixed bottom-[7.5rem] md:bottom-24 right-5 z-[60] w-[360px] max-w-[calc(100vw-2.5rem)] flex flex-col rounded-2xl overflow-hidden transition-all duration-400 ${
           isOpen
             ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
             : "opacity-0 translate-y-4 scale-95 pointer-events-none"
         }`}
         style={{
-          height: "min(520px, calc(100vh - 140px))",
+          height: "min(520px, calc(100vh - 180px))",
           boxShadow: "0 12px 50px rgba(0,0,0,0.15), 0 4px 20px rgba(0,0,0,0.08)",
           border: "1px solid var(--neutral-200)",
         }}

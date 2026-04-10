@@ -1,12 +1,24 @@
 import { courses } from "@/lib/data/courses";
 import LandingPageOficinaClient from "@/components/landing-page-oficina-client";
+import JsonLd from "@/components/json-ld";
+import { buildCourseMetadata, buildCourseJsonLd } from "@/lib/seo";
+
+const SLUG = "abriendo-oficina-arquitectura";
+const course = courses.find((c) => c.id === SLUG)!;
+
+export const metadata = buildCourseMetadata(
+  course,
+  SLUG,
+  "Abriendo tu Oficina de Arquitectura — Curso UVA"
+);
 
 export default async function AbriendoOficinaArquitecturaPage() {
-  const course = courses.find((c) => c.id === "abriendo-oficina-arquitectura");
+  if (!course) return <div>Curso no encontrado</div>;
 
-  if (!course) {
-    return <div>Curso no encontrado</div>;
-  }
-
-  return <LandingPageOficinaClient course={course} />;
+  return (
+    <>
+      <JsonLd data={buildCourseJsonLd(course, SLUG)} />
+      <LandingPageOficinaClient course={course} />
+    </>
+  );
 }
