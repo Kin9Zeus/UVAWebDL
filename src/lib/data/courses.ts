@@ -39,6 +39,60 @@ export const courses: Course[] = [
     href: "/comunidad"
   },
   {
+    id: "diplomado-gestion-desarrollo-vivienda",
+    title: "Diplomado en Gestión y Desarrollo de Vivienda",
+    description: "De la captación del cliente a la entrega del proyecto. Aprende a estructurar, vender y ejecutar proyectos de vivienda de forma profesional y rentable.",
+    price: 150,
+    hotmartLink: "https://wa.link/3qrrd2",
+    rating: 5,
+    cover: "/Humanizar/diplomado_vivienda_16_9.png",
+    category: "gestión",
+    level: "intermedio",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "Módulo 1: Captación de clientes, marketing y diseño arquitectónico",
+        items: [
+          "Estrategias de captación de clientes",
+          "Marketing para proyectos de vivienda",
+          "Diseño arquitectónico orientado a la rentabilidad"
+        ]
+      },
+      {
+        title: "Módulo 2: Diseños técnicos: estructuras, redes y normativa",
+        items: [
+          "Coordinación de diseños técnicos",
+          "Estructuras y redes",
+          "Cumplimiento de normativa vigente"
+        ]
+      },
+      {
+        title: "Módulo 3: Contratos, cotizaciones y gestión administrativa",
+        items: [
+          "Elaboración de contratos sólidos",
+          "Cotizaciones precisas",
+          "Gestión administrativa eficiente"
+        ]
+      },
+      {
+        title: "Módulo 4: Costos, presupuestos y modelos de contratación",
+        items: [
+          "Análisis de costos",
+          "Elaboración de presupuestos detallados",
+          "Selección del modelo de contratación adecuado"
+        ]
+      },
+      {
+        title: "Módulo 5: Ejecución, seguimiento y cierre del proyecto",
+        items: [
+          "Supervisión de la ejecución de obra",
+          "Seguimiento y control de avances",
+          "Cierre exitoso y entrega del proyecto"
+        ]
+      }
+    ]
+  },
+  {
     id: "render-visualizacion-ia",
     title: "Render y Visualización con IA",
     description: "Aprende a crear renders hiperrealistas, videos y recorridos virtuales en minutos a partir de imágenes básicas, bocetos o fotografías crudas.",
@@ -388,7 +442,7 @@ export const courses: Course[] = [
     hotmartLink: "https://wa.link/g5i2ju",
     rating: 5,
     cover: "/Humanizar/Curso_de_D5_16.9.jpeg",
-    category: "urbanismo",
+    category: "visualización",
     level: "avanzado",
     videoUrl: undefined,
     syllabus: [

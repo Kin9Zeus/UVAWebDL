@@ -1,21 +1,9 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
 import * as gtm from '@/lib/analytics/gtm';
 import * as pixel from '@/lib/analytics/meta-pixel';
 
 export const useAnalytics = () => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    if (pathname) {
-      gtm.pageview(pathname);
-      pixel.pageview();
-    }
-  }, [pathname, searchParams]);
-
   const trackEvent = (eventName: string, properties?: Record<string, any>) => {
     // Generate a unique event ID for deduplication if not provided
     const eventID = properties?.eventID || crypto.randomUUID();

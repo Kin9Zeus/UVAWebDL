@@ -147,9 +147,9 @@ export default function Footer() {
         <div className="mt-12 h-px bg-white/[0.06]" />
 
         {/* Bottom bar */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
+        <div className="mt-6 flex flex-col items-center justify-center gap-4 text-xs text-white/30 pb-6 md:pb-0 text-center">
           <p>© {new Date().getFullYear()} UVA — Unidad Vectorial de Arquitectura. Todos los derechos reservados.</p>
-          <p className="flex items-center gap-1.5">
+          <p className="flex items-center justify-center gap-1.5">
             Developed by{" "}
             <a
               href="https://www.devleck.com/"

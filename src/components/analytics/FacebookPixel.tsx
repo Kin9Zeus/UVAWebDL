@@ -1,26 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
-import * as pixel from '@/lib/analytics/meta-pixel';
 
 export default function FacebookPixel() {
-  const [loaded, setLoaded] = useState(false);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    if (!loaded) return;
-    pixel.pageview();
-  }, [pathname, searchParams, loaded]);
+  const fbPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+  if (!fbPixelId) return null;
 
   return (
     <div>
       <Script
         id="fb-pixel"
         strategy="afterInteractive"
-        onLoad={() => setLoaded(true)}
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -32,7 +22,7 @@ export default function FacebookPixel() {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             
-            fbq('init', '${process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID}');
+            fbq('init', '${fbPixelId}');
           `,
         }}
       />

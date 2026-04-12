@@ -41,20 +41,21 @@ export default function GoogleTagManager({ gtmId }: GoogleTagManagerProps) {
             window.dataLayer = window.dataLayer || [];
             window.gtag = function(){dataLayer.push(arguments);}
             
-            if(localStorage.getItem('cookie_consent') === null){
-              window.gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'analytics_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'wait_for_update': 500
-              });
-            } else {
+            var consentValue = localStorage.getItem('cookie_consent');
+            if (consentValue === 'granted') {
                window.gtag('consent', 'default', {
                 'ad_storage': 'granted',
                 'analytics_storage': 'granted',
                 'ad_user_data': 'granted',
                 'ad_personalization': 'granted',
+                'wait_for_update': 500
+              });
+            } else {
+              window.gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
                 'wait_for_update': 500
               });
             }

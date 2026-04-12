@@ -207,15 +207,20 @@ h1, h2, h3, h4, h5, h6,
 
 /* ─── Scroll Marquee ──────────────────────────────────────── */
 
-@keyframes scroll {
+@keyframes marqueeScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.animate-scroll {
-  animation: scroll 30s linear infinite;
+.uva-marquee-scroll {
+  animation: marqueeScroll 30s linear infinite !important;
+  display: flex !important;
+  width: max-content !important;
+  will-change: transform;
 }
-.animate-scroll:hover {
-  animation-play-state: paused;
+.uva-marquee-scroll:hover,
+.uva-marquee-scroll:active,
+.uva-marquee-scroll:focus-within {
+  animation-play-state: paused !important;
 }
 
 /* ─── Glow Pulse ──────────────────────────────────────────── */

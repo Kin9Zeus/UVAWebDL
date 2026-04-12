@@ -20,11 +20,73 @@ function CourseList() {
     });
   }, [query]);
 
+  const groupedCourses = useMemo(() => {
+    return {
+      cursos: filtered.filter(c => !c.id.includes('libro') && !c.id.includes('asesoria') && !c.id.includes('comunidad')),
+      libros: filtered.filter(c => c.id.includes('libro')),
+      asesorias: filtered.filter(c => c.id.includes('asesoria')),
+      comunidad: filtered.filter(c => c.id.includes('comunidad')),
+    };
+  }, [filtered]);
+
   const handleCourseClick = (courseTitle: string) => {
     trackEvent('Click', {
       category: 'Course Card',
       label: courseTitle,
     });
+  };
+
+  const renderCourseCard = (c: typeof courses[0]) => (
+    <div key={c.id} className="flex flex-col h-full bg-[#1a1a1a] rounded-2xl border border-[#333] p-6 hover:border-[#f3c609] transition-all group hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(243,198,9,0.1)]">
+      <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#111] mb-4">
+        <Image
+          src={c.cover}
+          alt={c.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          style={{ objectFit: "cover" }}
+          className="transition-transform duration-500 group-hover:scale-110"
+        />
+        {/* Category Badge */}
+        <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-[#f3c609] text-xs font-bold px-2 py-1 rounded border border-[#f3c609]/30">
+          {c.category.toUpperCase()}
+        </div>
+      </div>
+      
+      <h3 className="text-xl font-bold text-white leading-tight mb-2 group-hover:text-[#f3c609] transition-colors">{c.title}</h3>
+      <p className="text-sm text-gray-400 mb-6 line-clamp-3 flex-grow">{c.description}</p>
+      
+      <div className="mt-auto space-y-4">
+        <div className="flex items-center justify-between pt-4 border-t border-[#333]">
+          <span className="text-gray-400 text-sm">Inversión:</span>
+          <span className="text-[#f3c609] font-bold text-xl">{c.priceDisplay ?? `$${c.price} USD`}</span>
+        </div>
+        
+        <Link 
+          href={c.href || `/cursos/${c.id}`} 
+          onClick={() => handleCourseClick(c.title)}
+          className="block w-full rounded-full bg-[#f3c609] px-4 py-3 text-black text-sm font-bold text-center hover:bg-[#d4ac00] transition-colors relative overflow-hidden group/btn"
+        >
+          <span className="relative z-10">VER DETALLES</span>
+          <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-500"></div>
+        </Link>
+      </div>
+    </div>
+  );
+
+  const renderSection = (title: string, items: typeof courses) => {
+    if (items.length === 0) return null;
+    return (
+      <div className="mb-20 last:mb-0 animate-fade-in">
+        <div className="flex items-center gap-4 mb-8">
+          <h2 className="text-2xl md:text-3xl font-black text-white">{title}</h2>
+          <div className="h-px bg-[#333] flex-grow"></div>
+        </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {items.map(renderCourseCard)}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -58,7 +120,7 @@ function CourseList() {
               <input 
                 value={query} 
                 onChange={(e) => setQuery(e.target.value)} 
-                placeholder="Buscar cursos..." 
+                placeholder="Buscar cursos, libros, asesorías..." 
                 className="w-full bg-[#1a1a1a] border border-[#333] text-white rounded-full px-6 py-3 focus:outline-none focus:border-[#f3c609] transition-colors placeholder-gray-500"
               />
               <svg className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -69,45 +131,16 @@ function CourseList() {
 
       <section className="relative z-10 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filtered.map((c) => (
-              <div key={c.id} className="flex flex-col h-full bg-[#1a1a1a] rounded-2xl border border-[#333] p-6 hover:border-[#f3c609] transition-all group hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(243,198,9,0.1)]">
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#111] mb-4">
-                  <Image
-                    src={c.cover}
-                    alt={c.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    style={{ objectFit: "cover" }}
-                    className="transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {/* Category Badge */}
-                  <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md text-[#f3c609] text-xs font-bold px-2 py-1 rounded border border-[#f3c609]/30">
-                    {c.category.toUpperCase()}
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-white leading-tight mb-2 group-hover:text-[#f3c609] transition-colors">{c.title}</h3>
-                <p className="text-sm text-gray-400 mb-6 line-clamp-3 flex-grow">{c.description}</p>
-                
-                <div className="mt-auto space-y-4">
-                  <div className="flex items-center justify-between pt-4 border-t border-[#333]">
-                    <span className="text-gray-400 text-sm">Inversión:</span>
-                    <span className="text-[#f3c609] font-bold text-xl">{c.priceDisplay ?? `$${c.price} USD`}</span>
-                  </div>
-                  
-                  <Link 
-                    href={c.href || `/cursos/${c.id}`} 
-                    onClick={() => handleCourseClick(c.title)}
-                    className="block w-full rounded-full bg-[#f3c609] px-4 py-3 text-black text-sm font-bold text-center hover:bg-[#d4ac00] transition-colors relative overflow-hidden group/btn"
-                  >
-                    <span className="relative z-10">VER DETALLES</span>
-                    <div className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-500"></div>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+          {filtered.length === 0 ? (
+            <div className="text-center text-gray-400 py-12">No se encontraron resultados para tu búsqueda.</div>
+          ) : (
+            <>
+              {renderSection("Cursos y Diplomados", groupedCourses.cursos)}
+              {renderSection("Libros y Guías", groupedCourses.libros)}
+              {renderSection("Asesorías y Mentorías", groupedCourses.asesorias)}
+              {renderSection("Comunidad", groupedCourses.comunidad)}
+            </>
+          )}
         </div>
       </section>
     </>
