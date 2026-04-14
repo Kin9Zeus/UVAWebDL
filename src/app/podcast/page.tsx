@@ -87,7 +87,7 @@ export default function PodcastPage() {
                 style={{ borderRadius: 16 }}
                 src="https://open.spotify.com/embed/show/0JGnY0rLz1CJHhQ4gYeRva/video?utm_source=generator&theme=0"
                 width="100%"
-                height="450"
+                height="352"
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 allowFullScreen
@@ -128,14 +128,14 @@ export default function PodcastPage() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { img: "/Humanizar/Pod1.jpg", title: "Píldora UVA", desc: "Episodios cortos para activar tu práctica profesional." },
-                { img: "/Humanizar/Pod2.jpg", title: "Historias de proceso", desc: "Aprendizajes reales: diseño, obra, clientes y equipo." },
-                { img: "/Humanizar/Seb.jpg", title: "Reflexiones y bienestar", desc: "Arquitectura con sentido humano, hábitos y mentalidad." },
-                { img: "/Humanizar/Seb2.jpg", title: "Detrás del micrófono", desc: "Conoce al arquitecto detrás del podcast y su visión." },
+                { img: "/Humanizar/Pod1.jpg", title: "Píldora UVA", desc: "Episodios cortos para activar tu práctica profesional.", link: "https://open.spotify.com/show/0JGnY0rLz1CJHhQ4gYeRva" },
+                { img: "/Humanizar/Pod2.jpg", title: "Historias de proceso", desc: "Aprendizajes reales: diseño, obra, clientes y equipo.", link: "https://open.spotify.com/episode/2eYmhjvHH9VsaOTpPD6fps?si=9a99b930a1e448b5" },
+                { img: "/Humanizar/Seb.jpg", title: "Reflexiones y bienestar", desc: "Arquitectura con sentido humano, hábitos y mentalidad.", link: "https://open.spotify.com/episode/1gPq42iMlvdGT06PytRL9v?si=dcf59b8a21d74433" },
+                { img: "/Humanizar/Seb2.jpg", title: "Detrás del micrófono", desc: "Conoce al arquitecto detrás del podcast y su visión.", link: "https://open.spotify.com/episode/5sn5DL7nx1uYJu2z2pZpOE?si=a0e796fe9281491c" },
               ].map((ep, idx) => (
                 <Link
                   key={idx}
-                  href="https://open.spotify.com/show/0JGnY0rLz1CJHhQ4gYeRva"
+                  href={ep.link}
                   target="_blank"
                   className="group flex flex-col bg-[#1a1a1a] rounded-2xl overflow-hidden border border-[#333] hover:border-[#1DB954] transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(29,185,84,0.1)]"
                 >
