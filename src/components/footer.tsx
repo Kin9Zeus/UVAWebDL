@@ -10,10 +10,11 @@ const youtube = process.env.NEXT_PUBLIC_YOUTUBE_URL || "https://youtube.com/@uva
 const spotify = process.env.NEXT_PUBLIC_SPOTIFY_URL || "https://open.spotify.com/";
 
 const FOOTER_LINKS = [
-  { href: "/cursos", label: "Cursos" },
+  { href: "/cursos", label: "Academia" },
   { href: "/proyectos", label: "Proyectos" },
   { href: "/servicios", label: "Servicios" },
   { href: "/podcast", label: "Podcast" },
+  { href: "/youtube", label: "YouTube" },
   { href: "/comunidad", label: "Comunidad" },
   { href: "/contacto", label: "Contacto" },
 ];

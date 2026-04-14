@@ -1,4 +1,3 @@
-import YouTubeLatest from "@/components/youtube-latest";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -29,118 +28,142 @@ export const metadata: Metadata = {
 
 export default function PodcastPage() {
   return (
-    <section>
-      {/* Hero */}
-      <div className="relative overflow-hidden">
-        <div className="relative min-h-[50vh] sm:min-h-[56vh] lg:min-h-[64vh]">
-          <Image src="/Humanizar/OficialPodcast.jpg" alt="Podcast UVA" fill priority sizes="100vw" className="object-cover" />
+    <div className="min-h-screen bg-[#111] text-white font-sans selection:bg-[#1DB954] selection:text-black">
+      {/* Background Texture */}
+      <div className="fixed inset-0 opacity-5 pointer-events-none z-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
+
+      {/* Hero Section */}
+      <section className="relative pt-20 pb-16 px-4 text-center overflow-hidden">
+        {/* Glow Effects */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#1DB954]/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-900/20 rounded-full blur-[100px] -z-10"></div>
+
+        <div className="max-w-5xl mx-auto relative z-10 space-y-6">
+          <div className="inline-flex items-center gap-2 bg-[#222] border border-[#1DB954]/30 rounded-full px-4 py-1 text-[#1DB954] text-sm font-medium animate-fade-in">
+            <span className="w-2 h-2 rounded-full bg-[#1DB954] animate-pulse"></span>
+            Podcast Oficial
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            PÍLDORA <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1DB954] via-[#4ade80] to-[#1DB954] drop-shadow-[0_0_15px_rgba(29,185,84,0.5)]">
+              UVA
+            </span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            Arquitectura, bienestar y estrategia. Conversaciones y reflexiones para arquitectos, diseñadores y constructores.
+          </p>
+
+          <div className="pt-4 flex justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <a 
+              href="https://open.spotify.com/show/0JGnY0rLz1CJHhQ4gYeRva" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group relative bg-[#1DB954] text-black text-lg font-bold px-8 py-4 rounded-full hover:bg-[#1ed760] transition-all hover:scale-105 shadow-[0_0_30px_rgba(29,185,84,0.3)] overflow-hidden flex items-center gap-3"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.3 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.841.241 1.2zM19.08 9.3C14.759 6.721 8.52 6.541 4.92 7.621c-.6.18-1.2-.181-1.38-.781-.18-.6.18-1.2.78-1.381 4.2-1.2 11.04-1.02 15.96 1.98.54.3.72 1.02.42 1.56-.3.541-1.02.72-1.62.3z"/></svg>
+              <span className="relative z-10">ESCUCHAR EN SPOTIFY</span>
+              <div className="absolute inset-0 bg-white/30 animate-shimmer"></div>
+            </a>
+          </div>
         </div>
-        <div className="hero-gradient absolute inset-0" />
-        <div className="grain-overlay absolute inset-0" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
-            <div className="text-white max-w-2xl animate-reveal-up">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-px bg-[var(--color-accent)]" />
-                <span className="text-xs uppercase tracking-[0.15em] text-white/50">Podcast</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-                Píldora UVA
-              </h1>
-              <p className="mt-1 text-lg sm:text-xl text-white/50 font-light">Arquitectura, bienestar y estrategia</p>
-              <p className="mt-3 text-sm sm:text-base text-white/65 max-w-lg">Conversaciones y reflexiones para arquitectos, diseñadores y constructores.</p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="https://open.spotify.com/show/0JGnY0rLz1CJHhQ4gYeRva" target="_blank" rel="noopener noreferrer" className="btn-primary rounded-full px-6 py-3 text-sm font-medium inline-flex items-center gap-2">
-                  <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm3.7 11.6a.7.7 0 01-.9.4c-2.4-1.5-5.5-1.8-9.1-.8a.7.7 0 11-.4-1.3c4-.9 7.5-.6 10.2 1.1.3.2.4.6.2.9z"/></svg>
-                  Escuchar en Spotify
-                </a>
-                <a href="https://youtube.com/@uvarq" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/[0.06] backdrop-blur-sm px-6 py-3 text-sm text-white transition-all duration-300 hover:bg-white/15 hover:border-white/40">
-                  Ver canal en YouTube
-                </a>
-              </div>
+      </section>
+
+      {/* Main Content Area */}
+      <section className="relative z-10 pb-24 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          
+          {/* Featured Episode / Spotify Player */}
+          <div className="mb-20 animate-reveal-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-2xl md:text-3xl font-black text-white">Episodio Destacado</h2>
+              <div className="h-px bg-[#333] flex-grow"></div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        {/* Topic Pills */}
-        <div className="flex flex-wrap gap-3">
-          <span className="badge badge-outline">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-secondary)]" />
-            Arquitectura y oficio
-          </span>
-          <span className="badge badge-outline">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" />
-            Estrategia y negocio
-          </span>
-          <span className="badge badge-outline">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-            Bienestar y hábitos
-          </span>
-        </div>
-
-        {/* Episode Carousel */}
-        <div className="mt-12">
-          <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-none" style={{ scrollbarWidth: "none" }}>
-            {[
-              { img: "/Humanizar/Pod1.jpg", title: "Píldora UVA", desc: "Episodios cortos para activar tu práctica profesional." },
-              { img: "/Humanizar/Pod2.jpg", title: "Historias de proceso", desc: "Aprendizajes reales: diseño, obra, clientes y equipo." },
-              { img: "/Humanizar/Seb.jpg", title: "Reflexiones y bienestar", desc: "Arquitectura con sentido humano, hábitos y mentalidad." },
-              { img: "/Humanizar/Seb2.jpg", title: "Detrás del micrófono", desc: "Conoce al arquitecto detrás del podcast y su visión." },
-            ].map((ep) => (
-              <Link
-                key={ep.title}
-                href="https://open.spotify.com/show/0JGnY0rLz1CJHhQ4gYeRva"
-                target="_blank"
-                className="group snap-center rounded-2xl overflow-hidden border border-[var(--neutral-200)] bg-[var(--surface)] min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] card-lift"
-              >
-                <div className="relative image-hover" style={{ aspectRatio: "16 / 10" }}>
-                  <Image src={ep.img} alt={ep.title} fill sizes="(max-width: 768px) 80vw, (max-width: 1024px) 45vw, 30vw" className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  <p className="absolute bottom-3 left-4 text-white font-semibold text-sm">{ep.title}</p>
-                  {/* Play icon */}
-                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  </div>
-                </div>
-                <div className="p-4 text-sm text-[var(--neutral-500)]">{ep.desc}</div>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Embeds */}
-        <div className="mt-16">
-          <div className="separator-gold mb-12" />
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-2xl border border-[var(--neutral-200)] p-5 bg-[var(--surface)]">
-              <div className="flex items-center gap-2 mb-4">
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="var(--color-secondary)"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm3.7 11.6a.7.7 0 01-.9.4c-2.4-1.5-5.5-1.8-9.1-.8a.7.7 0 11-.4-1.3c4-.9 7.5-.6 10.2 1.1.3.2.4.6.2.9z"/></svg>
-                <span className="text-sm font-medium text-[var(--foreground)]">Spotify</span>
-              </div>
+            
+            <div className="bg-[#1a1a1a] rounded-3xl border border-[#333] p-2 md:p-4 hover:border-[#1DB954]/50 transition-colors shadow-2xl">
               <iframe
                 title="Píldora UVA (Video del show)"
-                style={{ borderRadius: 12 }}
+                style={{ borderRadius: 16 }}
                 src="https://open.spotify.com/embed/show/0JGnY0rLz1CJHhQ4gYeRva/video?utm_source=generator&theme=0"
                 width="100%"
-                height="352"
+                height="450"
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
+                className="w-full bg-[#111]"
               />
             </div>
-            <div className="rounded-2xl border border-[var(--neutral-200)] p-5 bg-[var(--surface)]">
-              <div className="flex items-center gap-2 mb-4">
-                <svg width="16" height="16" viewBox="0 0 20 20" fill="var(--color-secondary)"><path d="M19.3 6.4a2 2 0 00-1.4-1.4C16.6 4.5 10 4.5 10 4.5s-6.6 0-7.9.5A2 2 0 00.7 6.4C.5 7.7.5 10 .5 10s0 2.3.2 3.6a2 2 0 001.4 1.4c1.3.5 7.9.5 7.9.5s6.6 0 7.9-.5a2 2 0 001.4-1.4c.2-1.3.2-3.6.2-3.6s0-2.3-.2-3.6zM8 13.5v-7l5 3.5-5 3.5z"/></svg>
-                <span className="text-sm font-medium text-[var(--foreground)]">YouTube</span>
-              </div>
-              <YouTubeLatest max={4} />
+          </div>
+
+          {/* Topics Grid */}
+          <div className="mb-20 animate-reveal-up">
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-2xl md:text-3xl font-black text-white">Temáticas</h2>
+              <div className="h-px bg-[#333] flex-grow"></div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { title: "Arquitectura y oficio", desc: "El día a día del arquitecto, diseño, obra y trato con clientes.", icon: "🏗️" },
+                { title: "Estrategia y negocio", desc: "Ventas, marketing, posicionamiento y gestión de estudios de arquitectura.", icon: "📈" },
+                { title: "Bienestar y hábitos", desc: "Productividad, salud mental y equilibrio entre vida y profesión.", icon: "🧘‍♂️" }
+              ].map((topic, i) => (
+                <div key={i} className="bg-[#1a1a1a] p-8 rounded-2xl border border-[#333] hover:border-[#1DB954] transition-all group hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(29,185,84,0.1)]">
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{topic.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#1DB954] transition-colors">{topic.title}</h3>
+                  <p className="text-gray-400 leading-relaxed text-sm">{topic.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
+
+          {/* Episode Gallery */}
+          <div className="animate-reveal-up">
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-2xl md:text-3xl font-black text-white">Galería de Episodios</h2>
+              <div className="h-px bg-[#333] flex-grow"></div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { img: "/Humanizar/Pod1.jpg", title: "Píldora UVA", desc: "Episodios cortos para activar tu práctica profesional." },
+                { img: "/Humanizar/Pod2.jpg", title: "Historias de proceso", desc: "Aprendizajes reales: diseño, obra, clientes y equipo." },
+                { img: "/Humanizar/Seb.jpg", title: "Reflexiones y bienestar", desc: "Arquitectura con sentido humano, hábitos y mentalidad." },
+                { img: "/Humanizar/Seb2.jpg", title: "Detrás del micrófono", desc: "Conoce al arquitecto detrás del podcast y su visión." },
+              ].map((ep, idx) => (
+                <Link
+                  key={idx}
+                  href="https://open.spotify.com/show/0JGnY0rLz1CJHhQ4gYeRva"
+                  target="_blank"
+                  className="group flex flex-col bg-[#1a1a1a] rounded-2xl overflow-hidden border border-[#333] hover:border-[#1DB954] transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(29,185,84,0.1)]"
+                >
+                  <div className="relative w-full aspect-square overflow-hidden bg-[#111]">
+                    <Image 
+                      src={ep.img} 
+                      alt={ep.title} 
+                      fill 
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" 
+                      className="object-cover transition-transform duration-500 group-hover:scale-110" 
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    {/* Spotify Icon overlay */}
+                    <div className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-[#1DB954] text-black flex items-center justify-center translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 shadow-lg">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.54.659.3 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.841.241 1.2zM19.08 9.3C14.759 6.721 8.52 6.541 4.92 7.621c-.6.18-1.2-.181-1.38-.781-.18-.6.18-1.2.78-1.381 4.2-1.2 11.04-1.02 15.96 1.98.54.3.72 1.02.42 1.56-.3.541-1.02.72-1.62.3z"/></svg>
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <h3 className="font-bold text-white mb-2 group-hover:text-[#1DB954] transition-colors line-clamp-1">{ep.title}</h3>
+                    <p className="text-sm text-gray-400 line-clamp-2">{ep.desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

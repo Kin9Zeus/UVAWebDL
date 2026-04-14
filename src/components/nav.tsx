@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: "/cursos", label: "Academia" },
   { href: "/proyectos", label: "Proyectos" },
   { href: "/podcast", label: "Podcast" },
+  { href: "/youtube", label: "YouTube" },
   { href: "/comunidad", label: "Comunidad" },
   { href: "/servicios", label: "Servicios" },
 ];

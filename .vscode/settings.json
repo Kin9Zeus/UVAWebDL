@@ -1,3 +1,6 @@
 {
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "css.customData": [
+    "./css_custom_data.json"
+  ]
 }
