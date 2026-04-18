@@ -141,7 +141,7 @@ export default function ChatWidget() {
           {
             id: generateId(),
             role: "model",
-            text: "No pude conectarme al servidor. Intenta de nuevo en un momento.",
+            text: "Mi conexión está fallando en este momento. Sin embargo, puedes comunicarte directamente con nuestro equipo por WhatsApp aquí: https://wa.link/4pjm79",
             timestamp: Date.now(),
           },
         ]);

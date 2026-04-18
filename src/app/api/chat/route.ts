@@ -191,7 +191,12 @@ export async function POST(req: NextRequest) {
     const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || `${protocol}://${host}`;
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${apiKey}`;
+    const fallbackModels = [
+      "gemini-3.1-flash-lite-preview", // Modelo rápido principal
+      "gemini-1.5-flash",              // Fallback rápido
+      "gemini-1.5-pro",                // Fallback avanzado
+      "gemini-2.5-flash"               // Otro fallback
+    ];
 
     const geminiBody = {
       system_instruction: {
@@ -215,31 +220,49 @@ export async function POST(req: NextRequest) {
       ],
     };
 
-    const geminiRes = await fetch(geminiUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(geminiBody),
-    });
+    let reply = "";
+    let success = false;
 
-    if (!geminiRes.ok) {
-      const errText = await geminiRes.text();
-      console.error("Gemini API error:", geminiRes.status, errText);
-      return NextResponse.json(
-        { error: "No pude procesar tu mensaje. Intenta de nuevo en un momento." },
-        { status: 502 }
-      );
+    for (const model of fallbackModels) {
+      try {
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        
+        const geminiRes = await fetch(geminiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(geminiBody),
+        });
+
+        if (!geminiRes.ok) {
+          const errText = await geminiRes.text();
+          console.warn(`Gemini API error with model ${model}:`, geminiRes.status, errText);
+          continue; // Si falla, intenta con el siguiente modelo en la lista
+        }
+
+        const geminiData = await geminiRes.json();
+        reply = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
+        
+        if (reply) {
+          success = true;
+          break; // Éxito, salir del bucle
+        }
+      } catch (err) {
+        console.warn(`Fetch error with model ${model}:`, err);
+        continue; // Error de red o similar, intenta con el siguiente modelo
+      }
     }
 
-    const geminiData = await geminiRes.json();
-    const reply =
-      geminiData?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Lo siento, no pude generar una respuesta. ¿Puedes reformular tu pregunta?";
+    if (!success) {
+      console.error("All Gemini fallback models failed.");
+      // Respuesta Hardcoded de emergencia si fallan todos los modelos de IA
+      reply = "Lo siento, mi sistema de inteligencia artificial está experimentando una alta demanda en este momento. Sin embargo, nuestro equipo humano está listo para ayudarte. Por favor, escríbenos directamente a nuestro WhatsApp: https://wa.link/4pjm79";
+    }
 
     return NextResponse.json({ reply });
   } catch (err) {
     console.error("Chat API error:", err);
     return NextResponse.json(
-      { error: "Error interno. Intenta de nuevo." },
+      { reply: "Lo siento, ocurrió un error interno en mi sistema. Por favor, escríbenos directamente a nuestro WhatsApp: https://wa.link/4pjm79 para poder ayudarte de inmediato." },
       { status: 500 }
     );
   }
