@@ -299,7 +299,7 @@ export default function LandingPageD5Client({ course }: Props) {
                  <span className="text-xl font-bold text-[#5E24C8]">USD</span>
                </div>
                <p className="text-green-500 font-medium bg-green-500/10 inline-block px-3 py-1 rounded-full text-sm">
-                 Ahorras $130 USD hoy
+                 Ahorras ${280 - course.price} USD hoy
                </p>
              </div>
 
