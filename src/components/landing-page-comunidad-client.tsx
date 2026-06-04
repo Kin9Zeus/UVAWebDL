@@ -211,7 +211,8 @@ export default function LandingPageComunidadClient() {
                   playsInline 
                   className="w-full h-full object-cover"
                 >
-                  <source src="/Humanizar/Casa_explotando%20en_render.mp4" type="video/mp4" />
+                  <source src="/Humanizar/casa_explotando_render.mov" type="video/quicktime" />
+                  <source src="/Humanizar/casa_explotando_render.mov" type="video/mp4" />
                 </video>
               </div>
               <h3 className="text-xl font-bold text-white text-center">Generación Inteligente</h3>
@@ -226,7 +227,8 @@ export default function LandingPageComunidadClient() {
                   playsInline 
                   className="w-full h-full object-cover"
                 >
-                  <source src="/Humanizar/Bouncy_Scale_Animation_Living_room.mp4" type="video/mp4" />
+                  <source src="/Humanizar/bouncy_scale_animation_living_room.mov" type="video/quicktime" />
+                  <source src="/Humanizar/bouncy_scale_animation_living_room.mov" type="video/mp4" />
                 </video>
               </div>
               <h3 className="text-xl font-bold text-white text-center">Animación Dinámica</h3>
