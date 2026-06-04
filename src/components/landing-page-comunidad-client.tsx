@@ -73,7 +73,7 @@ export default function LandingPageComunidadClient() {
       {/* Top Urgent Banner */}
       <div className="relative bg-gradient-to-r from-[#404EED] via-[#5865F2] to-[#404EED] text-white text-xs md:text-sm font-bold text-center py-2 sticky top-0 z-50 shadow-lg overflow-hidden">
         <div className="absolute inset-0 animate-shimmer bg-[length:200%_100%] z-0"></div>
-        <span className="relative z-10">🔥 ÚNETE A NUESTRO GRUPO PRIVADO EN DISCORD - PRECIO ESPECIAL DE LANZAMIENTO</span>
+        <span className="relative z-10">🔥 ÚNETE A NUESTRO GRUPO PRIVADO EN DISCORD - PRECIO ESPECIAL DE LANZAMIENTO!</span>
       </div>
 
       {/* Hero Section */}
