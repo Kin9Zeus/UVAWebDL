@@ -42,7 +42,7 @@ export const courses: Course[] = [
     id: "diplomado-gestion-desarrollo-vivienda",
     title: "Diplomado en Gestión y Desarrollo de Vivienda",
     description: "De la captación del cliente a la entrega del proyecto. Aprende a estructurar, vender y ejecutar proyectos de vivienda de forma profesional y rentable.",
-    price: 120,
+    price: 160,
     hotmartLink: "https://wa.link/3qrrd2",
     rating: 5,
     cover: "/Humanizar/diplomado_vivienda_16_9.png",
@@ -96,7 +96,7 @@ export const courses: Course[] = [
     id: "render-visualizacion-ia",
     title: "Render y Visualización con IA",
     description: "Aprende a crear renders hiperrealistas, videos y recorridos virtuales en minutos a partir de imágenes básicas, bocetos o fotografías crudas.",
-    price: 220, // Precio estimado, ajustar si es diferente
+    price: 240, // Precio estimado, ajustar si es diferente
     hotmartLink: "https://wa.link/37c5z5",
     rating: 5,
     cover: "/Humanizar/portada_render_ia.jpeg",
@@ -156,7 +156,7 @@ export const courses: Course[] = [
     id: "diplomado-gerencia-proyectos",
     title: "Diplomado en Gerencia de Proyectos, Costos y Presupuestos",
     description: "Domina la gestión integral de obras: planificación, costos, contratación y cierre financiero.",
-    price: 120,
+    price: 160,
     hotmartLink: "https://wa.link/i7yx5y",
     rating: 5,
     cover: "/Humanizar/Gerencia_de_proyectos_16.9.jpeg",
@@ -238,7 +238,7 @@ export const courses: Course[] = [
     id: "abriendo-oficina-arquitectura",
     title: "Abriendo tu oficina de Arquitectura en 10 días",
     description: "Mentoría grupal diseñada para arquitectos que quieren abrir su estudio de forma estructurada, acompañada y con visión empresarial.",
-    price: 120,
+    price: 160,
     hotmartLink: "https://wa.link/ba1roh",
     rating: 5,
     cover: "/Humanizar/Oficina_de_arquitectura_en_10_dias_16.9.jpeg",
@@ -438,7 +438,7 @@ export const courses: Course[] = [
     id: "diplomado-d5-render",
     title: "Diplomado en D5 Render",
     description: "Curso intensivo de renderizado arquitectónico. Domina la iluminación, materiales PBR, integración con IA y postproducción.",
-    price: 120,
+    price: 160,
     hotmartLink: "https://wa.link/g5i2ju",
     rating: 5,
     cover: "/Humanizar/Curso_de_D5_16.9.jpeg",
@@ -498,7 +498,7 @@ export const courses: Course[] = [
     id: "diplomado-redes-ia",
     title: "Instagram + Facebook Ads para Arquitectos, Diseñadores y Constructores (DE 0 A 100)",
     description: "Convierte redes sociales en clientes reales y proyectos pagos. Aprende a crear contenido estratégico, dominar el algoritmo y vender servicios de arquitectura.",
-    price: 120,
+    price: 160,
     hotmartLink: "https://wa.link/iafcnd",
     rating: 5,
     cover: "/Humanizar/curso_instagram_v2.png",
@@ -584,7 +584,7 @@ export const courses: Course[] = [
     id: "diseno-interior-iluminacion",
     title: "Diseño Interior e Iluminación",
     description: "Curso completo para principiantes, profesionales y empíricos. Domina desde la historia y el concepto hasta la iluminación y la gestión profesional.",
-    price: 220, // Actualizado a 220 USD
+    price: 240, // Actualizado a 240 USD
     hotmartLink: "https://wa.link/vaq30t",
     rating: 5,
     cover: "/Humanizar/Diseño_de_interiores_e_iluminacion_16.9.jpeg",
@@ -651,7 +651,7 @@ export const courses: Course[] = [
     id: "revit-arquitectura",
     title: "Revit Arquitectura",
     description: "Curso completo de Revit Arquitectura. Aprende desde los fundamentos hasta la documentación y planos, optimizando tus tiempos de trabajo.",
-    price: 120, // Precio estimado, ajustar si es diferente
+    price: 160, // Precio estimado, ajustar si es diferente
     hotmartLink: "https://wa.link/c660qc",
     rating: 5,
     cover: "/Humanizar/Autodesk_Revit_16.9.jpeg",
