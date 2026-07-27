@@ -712,5 +712,86 @@ export const courses: Course[] = [
         ]
       }
     ]
+  },
+  {
+    id: "curso-sketchup",
+    title: "Curso de SketchUp",
+    description: "Modelado Arquitectónico desde Cero. Aprende a modelar tus proyectos en 3D de una manera rápida y sencilla.",
+    price: 160,
+    rating: 5,
+    cover: "/Humanizar/portada_para_curso_sketchup_en_academia.jpeg",
+    category: "software",
+    level: "básico",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "Módulo 1: Introducción",
+        items: ["Introducción, interfaz, navegación y herramientas básicas."]
+      },
+      {
+        title: "Módulo 2: Modelado arquitectónico",
+        items: ["Modelado arquitectónico, Push/Pull, Offset, geometría limpia y buenas prácticas."]
+      },
+      {
+        title: "Módulo 3: Construcción de una vivienda desde planos",
+        items: ["Muros, puertas, ventanas, losas y cubiertas."]
+      },
+      {
+        title: "Módulo 4: Organización profesional",
+        items: ["Grupos, componentes, etiquetas, escenas y 3D Warehouse."]
+      },
+      {
+        title: "Módulo 5: Presentación arquitectónica",
+        items: ["Materiales, texturas, estilos, sombras, cortes y presentación arquitectónica."]
+      },
+      {
+        title: "Módulo 6: Plugins esenciales",
+        items: ["Plugins esenciales para optimizar el modelado y el flujo de trabajo."]
+      },
+      {
+        title: "Módulo 7: Terrenos y topografía",
+        items: ["Terrenos, topografía e implantación arquitectónica con Sandbox Tools."]
+      },
+      {
+        title: "Módulo 8: Optimización y exportación",
+        items: [
+          "Optimización, exportación para presentación, IA y render conceptual.",
+          "Proyecto Final: Modelarás una vivienda completa con terreno, interior, materiales, escenas y archivos listos para presentación o render."
+        ]
+      }
+    ]
+  },
+  {
+    id: "diplomado-clinicas-odontologicas",
+    title: "Diseño Interior y Habilitación de Clínicas Odontológicas",
+    description: "Aprende a desarrollar proyectos odontológicos completos, desde el diseño hasta la habilitación con la Resolución 3100 de 2019.",
+    price: 160,
+    rating: 5,
+    cover: "/Humanizar/portada_para_diplomado_diseño_y_habilitacion_de_clinicas_odontologicas_en_academia.jpeg",
+    category: "diseño",
+    level: "intermedio",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "Módulo 1: Normativa y habilitación",
+        items: ["Normativa y habilitación bajo la Resolución 3100 de 2019."]
+      },
+      {
+        title: "Módulo 2: Diseño arquitectónico",
+        items: ["Criterios de diseño arquitectónico para clínicas odontológicas."]
+      },
+      {
+        title: "Módulo 3: Diseño interior",
+        items: ["Diseño interior, materiales y experiencia del paciente."]
+      },
+      {
+        title: "Módulo 4: Presupuestos y planeación",
+        items: ["Presupuestos, planeación de obra y control de costos."]
+      },
+      {
+        title: "Módulo 5: Construcción y habilitación final",
+        items: ["Proceso de construcción, ejecución y habilitación final de la clínica."]
+      }
+    ]
   }
 ];
