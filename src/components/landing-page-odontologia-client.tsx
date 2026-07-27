@@ -42,9 +42,9 @@ export default function LandingPageOdontologiaClient({ course }: Props) {
             Certificación Profesional UVA
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none animate-fade-in" style={{ animationDelay: '0.1s' }}>
             DIPLOMADO EN DISEÑO DE <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0d9488] via-[#2dd4bf] to-[#0d9488]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0d9488] via-[#2dd4bf] to-[#0d9488] break-words">
               CLÍNICAS ODONTOLÓGICAS
             </span>
           </h1>
