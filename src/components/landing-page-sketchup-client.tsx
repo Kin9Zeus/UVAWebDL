@@ -236,11 +236,11 @@ export default function LandingPageSketchupClient({ course }: Props) {
                   </a>
                ) : (
                  <a 
-                   href="/contacto"
-                   className="block mt-4 w-full rounded-full bg-[#e32d30] px-5 py-3 text-white text-center font-bold hover:opacity-90 transition-opacity"
-                 >
-                   Más Información
-                 </a>
+                  href="/contacto"
+                  className="block mt-4 w-full rounded-full bg-[#e32d30] px-5 py-3 text-white text-center font-bold hover:opacity-90 transition-opacity"
+                >
+                  COMPRAR AHORA
+                </a>
                )}
                 <p className="text-xs text-center text-gray-500">
                   *Acceso inmediato enviado a tu correo electrónico.

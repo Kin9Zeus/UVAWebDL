@@ -18,7 +18,7 @@ export default function LandingPageAsesoriaClient({ course }: Props) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappLink = "https://wa.link/r7u7qs";
+  const whatsappLink = "https://wa.link/zqb5rk";
 
   return (
     <div className="min-h-screen bg-[#111] text-white font-sans selection:bg-[#f3c609] selection:text-white overflow-x-hidden">

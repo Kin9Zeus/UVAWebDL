@@ -61,7 +61,7 @@ export default function LandingPageComunidadClient() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappLink = "https://wa.link/zudao0";
+  const whatsappLink = "https://wa.link/ytb29o";
   const discordColor = "#5865F2"; // Discord Blurple
   const discordColorLight = "#7983F5"; // Lighter shade
 
