@@ -803,6 +803,7 @@ export const courses: Course[] = [
     description: "Aprende a convertir a Claude en tu asistente profesional para trabajar más rápido, con mayor precisión y sin empezar de cero.",
     price: 198,
     rating: 5,
+    hotmartLink: "https://wa.link/ykrcz2",
     cover: "/Humanizar/portada_diplomado.jpeg",
     category: "gestión",
     level: "intermedio",
