@@ -796,5 +796,38 @@ export const courses: Course[] = [
         items: ["Proceso de construcción, ejecución y habilitación final de la clínica."]
       }
     ]
+  },
+  {
+    id: "diplomado-claude-ia",
+    title: "Diplomado en Claude IA para Presupuestos y Administración de Obra",
+    description: "Aprende a convertir a Claude en tu asistente profesional para trabajar más rápido, con mayor precisión y sin empezar de cero.",
+    price: 198,
+    rating: 5,
+    cover: "/Humanizar/portada_diplomado.jpeg",
+    category: "gestión",
+    level: "intermedio",
+    videoUrl: undefined,
+    syllabus: [
+      {
+        title: "Sesión 1: Fundamentos de Claude para la Construcción",
+        items: ["Introducción a Claude y su aplicación real en proyectos arquitectónicos y de construcción."]
+      },
+      {
+        title: "Sesión 2: Presupuestos Inteligentes con IA",
+        items: ["Generación, análisis y optimización de presupuestos automatizados."]
+      },
+      {
+        title: "Sesión 3: Administración y control presupuestal de Obra",
+        items: ["Seguimiento financiero, estimaciones y control de costos en tiempo real."]
+      },
+      {
+        title: "Sesión 4: Documentación y Gestión de Clientes",
+        items: ["Redacción de contratos, reportes, actas y comunicación profesional asistida por IA."]
+      },
+      {
+        title: "Sesión 5: Implementación Completa para tu Empresa",
+        items: ["Creación de flujos de trabajo personalizados para tu propio estudio o constructora."]
+      }
+    ]
   }
 ];
