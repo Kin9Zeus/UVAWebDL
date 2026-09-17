@@ -24,19 +24,19 @@ function getSystemPrompt(baseUrl: string) {
 ## CATÁLOGO COMPLETO DE CURSOS Y PRODUCTOS
 
 ### 1. Render y Visualización con IA
-- Precio: $240 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Transforma bocetos simples en renders hiperrealistas, videos y recorridos virtuales en minutos. Optimiza radicalmente el tiempo de entrega de proyectos. 5 sesiones.
 - Link web: ${baseUrl}/cursos/render-visualizacion-ia
 - WhatsApp para comprar: https://wa.link/37c5z5
 
 ### 2. Diplomado en Gerencia de Proyectos, Costos y Presupuestos
-- Precio: $160 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Deja de perder dinero en obras. Domina la gestión integral, cálculo de honorarios, APUs y control financiero para asegurar la rentabilidad. 8 sesiones.
 - Link web: ${baseUrl}/cursos/diplomado-gerencia-proyectos
 - WhatsApp para comprar: https://wa.link/i7yx5y
 
 ### 3. Abriendo tu Oficina de Arquitectura en 10 días
-- Precio: $160 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Pasa de arquitecto a empresario. Mentoría estructurada para crear tu estudio, definir tu marca, captar clientes reales y establecer tu portafolio. 10 módulos.
 - Link web: ${baseUrl}/cursos/abriendo-oficina-arquitectura
 - WhatsApp para comprar: https://wa.link/ba1roh
@@ -60,36 +60,54 @@ function getSystemPrompt(baseUrl: string) {
 - WhatsApp para comprar: https://wa.link/21my6s
 
 ### 7. Diplomado en D5 Render
-- Precio: $160 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Domina la iluminación, materiales PBR e integración de IA. Consigue impacto visual de alto nivel que hace destacar tus proyectos. 5 módulos.
 - Link web: ${baseUrl}/cursos/diplomado-d5-render
 - WhatsApp para comprar: https://wa.link/g5i2ju
 
 ### 8. Instagram + Facebook Ads para Arquitectos (DE 0 A 100)
-- Precio: $160 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Sistema real y comprobado para captar clientes que SÍ pagan. Embudo digital, segmentación de alto poder adquisitivo y cierre de ventas. 8 sesiones.
 - Link web: ${baseUrl}/cursos/diplomado-redes-ia
 - WhatsApp para comprar: https://wa.link/iafcnd
 
 ### 9. Diseño Interior e Iluminación
-- Precio: $240 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Interiorismo estratégico desde el concepto hasta el presupuesto. Narrativa espacial y selección inteligente de materiales. 4 sesiones.
 - Link web: ${baseUrl}/cursos/diseno-interior-iluminacion
 - WhatsApp para comprar: https://wa.link/vaq30t
 
 ### 10. Revit Arquitectura
-- Precio: $160 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Optimiza tu producción. Modela, cuantifica y planimetría en tiempos récord con metodología paramétrica profesional. 7 días.
 - Link web: ${baseUrl}/cursos/revit-arquitectura
 - WhatsApp para comprar: https://wa.link/c660qc
 
+### 11. Curso de SketchUp
+- Precio: $220 USD
+- Beneficio y Transformación: Modela tus proyectos arquitectónicos en 3D de forma rápida y profesional, desde cero hasta la presentación final con render conceptual. 8 módulos.
+- Link web: ${baseUrl}/cursos/curso-sketchup
+- WhatsApp para comprar: https://wa.link/m5xo5u
+
 ### 12. Diplomado en Gestión y Desarrollo de Vivienda
-- Precio: $160 USD
+- Precio: $220 USD
 - Beneficio y Transformación: Aprende a estructurar, vender y ejecutar proyectos de vivienda de forma profesional y rentable.
 - Link web: ${baseUrl}/cursos/diplomado-gestion-desarrollo-vivienda
 - WhatsApp para comprar: https://wa.link/3qrrd2
 
-### 11. Comunidad UVA (Discord)
+### 13. Diseño Interior y Habilitación de Clínicas Odontológicas
+- Precio: $220 USD
+- Beneficio y Transformación: Diseña y habilita consultorios odontológicos completos cumpliendo la Resolución 3100 de 2019, desde el diseño arquitectónico hasta la construcción. 5 módulos.
+- Link web: ${baseUrl}/cursos/diplomado-clinicas-odontologicas
+- WhatsApp para comprar: https://wa.link/222uck
+
+### 14. Diplomado en Claude IA para Presupuestos y Administración de Obra
+- Precio: $220 USD
+- Beneficio y Transformación: Convierte a Claude en tu asistente profesional para generar presupuestos, controlar costos de obra y automatizar la gestión documental de tus proyectos. 5 sesiones.
+- Link web: ${baseUrl}/cursos/diplomado-claude-ia
+- WhatsApp para comprar: https://wa.link/ykrcz2
+
+### 15. Comunidad UVA (Discord)
 - Precio: $7 USD/mes
 - Beneficio y Transformación: Tu red de apoyo exclusiva. Crece profesionalmente compartiendo recursos, networking y resolviendo dudas con otros arquitectos del ecosistema UVA.
 - Link web: ${baseUrl}/comunidad

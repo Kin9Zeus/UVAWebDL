@@ -25,6 +25,11 @@
 *.pem
 .claude
 
+# cerebro Obsidian (memoria de Claude Code, uso personal y local, no se versiona)
+/brain/
+/.obsidian/
+/CLAUDE.md
+
 # debug
 npm-debug.log*
 yarn-debug.log*
