@@ -80,7 +80,7 @@ src/
 └── models/Lead.ts
 ```
 
-La guía completa de medición está en [`TRACKING_SETUP.md`](TRACKING_SETUP.md) y el historial de cambios de contenido en [`CHANGELOG.md`](CHANGELOG.md).
+La guía completa de medición está en [`docs/TRACKING_SETUP.md`](docs/TRACKING_SETUP.md) y el historial de cambios de contenido en [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Arrancar
 
@@ -96,7 +96,7 @@ Crea `.env.local` con las variables que uses:
 | `MONGODB_URI` | Base de datos de leads |
 | `GEMINI_API_KEY` | Asistente de IA (solo servidor) |
 | `NEXT_PUBLIC_BASE_URL` | Enlaces absolutos del asistente |
-| `NEXT_PUBLIC_GTM_ID` · `NEXT_PUBLIC_GA_ID` · `NEXT_PUBLIC_FACEBOOK_PIXEL_ID` · `FACEBOOK_ACCESS_TOKEN` | Medición (ver `TRACKING_SETUP.md`) |
+| `NEXT_PUBLIC_GTM_ID` · `NEXT_PUBLIC_GA_ID` · `NEXT_PUBLIC_FACEBOOK_PIXEL_ID` · `FACEBOOK_ACCESS_TOKEN` | Medición (ver `docs/TRACKING_SETUP.md`) |
 | `NEXT_PUBLIC_WHATSAPP_URL` · `NEXT_PUBLIC_INSTAGRAM_URL` · `NEXT_PUBLIC_YOUTUBE_URL` · `NEXT_PUBLIC_SPOTIFY_URL` | Enlaces de contacto y redes |
 | `YOUTUBE_API_KEY` | Últimos videos del canal |
 
