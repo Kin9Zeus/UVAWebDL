@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint & build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install (exact lockfile)
+        run: npm ci --no-audit --no-fund
+
+      # Known style findings (react/no-unescaped-entities, no-explicit-any) are
+      # reported but do not block the build; fix them gradually.
+      - name: Lint (informational)
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build

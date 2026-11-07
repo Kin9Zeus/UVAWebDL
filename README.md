@@ -9,6 +9,7 @@
 <br/>
 
 [![Sitio en vivo](https://img.shields.io/badge/Sitio_en_vivo-uvarq.com-6E5BB8?style=for-the-badge&labelColor=0d0d12)](https://www.uvarq.com/)
+[![CI](https://github.com/Kin9Zeus/UVAWebDL/actions/workflows/ci.yml/badge.svg)](https://github.com/Kin9Zeus/UVAWebDL/actions/workflows/ci.yml)
 
 ![Next.js](https://img.shields.io/badge/Next.js_16-0d0d12?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React_19-0d0d12?style=flat-square&logo=react&logoColor=61DAFB)
