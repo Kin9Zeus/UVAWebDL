@@ -101,6 +101,10 @@ Crea `.env.local` con las variables que uses:
 
 Producción: `npm run build && npm start`.
 
+## Licencia
+
+© 2026 Devleck (Aleck Martinez). **Todos los derechos reservados.** El código se publica como caso de estudio de portafolio: puedes leerlo y ejecutarlo en local para evaluarlo, pero no copiarlo, redistribuirlo ni usarlo en otro producto sin permiso escrito. Las marcas, logotipos, fotografías y textos pertenecen a sus respectivos dueños. Ver [LICENSE](LICENSE) · Permisos: contact@devleck.com
+
 ---
 
 <div align="center">
